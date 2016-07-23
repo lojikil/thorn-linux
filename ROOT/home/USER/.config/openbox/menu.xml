@@ -1,0 +1,92 @@
+<openbox_menu xmlns="http://openbox.org/"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://openbox.org/
+                file:///usr/share/openbox/menu.xsd">
+
+<menu id="root-menu" label="Thorn Linux">
+  <item label="Terminal emulator">
+    <action name="Execute"><execute>terminator</execute></action>
+  </item>
+  <item label="File Manager">
+    <action name="Execute"><execute>thunar</execute></action>
+  </item>
+  <item label="Web browser">
+    <action name="Execute"><execute>google-chrome</execute></action>
+  </item>
+  <item label="Text Editor">
+    <action name="Execute"><execute>geany</execute></action>
+  </item>
+  <item label="Media Player">
+    <action name="Execute"><execute>vlc</execute></action>
+  </item>
+
+  <separator />
+    <menu id="accessories" label="Accessories">
+      <item label="Galculator">
+        <action name="Execute"><execute>galculator</execute></action>
+      </item>
+      <item label="Leafpad">
+        <action name="Execute"><execute>leafpad</execute></action>
+      </item>
+    </menu>
+    <menu id="graphics" label="Graphics">
+      <item label="Eye of GNOME">
+        <action name="Execute"><execute>eog</execute></action>
+      </item>
+      <item label="Gimp">
+        <action name="Execute"><execute>gimp</execute></actoin>
+      </item>
+    </menu>
+    <menu id="multimedia" label="Multimedia">
+      <item label="Audacity">
+        <action name="Execute"><execute>audacity</execute></action>
+      </item>
+      <item label="Guitarix">
+        <action name="Execute"><execute>guitarix</execute></action>
+      </item>
+      <item label="Mixxx">
+        <action name="Execute"><execute>mixxx</execute></action>
+      </item>
+      <item label="Pithos">
+        <action name="Execute"><execute>pithos</execute></action>
+      </item>
+      <item label="VLC">
+        <action name="Execute"><execute>vlc</execute></action>
+      </item>
+    </menu>
+    <menu id="network" label="Network">
+      <item label="Filezilla">
+        <action name="Execute"><execute>filezilla</execute></action>
+      </item>
+      <item label="Google Chrome">
+        <action name="Execute"><execute>google-chrome</execute></action>
+      </item>
+      <item label="Hexchat">
+        <action name="Execute"><execute>hexchat</execute></action>
+      </item>
+      <item label="IceDove">
+        <action name="Execute"><execute>icedove</execute></action>
+      </item>
+      <item label="Transmission">
+        <action name="Execute"><execute>transmission-gtk</execute></action>
+      </item>
+    </menu>
+  <separator />
+  <menu id="client-list-menu" />
+  <separator />
+  <item label="ObConf">
+    <action name="Execute"><execute>obconf</execute></action>
+  </item>
+  <item label="Reconfigure">
+    <action name="Reconfigure" />
+  </item>
+  <item label="Restart">
+    <action name="Restart" />
+  </item>
+  <separator />
+  <item label="Exit">
+    <action name="Exit" />
+  </item>
+</menu>
+
+</openbox_menu>

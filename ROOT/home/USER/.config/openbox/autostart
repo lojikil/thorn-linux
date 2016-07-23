@@ -1,0 +1,5 @@
+# Set the wallpaper
+nitrogen --restore &
+
+# Start the panel
+tint2 &

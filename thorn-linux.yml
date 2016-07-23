@@ -1,0 +1,149 @@
+---
+# BEFORE RUNNING:
+# SET 'force_handlers = True' in ansible.cfg
+
+- hosts: target
+  vars:
+  -  username: thornlinux
+  # The default password is 'thornlinux', See this article on creating crypted passwords to change it: http://docs.ansible.com/ansible/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module
+  -  password:  $6$rounds=656000$bEFE6/m8aTVDfxfF$qmRU7aESYdQIAO/9Z6TtAlULxsOrL0U8YeD74JgcUi9AbgXEkBiqbaSgP4xfTWl41z.MxcrlF/MtSOR/zYHF0.
+
+  tasks:
+   - name: Create group for new user account
+     group: name={{ username }}
+
+   - name: Create account with sudo privileges
+     user: name={{ username }} createhome=yes password={{ password }} group={{ username }} groups="sudo" shell=/bin/bash
+
+   - name: Remove the default entry in the apt sources list for the cdrom
+     lineinfile: dest=/etc/apt/sources.list line="Debian GNU/Linux 8.5.0 _Jessie_ - Official amd64 CD Binary-1 20160604-15:35/ jessie main" state=absent
+
+   - name: Update package cache and upgrade installed packages
+     apt: update_cache=true upgrade=dist
+
+   - name: Install system packages
+     apt: name={{ item }} state=installed
+     with_items:
+      - lightdm # A Display manager
+      - openbox # A Window manager
+      - tint2 #  A panel with clock included
+      - fonts-inconsolata # A collection of fonts
+      - software-properties-common # Contains apt-add-repository
+
+   - name: Install user applications
+     apt: name={{ item }} state=installed
+     with_items:
+      - nitrogen # A wallpaper setter
+      - terminator # A multiplexing terminal emulator
+      - vlc # A multimedia player
+      - geany # A "medium" editor/IDE
+      - leafpad # A light editor
+      - icedove # An email client
+      - thunar # A file manager
+      - libreoffice # An office suite
+      - galculator # A calculator
+      - gimp # An image editor
+      - audacity # An audio editor
+      - eog # An image viewer
+      - transmission # A torrent client
+      - filezilla # A FTP client
+      - hexchat # An IRC client
+      - mixxx # A digital disk jockey interface
+      - guitarix # A digital guitar amplifier
+      - lxappearance # A theme manager
+      - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
+      - pithos # A Pandora client
+
+   - name: Install user utilities
+     apt: name={{ item }} state=installed
+     with_items:
+       - vim
+       - htop
+
+   - name: Download applications from external sources
+     get_url: dest=/tmp url={{ item }}
+     with_items:
+       - https://atom.io/download/deb
+       - https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+       - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+   - name: Install applications from external sources
+     apt: deb=/tmp/{{ item }}
+     with_items:
+       - atom-amd64.deb
+       - steam_latest.deb
+       - google-chrome-stable_current_amd64.deb
+
+   - name: Ensure the openbox configuration directory exists and is owned by the correct user
+     file: path=/home/{{ username }}/.config/openbox recurse=yes state=directory owner={{ username }} group={{ username }}
+
+   - name: Override the default startup file
+     copy: src=ROOT/home/USER/.config/openbox/autostart dest=/home/{{ username }}/.config/openbox/autostart owner={{ username }} group={{ username }}
+
+   - name: Override the default menu file
+     copy: src=ROOT/home/USER/.config/openbox/menu.xml dest=/home/{{ username }}/.config/openbox/menu.xml owner={{ username }} group={{ username }}
+
+   - name: Override the default openbox configuration file
+     copy: src=ROOT/home/USER/.config/openbox/rc.xml dest=/home/{{ username }}/.config/openbox/rc.xml owner={{ username }} group={{ username }}
+
+   - name: Ensure the wallpaper directory exists
+     file: path=/home/{{ username }}/Pictures/wallpapers state=directory recurse=yes owner={{ username }} group={{ username }}
+
+   - name: Copy over wallpapers
+     copy: src={{ item }} dest=/home/{{ username }}/Pictures/wallpapers owner={{ username }} group={{ username }}
+     with_fileglob:
+       - ROOT/home/USER/Pictures/wallpapers/*
+
+   - name: Ensure the wallpaper setter configuration directory exists
+     file: path=/home/{{ username }}/.config/nitrogen state=directory owner={{ username }} group={{ username }}
+
+   - name: Copy over wallpaper setter configuration files - Part 1
+     template: src=ROOT/home/USER/.config/nitrogen/bg-saved.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/bg-saved.cfg owner={{ username }} group={{ username }}
+
+   - name: Copy over wallpaper setter configuration files - Part 2
+     template: src=ROOT/home/USER/.config/nitrogen/nitrogen.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/nitrogen.cfg owner={{ username }} group={{ username }}
+
+   - name: Create apt sources file for Arc GTK themes
+     lineinfile: line='deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' dest=/etc/apt/sources.list.d/arc-theme.list create=yes
+
+   - name: Import apt key for Arc GTK themes
+     apt_key: url=http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key state=present
+
+   - name: Install arc themes
+     apt: update_cache=yes name=arc-theme
+
+   - name: Add apt repository for Moka icons
+     command: apt-add-repository -y ppa:moka/daily
+
+   - name: Change release codename in Moka apt repository configuration
+     command: sed -i 's/jessie/xenial/g' /etc/apt/sources.list.d/moka-daily-jessie.list
+
+   - name: Install Moka icons
+     apt: update_cache=yes name=moka-icon-theme
+
+   - name: Download Arc icons
+     git:  repo=https://github.com/horst3180/arc-icon-theme.git dest=/tmp/arc-icon-theme
+
+   - name: Move Arc icon theme into place
+     command: mv /tmp/arc-icon-theme/Arc /usr/share/icons/ creates=/usr/share/icons/Arc
+
+   - name: Copy over GTK config file
+     copy: src=ROOT/home/USER/.gtkrc-2.0 dest=/home/{{ username }}/.gtkrc-2.0 owner={{ username }} group={{ username }}
+
+   - name: Ensure the terminator config directory exists
+     file: path=/home/{{ username }}/.config/terminator state=directory owner={{ username }} group={{ username }}
+
+   - name: Copy over terminator config
+     copy: src=ROOT/home/USER/.config/terminator/config dest=/home/{{ username }}/.config/terminator/config owner={{ username }} group={{ username }}
+
+   - name: Ensure the Google Chrome configuration directory exists
+     file: path=/home/{{ username }}/.config/google-chrome/Default state=directory recurse=yes owner={{ username }} group={{ username }}
+
+   - name: Copy over the Google Chrome default preferences file
+     copy: src=ROOT/home/USER/.config/google-chrome/Default/Preferences dest=/home/{{ username }}/.config/google-chrome/Default/Preferences owner={{ username }} group={{ username }}
+
+   - name: Set Google Chrome to use GTK theme
+     command: sed -i 's/\"use_system\":false/\"use_system\":true/' /home/{{ username }}/.config/google-chrome/Default/Preferences
+  handlers:
+     - name: resolve dependency issues
+       command: apt-get -fy install
