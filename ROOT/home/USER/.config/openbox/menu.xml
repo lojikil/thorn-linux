@@ -19,7 +19,702 @@
   <item label="Media Player">
     <action name="Execute"><execute>vlc</execute></action>
   </item>
-
+  <separator />
+    <menu id="penetration-testing" label="Penetration Testing">
+      <menu id="information-gathering" label="Information Gathering">
+        <item label="DMitry">
+          <action name="Execute">
+            <command>
+              xterm -hold dmitry
+            </command>
+          </action>
+        </item>
+        <menu id="dnmap" label="dnmap">
+          <item label="dnmap_client">
+            <action name="Execute">
+              <command>
+                xterm -hold dnmap_client
+              </command>
+            </action>
+          </item>
+          <item label="dnmap_server">
+            <action name="Execute">
+              <command>
+                xterm -hold dnmap_server
+              </command>
+            </action>
+          </item>
+        </menu>
+        <item label="ike-scan">
+          <action name="Execute">
+            <command>
+              xterm -hold -e dnmap_server
+            </command>
+          </action>
+        </item>
+        <item label="Maltego Teeth">
+          <action name="Execute">
+            <command>
+              maltegoce
+            </command>
+          </action>
+        </item>
+        <item label="netdiscover">
+          <action name="Execute">
+            <command>
+              xterm -hold -e sudo netdiscover -h
+            </command>
+          </action>
+        </item>
+        <item label="Nmap">
+          <action name="Execute">
+            <command>
+              xterm -hold -e nmap -h
+            </command>
+          </action>
+        </item>
+        <item label="p0f">
+          <action name="Execute">
+            <command>
+              xterm -hold -e p0f -h
+            </command>
+          </action>
+        </item>
+        <item label="recon-ng">
+          <action name="Execute">
+            <command>
+              terminator -e recon-ng
+            </command>
+          </action>
+        </item>
+        <item label="sparta">
+          <action name="Execute">
+            <command>
+              sparta
+            </command>
+          </action>
+        </item>
+        <item label="zenmap">
+          <action name="Execute">
+            <command>
+              xterm -hold -e sudo zenmap
+            </command>
+          </action>
+        </item>
+        <menu id="dns_analysis" label="DNS Analysis">
+          <item label="dnsenum">
+            <action name="Execute">
+              <command>
+                xterm -hold dnsenum
+              </command>
+            </action>
+          </item>
+          <item label="dnsmap">
+            <action name="Execute">
+              <command>
+                xterm -hold dnsmap
+              </command>
+            </action>
+          </item  >
+          <item label="dnsrecon">
+            <action name="Execute">
+              <command>
+                xterm -hold dnsrecon
+              </command>
+            </action>
+          </item>
+          <item label="dnstracer">
+            <action name="Execute">
+              <command>
+                xterm -hold dnstracer
+              </command>
+            </action>
+          </item>
+          <item label="dnswalk">
+            <action name="Execute">
+              <command>
+                xterm -hold -e dnswalk --help
+              </command>
+            </action>
+          </item>
+          <item label="Fierce">
+            <action name="Execute">
+              <command>
+                xterm -hold -e fierce -h
+              </command>
+            </action>
+          </item>
+          <item label="URLCrazy">
+            <action name="Execute">
+              <command>
+                xterm -hold urlcrazy
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="ids_ips_identification" label="IDS/IPS Identification">
+          <item label="fragroute">
+            <action name="Execute">
+              <command>
+                xterm -hold fragroute
+              </command>
+            </action>
+          </item>
+          <item label="fragrouter">
+            <action name="Execute">
+              <command>
+                xterm -hold fragrouter
+              </command>
+            </action>
+          </item>
+          <item label="ftest">
+            <action name="Execute">
+              <command>
+                xterm -hold ftest
+              </command>
+            </action>
+          </item>
+          <item label="wafw00f">
+            <action name="Execute">
+              <command>
+                xterm -hold -e wafw00f -h
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="live_host_identification" label="Live Host Identification">
+          <item label="arping">
+            <action name="Execute">
+              <command>
+                xterm -hold arping
+              </command>
+            </action>
+          </item>
+          <item label="CDPsnarf">
+            <action name="Execute">
+              <command>
+                xterm -hold cdpsnarf
+              </command>
+            </action>
+          </item>
+          <item label="fping">
+            <action name="Execute">
+              <command>
+                xterm -hold -e fping -h
+              </command>
+            </action>
+          </item>
+          <item label="hping3">
+            <action name="Execute">
+              <command>
+                xterm -hold -e hping3 -h
+              </command>
+            </action>
+          </item>
+          <item label="masscan">
+            <action name="Execute">
+              <command>
+                xterm -hold -e masscan --help
+              </command>
+            </action>
+          </item>
+          <item label="Miranda">
+            <action name="Execute">
+              <command>
+                xterm -hold -e miranda -h
+              </command>
+            </action>
+          </item>
+          <item label="ncat">
+            <action name="Execute">
+              <command>
+                xterm -hold -e ncat -h
+              </command>
+            </action>
+          </item>
+          <item label="unicornscan">
+            <action name="Execute">
+              <command>
+                xterm -hold -e unicornscan -h
+              </command>
+            </action>
+          </item>
+          <item label="WOL-E">
+            <action name="Execute">
+              <command>
+                xterm -hold -e wol-e -h
+              </command>
+            </action>
+          </item>
+          <item label="xprobe">
+            <action name="Execute">
+              <command>
+                xterm -hold xprobe2
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="network_and_port_scanners" label="Network And Port Scanners">
+          <item label="Amap">
+            <action name="Execute">
+              <command>
+                xterm -hold amap
+              </command>
+            </action>
+          </item>
+          <item label="Amap6">
+            <action name="Execute">
+              <command>
+                xterm -hold amap6
+              </command>
+            </action>
+          </item>
+          <item label="bing-ip2hosts">
+            <action name="Execute">
+              <command>
+                xterm -hold bing-ip2hosts
+              </command>
+            </action>
+          </item>
+          <item label="cisco-torch">
+            <action name="Execute">
+              <command>
+                xterm -hold cisco-torch
+              </command>
+            </action>
+          </item>
+          <item label="DMitry">
+            <action name="Execute">
+              <command>
+                xterm -hold dmitry
+              </command>
+            </action>
+          </item>
+          <menu id="dnmap" label="dnmap">
+            <item label="dnmap_client">
+              <action name="Execute">
+                <command>
+                  xterm -hold dnmap_client
+                </command>
+              </action>
+            </item>
+            <item label="dnmap_server">
+              <action name="Execute">
+                <command>
+                  xterm -hold dnmap_server
+                </command>
+              </action>
+            </item>
+          </menu>
+          <item label="masscan">
+            <action name="Execute">
+              <command>
+                xterm -hold -e masscan --help
+              </command>
+            </action>
+          </item>
+          <item label="Nmap">
+            <action name="Execute">
+              <command>
+                xterm -hold -e nmap -h
+              </command>
+            </action>
+          </item>
+          <item label="unicornscan">
+            <action name="Execute">
+              <command>
+                xterm -hold -e unicornscan -h
+              </command>
+            </action>
+          </item>
+          <item label="WireShark">
+            <action name="Execute">
+              <command>
+                wireshark
+              </command>
+            </action>
+          </item>
+          <item label="zenmap">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sudo zenmap
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="osint_analysis" label="OSINT Analysis">
+          <item label="automater">
+            <action name="Execute">
+              <command>
+                xterm -hold -e automater --help
+              </command>
+            </action>
+          </item>
+          <item label="CaseFile">
+            <action name="Execute">
+              <command>
+                casefile
+              </command>
+            </action>
+          </item>
+          <item label="creepy">
+            <action name="Execute">
+              <command>
+                creepy
+              </command>
+            </action>
+          </item>
+          <item label="CaseFile">
+            <action name="Execute">
+              <command>
+                casefile
+              </command>
+            </action>
+          </item>
+          <item label="Maltego Teeth">
+            <action name="Execute">
+              <command>
+                maltegoce
+              </command>
+            </action>
+          </item>
+          <item label="twofi">
+            <action name="Execute">
+              <command>
+                xterm -hold twofi
+              </command>
+            </action>
+          </item>
+          <item label="URLCrazy">
+            <action name="Execute">
+              <command>
+                xterm -hold urlcrazy
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="route_analysis" label="Route Analysis">
+          <item label="0trace">
+            <action name="Execute">
+              <command>
+                xterm -hold 0trace.sh
+              </command>
+            </action>
+          </item>
+          <item label="intrace">
+            <action name="Execute">
+              <command>
+                xterm -hold intrace
+              </command>
+            </action>
+          </item>
+          <item label="irpass-ass">
+            <action name="Execute">
+              <command>
+                xterm -hold ass
+              </command>
+            </action>
+          </item>
+          <item label="irpass-cdp">
+            <action name="Execute">
+              <command>
+                xterm -hold cdp
+              </command>
+            </action>
+          </item>
+          <item label="irpass-cdp">
+            <action name="Execute">
+              <command>
+                xterm -hold cdp
+              </command>
+            </action>
+          </item>
+          <item label="netdiscover">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sudo netdiscover -h
+              </command>
+            </action>
+          </item>
+          <item label="netmask">
+            <action name="Execute">
+              <command>
+                xterm -hold -e netmask --help
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="smb_analysis" label="SMB Analysis">
+          <item label="acccheck">
+            <action name="Execute">
+              <command>
+                xterm -hold acccheck
+              </command>
+            </action>
+          </item>
+          <item label="enum4linux">
+            <action name="Execute">
+              <command>
+                xterm -hold enum4linux
+              </command>
+            </action>
+          </item>
+          <item label="nbtscan">
+            <action name="Execute">
+              <command>
+                xterm -hold nbtscan
+              </command>
+            </action>
+          </item>
+          <item label="smbmap">
+            <action name="Execute">
+              <command>
+                xterm -hold smbmap
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="smtp_analysis" label="SMTP Analysis">
+          <item label="iSMTP">
+            <action name="Execute">
+              <command>
+                xterm -hold ismpt
+              </command>
+            </action>
+          </item>
+          <item label="smtp-user-enum">
+            <action name="Execute">
+              <command>
+                xterm -hold smtp-user-enum
+              </command>
+            </action>
+          </item>
+          <item label="swaks">
+            <action name="Execute">
+              <command>
+                xterm -hold -e swaks --help
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="snmp_analysis" label="SNMP Analysis">
+          <item label="braa">
+            <action name="Execute">
+              <command>
+                xterm -hold braa
+              </command>
+            </action>
+          </item>
+          <item label="onesixtyone">
+            <action name="Execute">
+              <command>
+                xterm -hold onesixtyone
+              </command>
+            </action>
+          </item>
+          <item label="snmpcheck">
+            <action name="Execute">
+              <command>
+                xterm -hold snmp-check
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="ssl_analysis" label="SSL Analysis">
+          <item label="sslcaudit">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sslcaudit -h
+              </command>
+            </action>
+          </item>
+          <item label="ssldump">
+            <action name="Execute">
+              <command>
+                xterm -hold -e ssldump -h
+              </command>
+            </action>
+          </item>
+          <item label="sslh">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sslh -h
+              </command>
+            </action>
+          </item>
+          <item label="sslscan">
+            <action name="Execute">
+              <command>
+                xterm -hold sslscan
+              </command>
+            </action>
+          </item>
+          <item label="sslsplit">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sslsplit -h
+              </command>
+            </action>
+          </item>
+          <item label="sslyze">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sslyze -h
+              </command>
+            </action>
+          </item>
+          <item label="tlssled">
+            <action name="Execute">
+              <command>
+                xterm -hold tlssled
+              </command>
+            </action>
+          </item>
+        </menu>
+        <menu id="miscellaneous" label="Miscellaneous">
+          <item label="ace-voip">
+            <action name="Execute">
+              <command>
+                xterm -hold ace
+              </command>
+            </action>
+          </item>
+          <item label="Cookie Cadger">
+            <action name="Execute">
+              <command>
+                xterm -hold -e sudo cookie-cadger
+              </command>
+            </action>
+          </item>
+          <item label="copy-router-config">
+            <action name="Execute">
+              <command>
+                xterm -hold copy-router-config.pl
+              </command>
+            </action>
+          </item>
+          <item label="DotDotPwn">
+            <action name="Execute">
+              <command>
+                xterm -hold dotdotpwn.pl
+              </command>
+            </action>
+          </item>
+          <item label="enumIAX">
+            <action name="Execute">
+              <command>
+                xterm -hold enumiax
+              </command>
+            </action>
+          </item>
+          <item label="exploitdb">
+            <action name="Execute">
+              <command>
+                xterm -hold searchsploit
+              </command>
+            </action>
+          </item>
+          <item label="Firewalk">
+            <action name="Execute">
+              <command>
+                xterm -hold firewalk
+              </command>
+            </action>
+          </item>
+          <item label="Ghost Phisher">
+            <action name="Execute">
+              <command>
+                ghost-phisher
+              </command>
+            </action>
+          </item>
+          <item label="GoLismero">
+            <action name="Execute">
+              <command>
+                xterm -hold golismero
+              </command>
+            </action>
+          </item>
+          <item label="goofile">
+            <action name="Execute">
+              <command>
+                xterm -hold goofile
+              </command>
+            </action>
+          </item>
+          <item label="lbd">
+            <action name="Execute">
+              <command>
+                xterm -hold lbd
+              </command>
+            </action>
+          </item>
+          <item label="Metagoofil">
+            <action name="Execute">
+              <command>
+                xterm -hold metagoofil
+              </command>
+            </action>
+          </item>
+          <item label="ntop">
+            <action name="Execute">
+              <command>
+                xterm -hold ntop -h
+              </command>
+            </action>
+          </item>
+          <item label="p0f">
+            <action name="Execute">
+              <command>
+                xterm -hold -e p0f -h
+              </command>
+            </action>
+          </item>
+          <item label="Parsero">
+            <action name="Execute">
+              <command>
+                xterm -hold parsero
+              </command>
+            </action>
+          </item>
+          <item label="recon-ng">
+            <action name="Execute">
+              <command>
+                terminator -e recon-ng
+              </command>
+            </action>
+          </item>
+          <item label="SET">
+            <action name="Execute">
+              <command>
+                xterm -hold setoolkit
+              </command>
+            </action>
+          </item>
+          <item label="thc-ipv6">
+            <action name="Execute">
+              <command>
+                terminator -e man thc-ipv6
+              </command>
+            </action>
+          </item>
+          <item label="TheHarvester">
+            <action name="Execute">
+              <command>
+                xterm -hold theharvester
+              </command>
+            </action>
+          </item>
+          <item label="Xplico">
+            <action name="Execute">
+              <command>
+                xterm -hold -e xplico -h
+              </command>
+            </action>
+          </item>
+        </menu>
+      </menu>
+    </menu>
   <separator />
     <menu id="accessories" label="Accessories">
       <item label="Galculator">
@@ -27,6 +722,11 @@
       </item>
       <item label="Leafpad">
         <action name="Execute"><execute>leafpad</execute></action>
+      </item>
+    </menu>
+    <menu id="games" label="Games">
+      <item label="Steam">
+        <action name="Execute"><execute>steam</execute></applications
       </item>
     </menu>
     <menu id="graphics" label="Graphics">

@@ -18,6 +18,12 @@
    - name: Remove the default entry in the apt sources list for the cdrom
      lineinfile: dest=/etc/apt/sources.list line="Debian GNU/Linux 8.5.0 _Jessie_ - Official amd64 CD Binary-1 20160604-15:35/ jessie main" state=absent
 
+   - name: Install Kali apt repositories
+     lineinfile: line="deb http://http.kali.org/kali kali-rolling main non-free contrib" create=yes dest=/etc/apt/sources.list.d/kali.list
+
+   - name: Install Kali apt key
+     copy: src=ROOT/etc/apt/trusted.gpg.d/kali-archive-keyring.gpg dest=/etc/apt/trusted.gpg.d/
+
    - name: Update package cache and upgrade installed packages
      apt: update_cache=true upgrade=dist
 
@@ -29,6 +35,8 @@
       - tint2 #  A panel with clock included
       - fonts-inconsolata # A collection of fonts
       - software-properties-common # Contains apt-add-repository
+      - pulseaudio # a sound server
+      - alsa-utils # Utilities for controling ALSA
 
    - name: Install user applications
      apt: name={{ item }} state=installed
@@ -53,6 +61,7 @@
       - lxappearance # A theme manager
       - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
       - pithos # A Pandora client
+      - pavucontrol # A volume control tool
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
@@ -66,6 +75,7 @@
        - https://atom.io/download/deb
        - https://steamcdn-a.akamaihd.net/client/installer/steam.deb
        - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+       - https://github.com/Automattic/simplenote-electron/releases/download/v1.0.2/simplenote-1.0.2.deb
 
    - name: Install applications from external sources
      apt: deb=/tmp/{{ item }}
@@ -73,6 +83,10 @@
        - atom-amd64.deb
        - steam_latest.deb
        - google-chrome-stable_current_amd64.deb
+       - simplenote-1.0.2.deb
+
+   - name: Symlink simplenote's oddly placed binary into a common binary location
+     file: src=/usr/share/simplenote/simplenote dest=/usr/local/bin/simplenote state=link
 
    - name: Ensure the openbox configuration directory exists and is owned by the correct user
      file: path=/home/{{ username }}/.config/openbox recurse=yes state=directory owner={{ username }} group={{ username }}
@@ -113,10 +127,10 @@
      apt: update_cache=yes name=arc-theme
 
    - name: Add apt repository for Moka icons
-     command: apt-add-repository -y ppa:moka/daily
+     copy: src=ROOT/etc/apt/sources.list.d/moka.list dest=/etc/apt/sources.list.d/moka.list
 
-   - name: Change release codename in Moka apt repository configuration
-     command: sed -i 's/jessie/xenial/g' /etc/apt/sources.list.d/moka-daily-jessie.list
+   - name: Import signing key for Moka apt repository
+     apt_key: url=http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x52BB8185076361AC state=present
 
    - name: Install Moka icons
      apt: update_cache=yes name=moka-icon-theme
@@ -142,8 +156,64 @@
    - name: Copy over the Google Chrome default preferences file
      copy: src=ROOT/home/USER/.config/google-chrome/Default/Preferences dest=/home/{{ username }}/.config/google-chrome/Default/Preferences owner={{ username }} group={{ username }}
 
-   - name: Set Google Chrome to use GTK theme
-     command: sed -i 's/\"use_system\":false/\"use_system\":true/' /home/{{ username }}/.config/google-chrome/Default/Preferences
-  handlers:
-     - name: resolve dependency issues
-       command: apt-get -fy install
+# Time to start thinking about splitting this into multiple playbooks/vars files...
+   - name: Install Information Gathering Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - acccheck
+       - ace-voip
+       - amap
+       - automater
+       - braa
+       - casefile
+       - cdpsnarf
+       - cisco-torch
+       - cookie-cadger # This required a dpkg dialog interaction, may not work with ansible
+       - copy-router-config
+       - dmitry
+       - dnmap
+       - dnsenum
+       - dnsmap
+       - dnsrecon
+       - dnstracer
+       - dnswalk
+       - dotdotpwn
+       - enum4linux
+       - enumiax
+       - exploitdb
+       - fierce
+       - firewalk
+       - fragroute
+       - fragrouter
+       - ghost-phisher
+       - golismero
+       - goofile
+       - hping3
+       - intrace
+       - ismtp
+       - lbd
+       - maltego-teeth
+       - masscan
+       - metagoofil
+       - miranda
+       - nmap
+       - ntop
+       - p0f
+       - parsero
+       - recon-ng
+       - set
+       - smtp-user-enum
+       - snmpcheck
+       - sslcaudit
+       - sslsplit
+       - sslstrip
+       - sslyze
+       - thc-ipv6
+       - theharvester
+       - tlssled
+       - twofi
+       - urlcrazy
+       - wireshark
+       - wol-e
+       - xplico
+       #&& wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz && tar -xzvf bing-ip2hosts-0.4.tar.gz && cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/")
