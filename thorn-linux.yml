@@ -37,6 +37,7 @@
       - software-properties-common # Contains apt-add-repository
       - pulseaudio # a sound server
       - alsa-utils # Utilities for controling ALSA
+     ignore_errors: yes
 
    - name: Install user applications
      apt: name={{ item }} state=installed
@@ -66,6 +67,7 @@
    - name: Install user utilities
      apt: name={{ item }} state=installed
      with_items:
+       - git
        - vim
        - htop
 
@@ -160,15 +162,17 @@
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
      with_items:
+       - 0trace
        - acccheck
        - ace-voip
        - amap
+       - arping
        - automater
        - braa
        - casefile
        - cdpsnarf
        - cisco-torch
-       - cookie-cadger # This required a dpkg dialog interaction, may not work with ansible
+       - cookie-cadger
        - copy-router-config
        - dmitry
        - dnmap
@@ -183,37 +187,54 @@
        - exploitdb
        - fierce
        - firewalk
+       - fping
        - fragroute
        - fragrouter
+       - ftester
        - ghost-phisher
        - golismero
        - goofile
        - hping3
+       - ike-scan
        - intrace
+       - irpas
        - ismtp
        - lbd
        - maltego-teeth
        - masscan
        - metagoofil
        - miranda
+       - nbtscan
+       - netdiscover
+       - netmask
        - nmap
        - ntop
+       - onesixtyone
        - p0f
        - parsero
        - recon-ng
        - set
+       - smbmap
        - smtp-user-enum
        - snmpcheck
+       - sparta
        - sslcaudit
+       - ssldump
+       - sslh
        - sslsplit
        - sslstrip
        - sslyze
+       - swaks
        - thc-ipv6
        - theharvester
        - tlssled
        - twofi
+       - unicornscan
        - urlcrazy
+       - wafw00f
        - wireshark
        - wol-e
        - xplico
+       - xprobe
+       - zenmap
        #&& wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz && tar -xzvf bing-ip2hosts-0.4.tar.gz && cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/")

@@ -156,7 +156,7 @@
           <item label="fragroute">
             <action name="Execute">
               <command>
-                xterm -hold fragroute
+                xterm -hold /usr/sbin/fragroute
               </command>
             </action>
           </item>
@@ -207,7 +207,7 @@
           <item label="hping3">
             <action name="Execute">
               <command>
-                xterm -hold -e hping3 -h
+                xterm -hold -e /usr/sbin/hping3 -h
               </command>
             </action>
           </item>
@@ -266,13 +266,6 @@
             <action name="Execute">
               <command>
                 xterm -hold amap6
-              </command>
-            </action>
-          </item>
-          <item label="bing-ip2hosts">
-            <action name="Execute">
-              <command>
-                xterm -hold bing-ip2hosts
               </command>
             </action>
           </item>
@@ -357,13 +350,6 @@
               </command>
             </action>
           </item>
-          <item label="creepy">
-            <action name="Execute">
-              <command>
-                creepy
-              </command>
-            </action>
-          </item>
           <item label="CaseFile">
             <action name="Execute">
               <command>
@@ -411,21 +397,14 @@
           <item label="irpass-ass">
             <action name="Execute">
               <command>
-                xterm -hold ass
+                xterm -hold /usr/sbin/ass
               </command>
             </action>
           </item>
           <item label="irpass-cdp">
             <action name="Execute">
               <command>
-                xterm -hold cdp
-              </command>
-            </action>
-          </item>
-          <item label="irpass-cdp">
-            <action name="Execute">
-              <command>
-                xterm -hold cdp
+                xterm -hold /usr/sbin/cdp
               </command>
             </action>
           </item>
@@ -478,7 +457,7 @@
           <item label="iSMTP">
             <action name="Execute">
               <command>
-                xterm -hold ismpt
+                xterm -hold ismtp
               </command>
             </action>
           </item>
@@ -531,14 +510,14 @@
           <item label="ssldump">
             <action name="Execute">
               <command>
-                xterm -hold -e ssldump -h
+                xterm -hold -e /usr/sbin/ssldump -h
               </command>
             </action>
           </item>
           <item label="sslh">
             <action name="Execute">
               <command>
-                xterm -hold -e sslh -h
+                xterm -hold -e /usr/sbin/sslh -h
               </command>
             </action>
           </item>
@@ -596,7 +575,7 @@
           <item label="DotDotPwn">
             <action name="Execute">
               <command>
-                xterm -hold dotdotpwn.pl
+                xterm -hold /usr/sbin/dotdotpwn.pl
               </command>
             </action>
           </item>
@@ -617,14 +596,14 @@
           <item label="Firewalk">
             <action name="Execute">
               <command>
-                xterm -hold firewalk
+                xterm -hold /usr/sbin/firewalk
               </command>
             </action>
           </item>
           <item label="Ghost Phisher">
             <action name="Execute">
               <command>
-                ghost-phisher
+                xterm -hold -e sudo ghost-phisher
               </command>
             </action>
           </item>
@@ -659,7 +638,7 @@
           <item label="ntop">
             <action name="Execute">
               <command>
-                xterm -hold ntop -h
+                xterm -hold /usr/sbin/ntop -h
               </command>
             </action>
           </item>
@@ -687,14 +666,14 @@
           <item label="SET">
             <action name="Execute">
               <command>
-                xterm -hold setoolkit
+                xterm -hold -e sudo setoolkit
               </command>
             </action>
           </item>
           <item label="thc-ipv6">
             <action name="Execute">
               <command>
-                terminator -e man thc-ipv6
+                xterm -hold -e man thc-ipv6
               </command>
             </action>
           </item>
