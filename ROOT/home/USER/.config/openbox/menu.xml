@@ -11,7 +11,7 @@
     <action name="Execute"><execute>thunar</execute></action>
   </item>
   <item label="Web browser">
-    <action name="Execute"><execute>google-chrome</execute></action>
+    <action name="Execute"><execute>chromium</execute></action>
   </item>
   <item label="Text Editor">
     <action name="Execute"><execute>geany</execute></action>
@@ -737,8 +737,8 @@
       <item label="Filezilla">
         <action name="Execute"><execute>filezilla</execute></action>
       </item>
-      <item label="Google Chrome">
-        <action name="Execute"><execute>google-chrome</execute></action>
+      <item label="Chromium">
+        <action name="Execute"><execute>chromium</execute></action>
       </item>
       <item label="Hexchat">
         <action name="Execute"><execute>hexchat</execute></action>
