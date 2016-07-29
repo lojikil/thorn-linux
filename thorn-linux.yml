@@ -28,7 +28,7 @@
      apt: update_cache=true upgrade=dist
 
    - name: Install system packages
-     apt: name={{ item }} state=installed
+     apt: name={{ item }} state=installed update_cache=yes
      with_items:
       - lightdm # A Display manager
       - openbox # A Window manager
@@ -37,32 +37,35 @@
       - software-properties-common # Contains apt-add-repository
       - pulseaudio # a sound server
       - alsa-utils # Utilities for controling ALSA
+      - compton # A compositor
      ignore_errors: yes
 
    - name: Install user applications
      apt: name={{ item }} state=installed
      with_items:
-      - nitrogen # A wallpaper setter
-      - terminator # A multiplexing terminal emulator
-      - vlc # A multimedia player
-      - geany # A "medium" editor/IDE
-      - leafpad # A light editor
-      - icedove # An email client
-      - thunar # A file manager
-      - libreoffice # An office suite
-      - galculator # A calculator
-      - gimp # An image editor
-      - audacity # An audio editor
-      - eog # An image viewer
-      - transmission # A torrent client
-      - filezilla # A FTP client
-      - hexchat # An IRC client
-      - mixxx # A digital disk jockey interface
-      - guitarix # A digital guitar amplifier
-      - lxappearance # A theme manager
-      - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
-      - pithos # A Pandora client
-      - pavucontrol # A volume control tool
+       - dmenu # An application launcher
+       - nitrogen # A wallpaper setter
+       - terminator # A multiplexing terminal emulator
+       - vlc # A multimedia player
+       - geany # A "medium" editor/IDE
+       - leafpad # A light editor
+       - icedove # An email client
+       - thunar # A file manager
+       - libreoffice # An office suite
+       - galculator # A calculator
+       - gimp # An image editor
+       - audacity # An audio editor
+       - eog # An image viewer
+       - transmission # A torrent client
+       - filezilla # A FTP client
+       - hexchat # An IRC client
+       - mixxx # A digital disk jockey interface
+       - guitarix # A digital guitar amplifier
+       - lxappearance # A theme manager
+       - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
+       - pithos # A Pandora client
+       - pavucontrol # A volume control tool
+       - chromium # A web browser
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
@@ -76,7 +79,6 @@
      with_items:
        - https://atom.io/download/deb
        - https://steamcdn-a.akamaihd.net/client/installer/steam.deb
-       - https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
        - https://github.com/Automattic/simplenote-electron/releases/download/v1.0.2/simplenote-1.0.2.deb
 
    - name: Install applications from external sources
@@ -84,11 +86,13 @@
      with_items:
        - atom-amd64.deb
        - steam_latest.deb
-       - google-chrome-stable_current_amd64.deb
        - simplenote-1.0.2.deb
 
    - name: Symlink simplenote's oddly placed binary into a common binary location
      file: src=/usr/share/simplenote/simplenote dest=/usr/local/bin/simplenote state=link
+
+   - name: Copy over the user's bash configuration
+     copy: src=ROOT/home/USER/.bash_profile dest=/home/{{ username }}/.bash_profile owner={{ username }} group={{ username }} mode=0440
 
    - name: Ensure the openbox configuration directory exists and is owned by the correct user
      file: path=/home/{{ username }}/.config/openbox recurse=yes state=directory owner={{ username }} group={{ username }}
@@ -128,20 +132,24 @@
    - name: Install arc themes
      apt: update_cache=yes name=arc-theme
 
-   - name: Add apt repository for Moka icons
-     copy: src=ROOT/etc/apt/sources.list.d/moka.list dest=/etc/apt/sources.list.d/moka.list
+   - name: Add apt repository for Noobslabs icons
+     copy: src=ROOT/etc/apt/sources.list.d/noobslabs.list dest=/etc/apt/sources.list.d/noobslabs.list
 
-   - name: Import signing key for Moka apt repository
-     apt_key: url=http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x52BB8185076361AC state=present
+   - name: Import signing key for Noobslabs apt repository
+     apt_key: url=http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0xD530E028F59EAE4D
 
-   - name: Install Moka icons
-     apt: update_cache=yes name=moka-icon-theme
+   - name: Install icon packs
+     apt: name={{ item }} state=present update_cache=yes
+     with_items:
+       - breeze-icon-theme
 
-   - name: Download Arc icons
-     git:  repo=https://github.com/horst3180/arc-icon-theme.git dest=/tmp/arc-icon-theme
+   - name: Install themes
+     apt: name={{ item }} state=present update_cache=yes
+     with_items:
+       - arc-flatabulous-theme
 
-   - name: Move Arc icon theme into place
-     command: mv /tmp/arc-icon-theme/Arc /usr/share/icons/ creates=/usr/share/icons/Arc
+   - name: Download Flatabulous Thorn theme
+     git: repo=https://github.com/dovellr177/Flatabulous-Thorn.git dest=/usr/share/themes/Flatabulous-Thorn
 
    - name: Copy over GTK config file
      copy: src=ROOT/home/USER/.gtkrc-2.0 dest=/home/{{ username }}/.gtkrc-2.0 owner={{ username }} group={{ username }}
@@ -152,11 +160,17 @@
    - name: Copy over terminator config
      copy: src=ROOT/home/USER/.config/terminator/config dest=/home/{{ username }}/.config/terminator/config owner={{ username }} group={{ username }}
 
-   - name: Ensure the Google Chrome configuration directory exists
-     file: path=/home/{{ username }}/.config/google-chrome/Default state=directory recurse=yes owner={{ username }} group={{ username }}
+   - name: Ensure the Chromium configuration directory exists
+     file: path=/home/{{ username }}/.config/chromium/Default state=directory recurse=yes owner={{ username }} group={{ username }}
 
-   - name: Copy over the Google Chrome default preferences file
-     copy: src=ROOT/home/USER/.config/google-chrome/Default/Preferences dest=/home/{{ username }}/.config/google-chrome/Default/Preferences owner={{ username }} group={{ username }}
+   - name: Copy over the Chromium default preferences file
+     copy: src=ROOT/home/USER/.config/chromium/Default/Preferences dest=/home/{{ username }}/.config/chromium/Default/Preferences owner={{ username }} group={{ username }}
+
+   - name: Ensure the dmenu configuration directory exists
+     file: path=/home/{{username}}/.config/dmenu/ state=directory owner={{ username }} group={{ username }}
+
+   - name: Copy over a dmenu launcher
+     copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
 
 # Time to start thinking about splitting this into multiple playbooks/vars files...
    - name: Install Information Gathering Tools
