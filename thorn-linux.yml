@@ -123,15 +123,6 @@
    - name: Copy over wallpaper setter configuration files - Part 2
      template: src=ROOT/home/USER/.config/nitrogen/nitrogen.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/nitrogen.cfg owner={{ username }} group={{ username }}
 
-   - name: Create apt sources file for Arc GTK themes
-     lineinfile: line='deb http://download.opensuse.org/repositories/home:/Horst3180/xUbuntu_16.04/ /' dest=/etc/apt/sources.list.d/arc-theme.list create=yes
-
-   - name: Import apt key for Arc GTK themes
-     apt_key: url=http://download.opensuse.org/repositories/home:Horst3180/xUbuntu_16.04/Release.key state=present
-
-   - name: Install arc themes
-     apt: update_cache=yes name=arc-theme
-
    - name: Add apt repository for Noobslabs icons
      copy: src=ROOT/etc/apt/sources.list.d/noobslabs.list dest=/etc/apt/sources.list.d/noobslabs.list
 
@@ -171,9 +162,6 @@
 
    - name: Copy over a dmenu launcher
      copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
-
-   - name: Copy over xterm configuratoin
-     copy: src=ROOT/home/USER/.Xresources dest=/home/{{ username }}/.Xresources owner={{ username }} group={{ username }}
 
 # Time to start thinking about splitting this into multiple playbooks/vars files...
    - name: Install Information Gathering Tools
