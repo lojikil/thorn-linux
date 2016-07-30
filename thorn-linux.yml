@@ -91,8 +91,8 @@
    - name: Symlink simplenote's oddly placed binary into a common binary location
      file: src=/usr/share/simplenote/simplenote dest=/usr/local/bin/simplenote state=link
 
-   - name: Copy over the user's bash configuration
-     copy: src=ROOT/home/USER/.bash_profile dest=/home/{{ username }}/.bash_profile owner={{ username }} group={{ username }} mode=0440
+   - name: Copy over the global environment configuration
+     copy: src=ROOT/etc/environment dest=/etc/environment owner=root group=root mode=0644
 
    - name: Ensure the openbox configuration directory exists and is owned by the correct user
      file: path=/home/{{ username }}/.config/openbox recurse=yes state=directory owner={{ username }} group={{ username }}
@@ -171,6 +171,9 @@
 
    - name: Copy over a dmenu launcher
      copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
+
+   - name: Copy over xterm configuratoin
+     copy: src=ROOT/home/USER/.Xresources dest=/home/{{ username }}/.Xresources owner={{ username }} group={{ username }}
 
 # Time to start thinking about splitting this into multiple playbooks/vars files...
    - name: Install Information Gathering Tools

@@ -198,10 +198,10 @@
     </keybind>
     <keybind key="C-A-w">
       <action name="Execute">
-        <command>terminator</command>
+        <command>chromium</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>terminator</name>
+          <name>chromium</name>
         </startupnotify>
       </action>
     </keybind>
@@ -223,6 +223,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-p">
+      <action name="Execute">
+        <command>pithos</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>pithos</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <!-- Keybindings for desktop switching -->
     <keybind key="C-A-Left">
       <action name="GoToDesktop">
@@ -236,25 +245,19 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="C-A-Up">
-      <action name="GoToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
+    <keybind key="W-A-Up">
+      <action name="ToggleMaximizeFull"/>
     </keybind>
-    <keybind key="C-A-Down">
-      <action name="GoToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
+    <keybind key="W-A-Down">
+      <action name="UnmaximizeFull"/>
     </keybind>
-    <keybind key="S-A-Left">
+    <keybind key="C-A-S-Left">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="C-A-S-Right">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -304,27 +307,7 @@
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
     </keybind>
-    <keybind key="W-S-Up">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <height>50%</height>
-      </action>
-      <action name="MoveToEdge">
-        <direction>north</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Down">
-      <action name="UnmaximizeFull"/>
-      <action name="MaximizeVert"/>
-      <action name="MoveResizeTo">
-        <height>50%</height>
-      </action>
-      <action name="MoveToEdge">
-        <direction>south</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
+    <keybind key="W-A-Left">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
@@ -334,7 +317,7 @@
         <direction>west</direction>
       </action>
     </keybind>
-    <keybind key="W-S-Right">
+    <keybind key="W-A-Right">
       <action name="UnmaximizeFull"/>
       <action name="MaximizeVert"/>
       <action name="MoveResizeTo">
@@ -351,6 +334,12 @@
           <enabled>yes</enabled>
           <name>dmenu</name>
         </startupnotify>
+      </action>
+    </keybind>
+    <!-- Show menu -->
+    <keybind key="W-space">
+      <action name="ShowMenu">
+        <menu>root-menu</menu>
       </action>
     </keybind>
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->

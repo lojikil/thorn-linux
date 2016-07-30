@@ -25,7 +25,7 @@
         <item label="DMitry">
           <action name="Execute">
             <command>
-              xterm -hold dmitry
+              terminator -e 'dmitry; bash -l'
             </command>
           </action>
         </item>
@@ -33,14 +33,14 @@
           <item label="dnmap_client">
             <action name="Execute">
               <command>
-                xterm -hold dnmap_client
+                terminator -e 'dnmap_client; bash -l'
               </command>
             </action>
           </item>
           <item label="dnmap_server">
             <action name="Execute">
               <command>
-                xterm -hold dnmap_server
+                terminator -e 'dnmap_server; bash -l'
               </command>
             </action>
           </item>
@@ -48,7 +48,7 @@
         <item label="ike-scan">
           <action name="Execute">
             <command>
-              xterm -hold -e dnmap_server
+              terminator -e 'sudo ike-scan --help; bash -l'
             </command>
           </action>
         </item>
@@ -62,28 +62,28 @@
         <item label="netdiscover">
           <action name="Execute">
             <command>
-              xterm -hold -e sudo netdiscover -h
+              terminator -e 'sudo netdiscover -h; bash -l'
             </command>
           </action>
         </item>
         <item label="Nmap">
           <action name="Execute">
             <command>
-              xterm -hold -e nmap -h
+              terminator -e 'nmap -h; bash -l'
             </command>
           </action>
         </item>
         <item label="p0f">
           <action name="Execute">
             <command>
-              xterm -hold -e p0f -h
+              terminator -e 'p0f -h; bash -l'
             </command>
           </action>
         </item>
         <item label="recon-ng">
           <action name="Execute">
             <command>
-              terminator -e recon-ng
+              terminator -e 'recon-ng; bash -l'
             </command>
           </action>
         </item>
@@ -97,7 +97,7 @@
         <item label="zenmap">
           <action name="Execute">
             <command>
-              xterm -hold -e sudo zenmap
+              terminator -e 'sudo zenmap; bash -l'
             </command>
           </action>
         </item>
@@ -105,49 +105,49 @@
           <item label="dnsenum">
             <action name="Execute">
               <command>
-                xterm -hold dnsenum
+                terminator -e 'dnsenum; bash -l'
               </command>
             </action>
           </item>
           <item label="dnsmap">
             <action name="Execute">
               <command>
-                xterm -hold dnsmap
+                terminator -e 'dnsmap; bash -l'
               </command>
             </action>
           </item  >
           <item label="dnsrecon">
             <action name="Execute">
               <command>
-                xterm -hold dnsrecon
+                terminator -e 'dnsrecon; bash -l'
               </command>
             </action>
           </item>
           <item label="dnstracer">
             <action name="Execute">
               <command>
-                xterm -hold dnstracer
+                terminator -e 'dnstracer; bash -l'
               </command>
             </action>
           </item>
           <item label="dnswalk">
             <action name="Execute">
               <command>
-                xterm -hold -e dnswalk --help
+                terminator -e 'dnswalk; bash -l'
               </command>
             </action>
           </item>
           <item label="Fierce">
             <action name="Execute">
               <command>
-                xterm -hold -e fierce -h
+                terminator -e 'fierce -h; bash -l'
               </command>
             </action>
           </item>
           <item label="URLCrazy">
             <action name="Execute">
               <command>
-                xterm -hold urlcrazy
+                terminator -e 'urlcrazy; bash -l'
               </command>
             </action>
           </item>
@@ -156,28 +156,28 @@
           <item label="fragroute">
             <action name="Execute">
               <command>
-                xterm -hold /usr/sbin/fragroute
+                terminator -e 'fragroute; bash -l'
               </command>
             </action>
           </item>
           <item label="fragrouter">
             <action name="Execute">
               <command>
-                xterm -hold fragrouter
+                terminator -e 'fragrouter; bash -l'
               </command>
             </action>
           </item>
           <item label="ftest">
             <action name="Execute">
               <command>
-                xterm -hold ftest
+                terminator -e 'ftest; bash -l'
               </command>
             </action>
           </item>
           <item label="wafw00f">
             <action name="Execute">
               <command>
-                xterm -hold -e wafw00f -h
+                terminator -e 'wafw00f -h; bash -l'
               </command>
             </action>
           </item>
@@ -186,70 +186,70 @@
           <item label="arping">
             <action name="Execute">
               <command>
-                xterm -hold arping
+                terminator -e 'arping; bash -l'
               </command>
             </action>
           </item>
           <item label="CDPsnarf">
             <action name="Execute">
               <command>
-                xterm -hold cdpsnarf
+                terminator -e 'cdpsnarf; bash -l'
               </command>
             </action>
           </item>
           <item label="fping">
             <action name="Execute">
               <command>
-                xterm -hold -e fping -h
+                terminator -e 'fping -h; bash -l'
               </command>
             </action>
           </item>
           <item label="hping3">
             <action name="Execute">
               <command>
-                xterm -hold -e /usr/sbin/hping3 -h
+                terminator -e 'hping3 -h; bash -l'
               </command>
             </action>
           </item>
           <item label="masscan">
             <action name="Execute">
               <command>
-                xterm -hold -e masscan --help
+                terminator -e 'masscan --help; bash -l'
               </command>
             </action>
           </item>
           <item label="Miranda">
             <action name="Execute">
               <command>
-                xterm -hold -e miranda -h
+                terminator -e 'miranda -h; bash -l'
               </command>
             </action>
           </item>
           <item label="ncat">
             <action name="Execute">
               <command>
-                xterm -hold -e ncat -h
+                terminator -e 'ncat -h; bash -l'
               </command>
             </action>
           </item>
           <item label="unicornscan">
             <action name="Execute">
               <command>
-                xterm -hold -e unicornscan -h
+                terminator -e 'unicornscan -h; bash -l'
               </command>
             </action>
           </item>
           <item label="WOL-E">
             <action name="Execute">
               <command>
-                xterm -hold -e wol-e -h
+                terminator -e 'wol-e -h; bash -l'
               </command>
             </action>
           </item>
           <item label="xprobe">
             <action name="Execute">
               <command>
-                xterm -hold xprobe2
+                terminator -e 'xprobe2; bash -l'
               </command>
             </action>
           </item>
@@ -258,28 +258,28 @@
           <item label="Amap">
             <action name="Execute">
               <command>
-                xterm -hold amap
+                terminator -e 'amap; bash -l'
               </command>
             </action>
           </item>
           <item label="Amap6">
             <action name="Execute">
               <command>
-                xterm -hold amap6
+                terminator -e 'amap6; bash -l'
               </command>
             </action>
           </item>
           <item label="cisco-torch">
             <action name="Execute">
               <command>
-                xterm -hold cisco-torch
+                terminator -e 'cisco-torch; bash -l'
               </command>
             </action>
           </item>
           <item label="DMitry">
             <action name="Execute">
               <command>
-                xterm -hold dmitry
+                terminator -e 'dmitry; bash -l'
               </command>
             </action>
           </item>
@@ -287,14 +287,14 @@
             <item label="dnmap_client">
               <action name="Execute">
                 <command>
-                  xterm -hold dnmap_client
+                  terminator -e 'dnmap_client; bash -l'
                 </command>
               </action>
             </item>
             <item label="dnmap_server">
               <action name="Execute">
                 <command>
-                  xterm -hold dnmap_server
+                  terminator -e 'dnmap_server; bash -l'
                 </command>
               </action>
             </item>
@@ -302,21 +302,21 @@
           <item label="masscan">
             <action name="Execute">
               <command>
-                xterm -hold -e masscan --help
+                terminator -e 'masscan --help; bash -l'
               </command>
             </action>
           </item>
           <item label="Nmap">
             <action name="Execute">
               <command>
-                xterm -hold -e nmap -h
+                terminator -e 'nmap -h; bash -l'
               </command>
             </action>
           </item>
           <item label="unicornscan">
             <action name="Execute">
               <command>
-                xterm -hold -e unicornscan -h
+                terminator -e 'unicornscan -h; bash -l'
               </command>
             </action>
           </item>
@@ -330,7 +330,7 @@
           <item label="zenmap">
             <action name="Execute">
               <command>
-                xterm -hold -e sudo zenmap
+                terminator -e 'sudo zenmap; bash -l'
               </command>
             </action>
           </item>
@@ -339,14 +339,7 @@
           <item label="automater">
             <action name="Execute">
               <command>
-                xterm -hold -e automater --help
-              </command>
-            </action>
-          </item>
-          <item label="CaseFile">
-            <action name="Execute">
-              <command>
-                casefile
+                terminator -e 'automater --help; bash -l'
               </command>
             </action>
           </item>
@@ -367,14 +360,14 @@
           <item label="twofi">
             <action name="Execute">
               <command>
-                xterm -hold twofi
+                terminator -e 'twofi; bash -l'
               </command>
             </action>
           </item>
           <item label="URLCrazy">
             <action name="Execute">
               <command>
-                xterm -hold urlcrazy
+                terminator -e 'urlcrazy; bash -l'
               </command>
             </action>
           </item>
@@ -383,42 +376,42 @@
           <item label="0trace">
             <action name="Execute">
               <command>
-                xterm -hold 0trace.sh
+                terminator -e '0trace.sh; bash -l'
               </command>
             </action>
           </item>
           <item label="intrace">
             <action name="Execute">
               <command>
-                xterm -hold intrace
+                terminator -e 'intrace; bash -l'
               </command>
             </action>
           </item>
           <item label="irpass-ass">
             <action name="Execute">
               <command>
-                xterm -hold /usr/sbin/ass
+                terminator -e 'ass; bash -l'
               </command>
             </action>
           </item>
           <item label="irpass-cdp">
             <action name="Execute">
               <command>
-                xterm -hold /usr/sbin/cdp
+                terminator -e 'cdp; bash -l'
               </command>
             </action>
           </item>
           <item label="netdiscover">
             <action name="Execute">
               <command>
-                xterm -hold -e sudo netdiscover -h
+                terminator -e 'sudo netdiscover -h; bash -l'
               </command>
             </action>
           </item>
           <item label="netmask">
             <action name="Execute">
               <command>
-                xterm -hold -e netmask --help
+                terminator -e 'netmask --help; bash -l'
               </command>
             </action>
           </item>
@@ -427,28 +420,28 @@
           <item label="acccheck">
             <action name="Execute">
               <command>
-                xterm -hold acccheck
+                terminator -e 'acccheck; bash -l'
               </command>
             </action>
           </item>
           <item label="enum4linux">
             <action name="Execute">
               <command>
-                xterm -hold enum4linux
+                terminator -e 'enum4linux; bash -l'
               </command>
             </action>
           </item>
           <item label="nbtscan">
             <action name="Execute">
               <command>
-                xterm -hold nbtscan
+                terminator -e 'nbtscan; bash -l'
               </command>
             </action>
           </item>
           <item label="smbmap">
             <action name="Execute">
               <command>
-                xterm -hold smbmap
+                terminator -e 'smbmap; bash -l'
               </command>
             </action>
           </item>
@@ -457,21 +450,21 @@
           <item label="iSMTP">
             <action name="Execute">
               <command>
-                xterm -hold ismtp
+                terminator -e 'ismtp; bash -l'
               </command>
             </action>
           </item>
           <item label="smtp-user-enum">
             <action name="Execute">
               <command>
-                xterm -hold smtp-user-enum
+                terminator -e 'smtp-user-enum; bash -l'
               </command>
             </action>
           </item>
           <item label="swaks">
             <action name="Execute">
               <command>
-                xterm -hold -e swaks --help
+                terminator -e 'swaks --help; bash -l'
               </command>
             </action>
           </item>
@@ -480,21 +473,21 @@
           <item label="braa">
             <action name="Execute">
               <command>
-                xterm -hold braa
+                terminator -e 'braa; bash -l'
               </command>
             </action>
           </item>
           <item label="onesixtyone">
             <action name="Execute">
               <command>
-                xterm -hold onesixtyone
+                terminator -e 'onesixtyone; bash -l'
               </command>
             </action>
           </item>
           <item label="snmpcheck">
             <action name="Execute">
               <command>
-                xterm -hold snmp-check
+                terminator -e 'snmp-check; bash -l'
               </command>
             </action>
           </item>
@@ -503,49 +496,49 @@
           <item label="sslcaudit">
             <action name="Execute">
               <command>
-                xterm -hold -e sslcaudit -h
+                terminator -e 'sslcaudit -h; bash -l'
               </command>
             </action>
           </item>
           <item label="ssldump">
             <action name="Execute">
               <command>
-                xterm -hold -e /usr/sbin/ssldump -h
+                terminator -e 'ssldump -h; bash -l'
               </command>
             </action>
           </item>
           <item label="sslh">
             <action name="Execute">
               <command>
-                xterm -hold -e /usr/sbin/sslh -h
+                terminator -e 'sslh -h; bash -l'
               </command>
             </action>
           </item>
           <item label="sslscan">
             <action name="Execute">
               <command>
-                xterm -hold sslscan
+                terminator -e 'sslscan; bash -l'
               </command>
             </action>
           </item>
           <item label="sslsplit">
             <action name="Execute">
               <command>
-                xterm -hold -e sslsplit -h
+                terminator -e 'sslsplit -h; bash -l'
               </command>
             </action>
           </item>
           <item label="sslyze">
             <action name="Execute">
               <command>
-                xterm -hold -e sslyze -h
+                terminator -e 'sslyze -h; bash -l'
               </command>
             </action>
           </item>
           <item label="tlssled">
             <action name="Execute">
               <command>
-                xterm -hold tlssled
+                terminator -e 'tlssled; bash -l'
               </command>
             </action>
           </item>
@@ -554,140 +547,140 @@
           <item label="ace-voip">
             <action name="Execute">
               <command>
-                xterm -hold ace
+                terminator -e 'ace; bash -l'
               </command>
             </action>
           </item>
           <item label="Cookie Cadger">
             <action name="Execute">
               <command>
-                xterm -hold -e sudo cookie-cadger
+                terminator -e 'sudo cookie-cadger; bash -l'
               </command>
             </action>
           </item>
           <item label="copy-router-config">
             <action name="Execute">
               <command>
-                xterm -hold copy-router-config.pl
+                terminator -e 'copy-router-config.pl; bash -l'
               </command>
             </action>
           </item>
           <item label="DotDotPwn">
             <action name="Execute">
               <command>
-                xterm -hold /usr/sbin/dotdotpwn.pl
+                terminator -e 'dotdotpwn.pl; bash -l'
               </command>
             </action>
           </item>
           <item label="enumIAX">
             <action name="Execute">
               <command>
-                xterm -hold enumiax
+                terminator -e 'enumiax; bash -l'
               </command>
             </action>
           </item>
           <item label="exploitdb">
             <action name="Execute">
               <command>
-                xterm -hold searchsploit
+                terminator -e 'searchsploit; bash -l'
               </command>
             </action>
           </item>
           <item label="Firewalk">
             <action name="Execute">
               <command>
-                xterm -hold /usr/sbin/firewalk
+                terminator -e 'firewalk; bash -l'
               </command>
             </action>
           </item>
           <item label="Ghost Phisher">
             <action name="Execute">
               <command>
-                xterm -hold -e sudo ghost-phisher
+                terminator -e 'sudo ghost-phisher; bash -l'
               </command>
             </action>
           </item>
           <item label="GoLismero">
             <action name="Execute">
               <command>
-                xterm -hold golismero
+                terminator -e 'golismero; bash -l'
               </command>
             </action>
           </item>
           <item label="goofile">
             <action name="Execute">
               <command>
-                xterm -hold goofile
+                terminator -e 'goofile; bash -l'
               </command>
             </action>
           </item>
           <item label="lbd">
             <action name="Execute">
               <command>
-                xterm -hold lbd
+                terminator -e 'lbd; bash -l'
               </command>
             </action>
           </item>
           <item label="Metagoofil">
             <action name="Execute">
               <command>
-                xterm -hold metagoofil
+                terminator -e 'metagoofil; bash -l'
               </command>
             </action>
           </item>
           <item label="ntop">
             <action name="Execute">
               <command>
-                xterm -hold /usr/sbin/ntop -h
+                terminator -e 'ntop -h; bash -l'
               </command>
             </action>
           </item>
           <item label="p0f">
             <action name="Execute">
               <command>
-                xterm -hold -e p0f -h
+                terminator -e 'p0f -h; bash -l'
               </command>
             </action>
           </item>
           <item label="Parsero">
             <action name="Execute">
               <command>
-                xterm -hold parsero
+                terminator -e 'parsero; bash -l'
               </command>
             </action>
           </item>
           <item label="recon-ng">
             <action name="Execute">
               <command>
-                terminator -e recon-ng
+                terminator -e 'recon-ng; bash -l'
               </command>
             </action>
           </item>
           <item label="SET">
             <action name="Execute">
               <command>
-                xterm -hold -e sudo setoolkit
+                terminator -e 'sudo setoolkit; bash -l'
               </command>
             </action>
           </item>
           <item label="thc-ipv6">
             <action name="Execute">
               <command>
-                xterm -hold -e man thc-ipv6
+                terminator -e 'man thc-ipv6; bash -l'
               </command>
             </action>
           </item>
           <item label="TheHarvester">
             <action name="Execute">
               <command>
-                xterm -hold theharvester
+                terminator -e 'theharvester; bash -l'
               </command>
             </action>
           </item>
           <item label="Xplico">
             <action name="Execute">
               <command>
-                xterm -hold -e xplico -h
+                terminator -e 'xplico -h; bash -l'
               </command>
             </action>
           </item>
