@@ -4,24 +4,262 @@
                 file:///usr/share/openbox/menu.xsd">
 
 <menu id="root-menu" label="Thorn Linux">
-  <item label="Terminal emulator">
-    <action name="Execute"><execute>terminator</execute></action>
-  </item>
-  <item label="File Manager">
-    <action name="Execute"><execute>thunar</execute></action>
-  </item>
-  <item label="Web browser">
-    <action name="Execute"><execute>chromium</execute></action>
-  </item>
-  <item label="Text Editor">
-    <action name="Execute"><execute>geany</execute></action>
-  </item>
-  <item label="Media Player">
-    <action name="Execute"><execute>vlc</execute></action>
-  </item>
-  <separator />
-    <menu id="penetration-testing" label="Penetration Testing">
-      <menu id="information-gathering" label="Information Gathering">
+  <menu id="penetration-testing" label="Penetration Testing">
+    <menu id="information-gathering" label="Information Gathering">
+      <item label="DMitry">
+        <action name="Execute">
+          <command>
+            terminator -e 'dmitry; bash -l'
+          </command>
+        </action>
+      </item>
+      <menu id="dnmap" label="dnmap">
+        <item label="dnmap_client">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnmap_client; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="dnmap_server">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnmap_server; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <item label="ike-scan">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo ike-scan --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="Maltego Teeth">
+        <action name="Execute">
+          <command>
+            maltegoce
+          </command>
+        </action>
+      </item>
+      <item label="netdiscover">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo netdiscover -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="Nmap">
+        <action name="Execute">
+          <command>
+            terminator -e 'nmap -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="p0f">
+        <action name="Execute">
+          <command>
+            terminator -e 'p0f -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="recon-ng">
+        <action name="Execute">
+          <command>
+            terminator -e 'recon-ng; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sparta">
+        <action name="Execute">
+          <command>
+            sparta
+          </command>
+        </action>
+      </item>
+      <item label="zenmap">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo zenmap; bash -l'
+          </command>
+        </action>
+      </item>
+      <menu id="dns_analysis" label="DNS Analysis">
+        <item label="dnsenum">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnsenum; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="dnsmap">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnsmap; bash -l'
+            </command>
+          </action>
+        </item  >
+        <item label="dnsrecon">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnsrecon; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="dnstracer">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnstracer; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="dnswalk">
+          <action name="Execute">
+            <command>
+              terminator -e 'dnswalk; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Fierce">
+          <action name="Execute">
+            <command>
+              terminator -e 'fierce -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="URLCrazy">
+          <action name="Execute">
+            <command>
+              terminator -e 'urlcrazy; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="ids_ips_identification" label="IDS/IPS Identification">
+        <item label="fragroute">
+          <action name="Execute">
+            <command>
+              terminator -e 'fragroute; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="fragrouter">
+          <action name="Execute">
+            <command>
+              terminator -e 'fragrouter; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="ftest">
+          <action name="Execute">
+            <command>
+              terminator -e 'ftest; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="wafw00f">
+          <action name="Execute">
+            <command>
+              terminator -e 'wafw00f -h; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="live_host_identification" label="Live Host Identification">
+        <item label="arping">
+          <action name="Execute">
+            <command>
+              terminator -e 'arping; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="CDPsnarf">
+          <action name="Execute">
+            <command>
+              terminator -e 'cdpsnarf; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="fping">
+          <action name="Execute">
+            <command>
+              terminator -e 'fping -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="hping3">
+          <action name="Execute">
+            <command>
+              terminator -e 'hping3 -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="masscan">
+          <action name="Execute">
+            <command>
+              terminator -e 'masscan --help; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Miranda">
+          <action name="Execute">
+            <command>
+              terminator -e 'miranda -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="ncat">
+          <action name="Execute">
+            <command>
+              terminator -e 'ncat -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="unicornscan">
+          <action name="Execute">
+            <command>
+              terminator -e 'unicornscan -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="WOL-E">
+          <action name="Execute">
+            <command>
+              terminator -e 'wol-e -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="xprobe">
+          <action name="Execute">
+            <command>
+              terminator -e 'xprobe2; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="network_and_port_scanners" label="Network And Port Scanners">
+        <item label="Amap">
+          <action name="Execute">
+            <command>
+              terminator -e 'amap; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Amap6">
+          <action name="Execute">
+            <command>
+              terminator -e 'amap6; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="cisco-torch">
+          <action name="Execute">
+            <command>
+              terminator -e 'cisco-torch; bash -l'
+            </command>
+          </action>
+        </item>
         <item label="DMitry">
           <action name="Execute">
             <command>
@@ -45,24 +283,10 @@
             </action>
           </item>
         </menu>
-        <item label="ike-scan">
+        <item label="masscan">
           <action name="Execute">
             <command>
-              terminator -e 'sudo ike-scan --help; bash -l'
-            </command>
-          </action>
-        </item>
-        <item label="Maltego Teeth">
-          <action name="Execute">
-            <command>
-              maltegoce
-            </command>
-          </action>
-        </item>
-        <item label="netdiscover">
-          <action name="Execute">
-            <command>
-              terminator -e 'sudo netdiscover -h; bash -l'
+              terminator -e 'masscan --help; bash -l'
             </command>
           </action>
         </item>
@@ -73,24 +297,17 @@
             </command>
           </action>
         </item>
-        <item label="p0f">
+        <item label="unicornscan">
           <action name="Execute">
             <command>
-              terminator -e 'p0f -h; bash -l'
+              terminator -e 'unicornscan -h; bash -l'
             </command>
           </action>
         </item>
-        <item label="recon-ng">
+        <item label="WireShark">
           <action name="Execute">
             <command>
-              terminator -e 'recon-ng; bash -l'
-            </command>
-          </action>
-        </item>
-        <item label="sparta">
-          <action name="Execute">
-            <command>
-              sparta
+              wireshark
             </command>
           </action>
         </item>
@@ -101,592 +318,707 @@
             </command>
           </action>
         </item>
-        <menu id="dns_analysis" label="DNS Analysis">
-          <item label="dnsenum">
-            <action name="Execute">
-              <command>
-                terminator -e 'dnsenum; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="dnsmap">
-            <action name="Execute">
-              <command>
-                terminator -e 'dnsmap; bash -l'
-              </command>
-            </action>
-          </item  >
-          <item label="dnsrecon">
-            <action name="Execute">
-              <command>
-                terminator -e 'dnsrecon; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="dnstracer">
-            <action name="Execute">
-              <command>
-                terminator -e 'dnstracer; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="dnswalk">
-            <action name="Execute">
-              <command>
-                terminator -e 'dnswalk; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Fierce">
-            <action name="Execute">
-              <command>
-                terminator -e 'fierce -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="URLCrazy">
-            <action name="Execute">
-              <command>
-                terminator -e 'urlcrazy; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="ids_ips_identification" label="IDS/IPS Identification">
-          <item label="fragroute">
-            <action name="Execute">
-              <command>
-                terminator -e 'fragroute; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="fragrouter">
-            <action name="Execute">
-              <command>
-                terminator -e 'fragrouter; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="ftest">
-            <action name="Execute">
-              <command>
-                terminator -e 'ftest; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="wafw00f">
-            <action name="Execute">
-              <command>
-                terminator -e 'wafw00f -h; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="live_host_identification" label="Live Host Identification">
-          <item label="arping">
-            <action name="Execute">
-              <command>
-                terminator -e 'arping; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="CDPsnarf">
-            <action name="Execute">
-              <command>
-                terminator -e 'cdpsnarf; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="fping">
-            <action name="Execute">
-              <command>
-                terminator -e 'fping -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="hping3">
-            <action name="Execute">
-              <command>
-                terminator -e 'hping3 -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="masscan">
-            <action name="Execute">
-              <command>
-                terminator -e 'masscan --help; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Miranda">
-            <action name="Execute">
-              <command>
-                terminator -e 'miranda -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="ncat">
-            <action name="Execute">
-              <command>
-                terminator -e 'ncat -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="unicornscan">
-            <action name="Execute">
-              <command>
-                terminator -e 'unicornscan -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="WOL-E">
-            <action name="Execute">
-              <command>
-                terminator -e 'wol-e -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="xprobe">
-            <action name="Execute">
-              <command>
-                terminator -e 'xprobe2; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="network_and_port_scanners" label="Network And Port Scanners">
-          <item label="Amap">
-            <action name="Execute">
-              <command>
-                terminator -e 'amap; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Amap6">
-            <action name="Execute">
-              <command>
-                terminator -e 'amap6; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="cisco-torch">
-            <action name="Execute">
-              <command>
-                terminator -e 'cisco-torch; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="DMitry">
-            <action name="Execute">
-              <command>
-                terminator -e 'dmitry; bash -l'
-              </command>
-            </action>
-          </item>
-          <menu id="dnmap" label="dnmap">
-            <item label="dnmap_client">
-              <action name="Execute">
-                <command>
-                  terminator -e 'dnmap_client; bash -l'
-                </command>
-              </action>
-            </item>
-            <item label="dnmap_server">
-              <action name="Execute">
-                <command>
-                  terminator -e 'dnmap_server; bash -l'
-                </command>
-              </action>
-            </item>
-          </menu>
-          <item label="masscan">
-            <action name="Execute">
-              <command>
-                terminator -e 'masscan --help; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Nmap">
-            <action name="Execute">
-              <command>
-                terminator -e 'nmap -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="unicornscan">
-            <action name="Execute">
-              <command>
-                terminator -e 'unicornscan -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="WireShark">
-            <action name="Execute">
-              <command>
-                wireshark
-              </command>
-            </action>
-          </item>
-          <item label="zenmap">
-            <action name="Execute">
-              <command>
-                terminator -e 'sudo zenmap; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="osint_analysis" label="OSINT Analysis">
-          <item label="automater">
-            <action name="Execute">
-              <command>
-                terminator -e 'automater --help; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="CaseFile">
-            <action name="Execute">
-              <command>
-                casefile
-              </command>
-            </action>
-          </item>
-          <item label="Maltego Teeth">
-            <action name="Execute">
-              <command>
-                maltegoce
-              </command>
-            </action>
-          </item>
-          <item label="twofi">
-            <action name="Execute">
-              <command>
-                terminator -e 'twofi; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="URLCrazy">
-            <action name="Execute">
-              <command>
-                terminator -e 'urlcrazy; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="route_analysis" label="Route Analysis">
-          <item label="0trace">
-            <action name="Execute">
-              <command>
-                terminator -e '0trace.sh; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="intrace">
-            <action name="Execute">
-              <command>
-                terminator -e 'intrace; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="irpass-ass">
-            <action name="Execute">
-              <command>
-                terminator -e 'ass; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="irpass-cdp">
-            <action name="Execute">
-              <command>
-                terminator -e 'cdp; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="netdiscover">
-            <action name="Execute">
-              <command>
-                terminator -e 'sudo netdiscover -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="netmask">
-            <action name="Execute">
-              <command>
-                terminator -e 'netmask --help; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="smb_analysis" label="SMB Analysis">
-          <item label="acccheck">
-            <action name="Execute">
-              <command>
-                terminator -e 'acccheck; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="enum4linux">
-            <action name="Execute">
-              <command>
-                terminator -e 'enum4linux; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="nbtscan">
-            <action name="Execute">
-              <command>
-                terminator -e 'nbtscan; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="smbmap">
-            <action name="Execute">
-              <command>
-                terminator -e 'smbmap; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="smtp_analysis" label="SMTP Analysis">
-          <item label="iSMTP">
-            <action name="Execute">
-              <command>
-                terminator -e 'ismtp; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="smtp-user-enum">
-            <action name="Execute">
-              <command>
-                terminator -e 'smtp-user-enum; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="swaks">
-            <action name="Execute">
-              <command>
-                terminator -e 'swaks --help; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="snmp_analysis" label="SNMP Analysis">
-          <item label="braa">
-            <action name="Execute">
-              <command>
-                terminator -e 'braa; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="onesixtyone">
-            <action name="Execute">
-              <command>
-                terminator -e 'onesixtyone; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="snmpcheck">
-            <action name="Execute">
-              <command>
-                terminator -e 'snmp-check; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="ssl_analysis" label="SSL Analysis">
-          <item label="sslcaudit">
-            <action name="Execute">
-              <command>
-                terminator -e 'sslcaudit -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="ssldump">
-            <action name="Execute">
-              <command>
-                terminator -e 'ssldump -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="sslh">
-            <action name="Execute">
-              <command>
-                terminator -e 'sslh -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="sslscan">
-            <action name="Execute">
-              <command>
-                terminator -e 'sslscan; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="sslsplit">
-            <action name="Execute">
-              <command>
-                terminator -e 'sslsplit -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="sslyze">
-            <action name="Execute">
-              <command>
-                terminator -e 'sslyze -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="tlssled">
-            <action name="Execute">
-              <command>
-                terminator -e 'tlssled; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
-        <menu id="miscellaneous" label="Miscellaneous">
-          <item label="ace-voip">
-            <action name="Execute">
-              <command>
-                terminator -e 'ace; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Cookie Cadger">
-            <action name="Execute">
-              <command>
-                terminator -e 'sudo cookie-cadger; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="copy-router-config">
-            <action name="Execute">
-              <command>
-                terminator -e 'copy-router-config.pl; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="DotDotPwn">
-            <action name="Execute">
-              <command>
-                terminator -e 'dotdotpwn.pl; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="enumIAX">
-            <action name="Execute">
-              <command>
-                terminator -e 'enumiax; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="exploitdb">
-            <action name="Execute">
-              <command>
-                terminator -e 'searchsploit; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Firewalk">
-            <action name="Execute">
-              <command>
-                terminator -e 'firewalk; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Ghost Phisher">
-            <action name="Execute">
-              <command>
-                terminator -e 'sudo ghost-phisher; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="GoLismero">
-            <action name="Execute">
-              <command>
-                terminator -e 'golismero; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="goofile">
-            <action name="Execute">
-              <command>
-                terminator -e 'goofile; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="lbd">
-            <action name="Execute">
-              <command>
-                terminator -e 'lbd; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Metagoofil">
-            <action name="Execute">
-              <command>
-                terminator -e 'metagoofil; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="ntop">
-            <action name="Execute">
-              <command>
-                terminator -e 'ntop -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="p0f">
-            <action name="Execute">
-              <command>
-                terminator -e 'p0f -h; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Parsero">
-            <action name="Execute">
-              <command>
-                terminator -e 'parsero; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="recon-ng">
-            <action name="Execute">
-              <command>
-                terminator -e 'recon-ng; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="SET">
-            <action name="Execute">
-              <command>
-                terminator -e 'sudo setoolkit; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="thc-ipv6">
-            <action name="Execute">
-              <command>
-                terminator -e 'man thc-ipv6; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="TheHarvester">
-            <action name="Execute">
-              <command>
-                terminator -e 'theharvester; bash -l'
-              </command>
-            </action>
-          </item>
-          <item label="Xplico">
-            <action name="Execute">
-              <command>
-                terminator -e 'xplico -h; bash -l'
-              </command>
-            </action>
-          </item>
-        </menu>
+      </menu>
+      <menu id="osint_analysis" label="OSINT Analysis">
+        <item label="automater">
+          <action name="Execute">
+            <command>
+              terminator -e 'automater --help; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="CaseFile">
+          <action name="Execute">
+            <command>
+              casefile
+            </command>
+          </action>
+        </item>
+        <item label="Maltego Teeth">
+          <action name="Execute">
+            <command>
+              maltegoce
+            </command>
+          </action>
+        </item>
+        <item label="twofi">
+          <action name="Execute">
+            <command>
+              terminator -e 'twofi; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="URLCrazy">
+          <action name="Execute">
+            <command>
+              terminator -e 'urlcrazy; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="route_analysis" label="Route Analysis">
+        <item label="0trace">
+          <action name="Execute">
+            <command>
+              terminator -e '0trace.sh; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="intrace">
+          <action name="Execute">
+            <command>
+              terminator -e 'intrace; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="irpass-ass">
+          <action name="Execute">
+            <command>
+              terminator -e 'ass; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="irpass-cdp">
+          <action name="Execute">
+            <command>
+              terminator -e 'cdp; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="netdiscover">
+          <action name="Execute">
+            <command>
+              terminator -e 'sudo netdiscover -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="netmask">
+          <action name="Execute">
+            <command>
+              terminator -e 'netmask --help; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="smb_analysis" label="SMB Analysis">
+        <item label="acccheck">
+          <action name="Execute">
+            <command>
+              terminator -e 'acccheck; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="enum4linux">
+          <action name="Execute">
+            <command>
+              terminator -e 'enum4linux; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="nbtscan">
+          <action name="Execute">
+            <command>
+              terminator -e 'nbtscan; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="smbmap">
+          <action name="Execute">
+            <command>
+              terminator -e 'smbmap; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="smtp_analysis" label="SMTP Analysis">
+        <item label="iSMTP">
+          <action name="Execute">
+            <command>
+              terminator -e 'ismtp; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="smtp-user-enum">
+          <action name="Execute">
+            <command>
+              terminator -e 'smtp-user-enum; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="swaks">
+          <action name="Execute">
+            <command>
+              terminator -e 'swaks --help; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="snmp_analysis" label="SNMP Analysis">
+        <item label="braa">
+          <action name="Execute">
+            <command>
+              terminator -e 'braa; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="onesixtyone">
+          <action name="Execute">
+            <command>
+              terminator -e 'onesixtyone; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="snmpcheck">
+          <action name="Execute">
+            <command>
+              terminator -e 'snmp-check; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="ssl_analysis" label="SSL Analysis">
+        <item label="sslcaudit">
+          <action name="Execute">
+            <command>
+              terminator -e 'sslcaudit -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="ssldump">
+          <action name="Execute">
+            <command>
+              terminator -e 'ssldump -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="sslh">
+          <action name="Execute">
+            <command>
+              terminator -e 'sslh -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="sslscan">
+          <action name="Execute">
+            <command>
+              terminator -e 'sslscan; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="sslsplit">
+          <action name="Execute">
+            <command>
+              terminator -e 'sslsplit -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="sslyze">
+          <action name="Execute">
+            <command>
+              terminator -e 'sslyze -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="tlssled">
+          <action name="Execute">
+            <command>
+              terminator -e 'tlssled; bash -l'
+            </command>
+          </action>
+        </item>
+      </menu>
+      <menu id="miscellaneous" label="Miscellaneous">
+        <item label="ace-voip">
+          <action name="Execute">
+            <command>
+              terminator -e 'ace; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Cookie Cadger">
+          <action name="Execute">
+            <command>
+              terminator -e 'sudo cookie-cadger; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="copy-router-config">
+          <action name="Execute">
+            <command>
+              terminator -e 'copy-router-config.pl; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="DotDotPwn">
+          <action name="Execute">
+            <command>
+              terminator -e 'dotdotpwn.pl; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="enumIAX">
+          <action name="Execute">
+            <command>
+              terminator -e 'enumiax; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="exploitdb">
+          <action name="Execute">
+            <command>
+              terminator -e 'searchsploit; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Firewalk">
+          <action name="Execute">
+            <command>
+              terminator -e 'firewalk; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Ghost Phisher">
+          <action name="Execute">
+            <command>
+              terminator -e 'sudo ghost-phisher; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="GoLismero">
+          <action name="Execute">
+            <command>
+              terminator -e 'golismero; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="goofile">
+          <action name="Execute">
+            <command>
+              terminator -e 'goofile; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="lbd">
+          <action name="Execute">
+            <command>
+              terminator -e 'lbd; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Metagoofil">
+          <action name="Execute">
+            <command>
+              terminator -e 'metagoofil; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="ntop">
+          <action name="Execute">
+            <command>
+              terminator -e 'ntop -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="p0f">
+          <action name="Execute">
+            <command>
+              terminator -e 'p0f -h; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Parsero">
+          <action name="Execute">
+            <command>
+              terminator -e 'parsero; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="recon-ng">
+          <action name="Execute">
+            <command>
+              terminator -e 'recon-ng; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="SET">
+          <action name="Execute">
+            <command>
+              terminator -e 'sudo setoolkit; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="thc-ipv6">
+          <action name="Execute">
+            <command>
+              terminator -e 'man thc-ipv6; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="TheHarvester">
+          <action name="Execute">
+            <command>
+              terminator -e 'theharvester; bash -l'
+            </command>
+          </action>
+        </item>
+        <item label="Xplico">
+          <action name="Execute">
+            <command>
+              terminator -e 'xplico -h; bash -l'
+            </command>
+          </action>
+        </item>
       </menu>
     </menu>
+    <menu id="vulnerability-analysis" label="Vulnerability Analysis">
+      <item label="Golismero">
+        <action name="Execute">
+          <command>
+            terminator -e 'golismero -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="lynis">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo lynis -h; bash -l'
+          </command>
+        </action>
+      </item>
+    <item label="nikto">
+      <action name="Execute">
+        <command>
+          terminator -e 'nikto -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="nmap">
+      <action name="Execute">
+        <command>
+          terminator -e 'nmap; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="sparta">
+      <action name="Execute">
+        <command>
+          sparta
+        </command>
+      </action>
+    </item>
+    <item label="unix-privesc-check">
+      <action name="Execute">
+        <command>
+          terminator -e 'unix-privesc-check; bash -l'
+        </command>
+      </action>
+    </item>
+    <menu id="cisco-tools" label="Cisco Tools">
+      <item label="cisco-auditing-tool">
+        <action name="Execute">
+          <command>
+            terminator -e 'CAT; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cisco-global-exploiter">
+        <action name="Execute">
+          <command>
+            terminator -e 'cge.pl; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cisco-ocs">
+        <action name="Execute">
+          <command>
+            terminator -e 'cisco-ocs; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cisco-torch">
+        <action name="Execute">
+          <command>
+            terminator -e 'cisco-torch; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="copy-router-config">
+        <action name="Execute">
+          <command>
+            terminator -e 'copy-router-config.pl; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="merge-router-config">
+        <action name="Execute">
+          <command>
+            terminator -e 'merge-router-config.pl; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="yersinia">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo yersinia -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="fuzzing-tools" label="Fuzzing Tools">
+      <item label="bed">
+        <action name="Execute">
+          <command>
+            terminator -e 'bed; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="ohrwurm">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo ohrwurm; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="powerfuzzer">
+        <action name="Execute">
+          <command>
+            powerfuzzer
+          </command>
+        </action>
+      </item>
+      <item label="sfuzz">
+        <action name="Execute">
+          <command>
+            terminator -e 'sfuzz -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="siparmyknife">
+        <action name="Execute">
+          <command>
+            terminator -e 'siparmyknife; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="spike-generic-chunked">
+        <action name="Execute">
+          <command>
+            terminator -e 'generic_chunked; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="spike-generic-listen-tcp">
+        <action name="Execute">
+          <command>
+            terminator -e 'generic_listen_tcp; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="spike-generic-send-tcp">
+        <action name="Execute">
+          <command>
+            terminator -e 'generic_send_tcp; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="spike-generic-send-udp">
+        <action name="Execute">
+          <command>
+            terminator -e 'generic_send_udp; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="stress-testing" label="Stress Testing">
+      <item label="dhcpig">
+        <action name="Execute">
+          <command>
+            terminator -e 'pig.py -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="iaxflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'iaxflood; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="inviteflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'inviteflood -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="siege">
+        <action name="Execute">
+          <command>
+            terminator -e 'siege -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="t50">
+        <action name="Execute">
+          <command>
+            terminator -e 't50 -help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="thc-ssl-dos">
+        <action name="Execute">
+          <command>
+            terminator -e 'thc-ssl-dos; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="voip-tools" label="VoIP Tools">
+      <item label="enumiax">
+        <action name="Execute">
+          <command>
+            terminator -e 'enumiax -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="iaxflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'iaxflood; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="inviteflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'inviteflood -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="ohrwurm">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo ohrwurm; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="protos-sip">
+        <action name="Execute">
+          <command>
+            terminator -e 'protos-sip -help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpbreak">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpbreak -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpflood; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpinsertsound">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpinsertsound -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpmixsound">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpmixsound -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sctpscan">
+        <action name="Execute">
+          <command>
+            terminator -e 'sctpscan; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="siparmyknife">
+        <action name="Execute">
+          <command>
+            terminator -e 'siparmyknife; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sipp">
+        <action name="Execute">
+          <command>
+            terminator -e 'sipp -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svcrack">
+        <action name="Execute">
+          <command>
+            terminator -e 'svcrack -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svcrash">
+        <action name="Execute">
+          <command>
+            terminator -e 'svcrash -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svmap">
+        <action name="Execute">
+          <command>
+            terminator -e 'svmap -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svreport">
+        <action name="Execute">
+          <command>
+            terminator -e 'svreport -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svwar">
+        <action name="Execute">
+          <command>
+            terminator -e 'svwar -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="voiphopper">
+        <action name="Execute">
+          <command>
+            terminator -e 'voiphopper -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
+</menu>
+<separator/>
+  <item label="Terminal emulator">
+    <action name="Execute"><execute>terminator</execute></action>
+  </item>
+  <item label="File Manager">
+    <action name="Execute"><execute>thunar</execute></action>
+  </item>
+  <item label="Web browser">
+    <action name="Execute"><execute>chromium</execute></action>
+  </item>
+  <item label="Text Editor">
+    <action name="Execute"><execute>geany</execute></action>
+  </item>
+  <item label="Media Player">
+    <action name="Execute"><execute>vlc</execute></action>
+  </item>
   <separator />
     <menu id="accessories" label="Accessories">
       <item label="Galculator">

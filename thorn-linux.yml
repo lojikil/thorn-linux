@@ -24,9 +24,6 @@
    - name: Install Kali apt key
      copy: src=ROOT/etc/apt/trusted.gpg.d/kali-archive-keyring.gpg dest=/etc/apt/trusted.gpg.d/
 
-   - name: Add 32 bit architecture to apt configuration
-     command: dpkg --add-architecture i386
-
    - name: Update package cache and upgrade installed packages
      apt: update_cache=true upgrade=dist
 
@@ -56,17 +53,12 @@
        - thunar # A file manager
        - libreoffice # An office suite
        - galculator # A calculator
-       - gimp # An image editor
-       - audacity # An audio editor
        - eog # An image viewer
        - transmission # A torrent client
        - filezilla # A FTP client
        - hexchat # An IRC client
-       - mixxx # A digital disk jockey interface
-       - guitarix # A digital guitar amplifier
        - lxappearance # A theme manager
        - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
-       - pithos # A Pandora client
        - pavucontrol # A volume control tool
        - chromium # A web browser
 
@@ -76,21 +68,6 @@
        - git
        - vim
        - htop
-
-   - name: Download applications from external sources
-     get_url: dest=/tmp url={{ item }}
-     with_items:
-       - https://atom.io/download/deb
-       - https://github.com/Automattic/simplenote-electron/releases/download/v1.0.2/simplenote-1.0.2.deb
-
-   - name: Install applications from external sources
-     apt: deb=/tmp/{{ item }}
-     with_items:
-       - atom-amd64.deb
-       - simplenote-1.0.2.deb
-
-   - name: Symlink simplenote's oddly placed binary into a common binary location
-     file: src=/usr/share/simplenote/simplenote dest=/usr/local/bin/simplenote state=link
 
    - name: Copy over the global environment configuration
      copy: src=ROOT/etc/environment dest=/etc/environment owner=root group=root mode=0644
@@ -244,3 +221,52 @@
        - xprobe
        - zenmap
        #&& wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz && tar -xzvf bing-ip2hosts-0.4.tar.gz && cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/")
+
+   - name: Install Vulnerability Analysis Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - bbqsql
+       - bed
+       - cisco-auditing-tool
+       - cisco-global-exploiter
+       - cisco-ocs
+       - cisco-torch
+       - copy-router-config
+       - dhcpig
+       - doona
+       - dotdotpwn
+       - greenbone-security-assistant
+       - hexorbase
+       - iaxflood
+       - inviteflood
+       - jsql
+       - lynis
+       - nmap
+       - ohrwurm
+       - openvas-cli
+       - openvas-manager
+       - openvas-scanner
+       - oscanner
+       - powerfuzzer
+       - protos-sip
+       - rtpbreak
+       - rtpflood
+       - rtpinsertsound
+       - rtpmixsound
+       - sctpscan
+       - sfuzz
+       - sidguesser
+       - siege
+       - siparmyknife
+       - sipp
+       - spike
+       - sqlmap
+       - sqlninja
+       - sqlsus
+       - t50
+       - thc-ipv6
+       - thc-ssl-dos
+       - tnscmd10g
+       - unix-privesc-check
+       - voiphopper
+       - yersinia

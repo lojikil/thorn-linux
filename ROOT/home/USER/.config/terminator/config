@@ -16,5 +16,7 @@
     background_image = None
     background_type = transparent
     exit_action = hold
+    font = Inconsolata Medium 12
     foreground_color = "#f019f8"
     show_titlebar = False
+    use_system_font = False
