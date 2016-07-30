@@ -696,11 +696,6 @@
         <action name="Execute"><execute>leafpad</execute></action>
       </item>
     </menu>
-    <menu id="games" label="Games">
-      <item label="Steam">
-        <action name="Execute"><execute>steam</execute></applications
-      </item>
-    </menu>
     <menu id="graphics" label="Graphics">
       <item label="Eye of GNOME">
         <action name="Execute"><execute>eog</execute></action>
