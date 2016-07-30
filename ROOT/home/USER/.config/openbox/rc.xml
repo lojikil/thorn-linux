@@ -205,6 +205,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-a">
+      <action name="Execute">
+        <command>atom</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>atom</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-f">
       <action name="Execute">
         <command>thunar</command>
