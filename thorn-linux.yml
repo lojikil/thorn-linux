@@ -141,6 +141,14 @@
    - name: Copy over a dmenu launcher
      copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
 
+   - name: Download the Tor Browser Bundle
+     get_url: url=https://www.torproject.org/dist/torbrowser/6.0.2/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/tmp
+
+   - name: Extract the Tor Browser Bundle
+     unarchive: src=/tmp/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/usr/local/bin copy=no owner={{ username }} group={{ username }}
+
+   - name: Copy over Tor Browser launcher script
+     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
 # Time to start thinking about splitting this into multiple playbooks/vars files...
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
@@ -243,7 +251,7 @@
        - lynis
        - nmap
        - ohrwurm
-       - openvas-cli
+       - openvas-cli # COME BACK TO THIS: Need to add service to menu
        - openvas-manager
        - openvas-scanner
        - oscanner

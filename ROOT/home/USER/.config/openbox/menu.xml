@@ -1001,6 +1001,71 @@
         </action>
       </item>
     </menu>
+    <menu id="vulnerability-analysis-misc" label="Miscellaneous">
+      <item label="bbqsql">
+        <action name="Execute">
+          <command>
+            terminator -e 'bbqsql; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="doona">
+        <action name="Execute">
+          <command>
+            terminator -e 'doona; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="Greenbone Security Assistant">
+        <action name="Execute">
+          <command>
+            terminator -e 'gsad -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="HexorBase">
+        <action name="Execute">
+          <command>
+            hexorbase
+          </command>
+        </action>
+      </item>
+      <item label="jSQL">
+        <action name="Execute">
+          <command>
+            jsql
+          </command>
+        </action>
+      </item>
+      <item label="oscanner">
+        <action name="Execute">
+          <command>
+            terminator -e 'oscanner; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sqlninja">
+        <action name="Execute">
+          <command>
+            terminator -e 'sqlninja; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sqlsus">
+        <action name="Execute">
+          <command>
+            terminator -e 'sqlsus; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="tnscmd10g">
+        <action name="Execute">
+          <command>
+            terminator -e 'tnscmd10g; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
   </menu>
 </menu>
 <separator/>
@@ -1010,8 +1075,11 @@
   <item label="File Manager">
     <action name="Execute"><execute>thunar</execute></action>
   </item>
-  <item label="Web browser">
+  <item label="Web Browser">
     <action name="Execute"><execute>chromium</execute></action>
+  </item>
+  <item label="Tor Browser">
+    <action name="Execute"><execute>/usr/local/bin/tor-browser.sh</execute></action>
   </item>
   <item label="Text Editor">
     <action name="Execute"><execute>geany</execute></action>

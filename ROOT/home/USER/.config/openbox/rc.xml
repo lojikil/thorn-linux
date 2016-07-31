@@ -205,6 +205,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-S-w">
+      <action name="Execute">
+        <command>tor-browser.sh</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>tor-browser</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-a">
       <action name="Execute">
         <command>atom</command>
