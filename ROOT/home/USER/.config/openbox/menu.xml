@@ -1550,6 +1550,466 @@
       </action>
     </item>
   </menu>
+  <menu id="password-attacks" label="Password Attacks">
+    <item label="cewl">
+      <action name="Execute">
+        <command>
+          terminator -e 'cewl --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="crunch">
+      <action name="Execute">
+        <command>
+          terminator -e 'crunch; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="hashcat">
+      <action name="Execute">
+        <command>
+          terminator -e 'hashcat --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="john">
+      <action name="Execute">
+        <command>
+          terminator -e 'john; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="johnny">
+      <action name="Execute">
+        <command>
+          johnny
+        </command>
+      </action>
+    </item>
+    <item label="medusa">
+      <action name="Execute">
+        <command>
+          terminator -e 'medusa -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="ncrack">
+      <action name="Execute">
+        <command>
+          terminator -e 'ncrack -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="ophcrack">
+      <action name="Execute">
+        <command>
+          ophcrack
+        </command>
+      </action>
+    </item>
+    <item label="pyrit">
+      <action name="Execute">
+        <command>
+          terminator -e 'pyrit -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="rainbowcrack">
+      <action name="Execute">
+        <command>
+          terminator -e 'rcrack; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="rcracki-mt">
+      <action name="Execute">
+        <command>
+          terminator -e 'rcracki_mt; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="wordlists">
+      <action name="Execute">
+        <command>
+          terminator -e 'ls -l /usr/share/wordlists; bash -l'
+        </command>
+      </action>
+    </item>
+    <menu id="offline-attacks" label="Offline Attacks">
+      <item label="cachedump">
+        <action name="Execute">
+          <command>
+            terminator -e 'cachedump -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="chntpw">
+        <action name="Execute">
+          <command>
+            terminator -e 'chntpw -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cmospwd">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo cmospwd; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="fcrackzip">
+        <action name="Execute">
+          <command>
+            terminator -e 'fcrackzip --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="hashcat">
+        <action name="Execute">
+          <command>
+            terminator -e 'hashcat --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="hashid">
+        <action name="Execute">
+          <command>
+            terminator -e 'hashid -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="hash-identifier">
+        <action name="Execute">
+          <command>
+            terminator -e 'hash-identifier; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="johnny">
+        <action name="Execute">
+          <command>
+            johnny
+          </command>
+        </action>
+      </item>
+      <item label="lsadump">
+        <action name="Execute">
+          <command>
+            terminator -e 'lsadump -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="ophcrack-cli">
+        <action name="Execute">
+          <command>
+            terminator -e 'ophcrack-cli; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pwdump">
+        <action name="Execute">
+          <command>
+            terminator -e 'pwdump -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rainbowcrack">
+        <action name="Execute">
+          <command>
+            terminator -e 'rcrack; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rcracki-mt">
+        <action name="Execute">
+          <command>
+            terminator -e 'rcracki_mt; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="samdump2">
+        <action name="Execute">
+          <command>
+            terminator -e 'samdump2; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sipcrack">
+        <action name="Execute">
+          <command>
+            terminator -e 'sipcrack -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sucrack">
+        <action name="Execute">
+          <command>
+            terminator -e 'sucrack -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="truecrack">
+        <action name="Execute">
+          <command>
+            terminator -e 'truecrack -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="online-attacks" label="Online Attacks">
+      <item label="acccheck">
+        <action name="Execute">
+          <command>
+            terminator -e 'acccheck; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cisco-auditing-tool">
+        <action name="Execute">
+          <command>
+            terminator -e 'CAT; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="findmyhash">
+        <action name="Execute">
+          <command>
+            terminator -e 'findmyhash; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="hydra">
+        <action name="Execute">
+          <command>
+            terminator -e 'hydra -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="hydra-gtk">
+        <action name="Execute">
+          <command>
+            xhydra
+          </command>
+        </action>
+      </item>
+      <item label="keimpx">
+        <action name="Execute">
+          <command>
+            terminator -e 'keimpx -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="onesixtyone">
+        <action name="Execute">
+          <command>
+            terminator -e 'onesixtyone; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="patator">
+        <action name="Execute">
+          <command>
+            terminator -e 'patator -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="thc-pptp-bruter">
+        <action name="Execute">
+          <command>
+            terminator -e 'thc-pptp-bruter; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="passing-the-hash-tools" label="Passing the Hash Tools">
+      <item label="mimikatz">
+        <action name="Execute">
+          <command>
+            terminator -e 'ls -l /usr/share/mimikatz; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-curl">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-curl -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-net">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-net help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-rpcclinet">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-rpcclient -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-smbclient">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-smbclient -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-smbget">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-smbget --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-sqsh">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-sqsh --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-winexe">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-winexe -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-wmic">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-wmic -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="pth-wmis">
+        <action name="Execute">
+          <command>
+            terminator -e 'pth-wmis -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="smbmap">
+        <action name="Execute">
+          <command>
+            terminator -e 'smbmap -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="password-profiling-and-wordlists" label="Password Profiling & Wordlists">
+      <item label="cewl">
+        <action name="Execute">
+          <command>
+            terminator -e 'cewl --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="crunch">
+        <action name="Execute">
+          <command>
+            terminator -e 'crunch; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="maskgen">
+        <action name="Execute">
+          <command>
+            terminator -e 'maskgen -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="policygen">
+        <action name="Execute">
+          <command>
+            terminator -e 'policygen -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rsmangler">
+        <action name="Execute">
+          <command>
+            terminator -e 'rsmangler -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="statsgen">
+        <action name="Execute">
+          <command>
+            terminator -e 'statsgen -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="wordlists">
+        <action name="Execute">
+          <command>
+            terminator -e 'ls -l /usr/share/wordlists; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="password-attacks-misc" label="Miscellaneous">
+      <item label="burpsuite">
+        <action name="Execute">
+          <command>
+            java -jar /usr/bin/burpsuite
+          </command>
+        </action>
+      </item>
+      <item label="gpp-decrypt">
+        <action name="Execute">
+          <command>
+            terminator -e 'gpp-decrypt; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="HexorBase">
+        <action name="Execute">
+          <command>
+            hexorbase
+          </command>
+        </action>
+      </item>
+      <item label="Maltego Teeth">
+        <action name="Execute">
+          <command>
+            maltegoce
+          </command>
+        </action>
+      </item>
+      <item label="maskprocessor">
+        <action name="Execute">
+          <command>
+            terminator -e 'maskprocessor --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="owasp-zap">
+        <action name="Execute">
+          <command>
+            owasp-zap
+          </command>
+        </action>
+      </item>
+      <item label="polenum">
+        <action name="Execute">
+          <command>
+            terminator -e 'polenum; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="webscarab">
+        <action name="Execute">
+          <command>
+            webscarab
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">

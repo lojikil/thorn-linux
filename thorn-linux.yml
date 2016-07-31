@@ -337,6 +337,53 @@
      apt: name={{ item }} state=installed
      with_items:
        - mdbtools
-       - sqlitebrowsre
+       - sqlitebrowser
        - sqldict
        - wine32
+
+   - name: Install Password Attack Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - acccheck
+       - burpsuite
+       - cewl
+       - chntpw
+       - cisco-auditing-tool
+       - cmospwd
+       - creddump
+       - crunch
+       - fcrackzip
+       - findmyhash
+       - gpp-decrypt # COME BACK TO THIS: Currently in menu, but has no documentation/helptext
+       - hash-identifier
+       - hashcat
+       - hashid
+       - hexorbase
+       - hydra-gtk
+       - john
+       - johnny
+       - keimpx
+       - maltego-teeth
+       - maskprocessor
+       - medusa
+       - mimikatz
+       - ncrack
+       - ophcrack
+       - ophcrack-cli
+       - pack
+       - passing-the-hash
+       - patator
+       - polenum
+       - pyrit
+       - rainbowcrack
+       - rcracki-mt
+       - rsmangler
+       - samdump2
+       - sipcrack
+       - statsprocessor
+       - sucrack
+       - thc-pptp-bruter
+       - truecrack
+       - webscarab
+       - wordlists
+       - zaproxy
