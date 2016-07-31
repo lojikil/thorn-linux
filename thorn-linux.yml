@@ -278,3 +278,53 @@
        - unix-privesc-check
        - voiphopper
        - yersinia
+
+   - name: Install Web Application Analysis Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - apache-users
+       - arachni
+       - bbqsql
+       - blindelephant
+       - burpsuite
+       - cadaver
+       - clusterd
+       - commix
+       - cutycapt
+       - davtest
+       - deblaze
+       - dirb
+       - dirbuster
+       - fimap
+       - funkload  # COME BACK TO THIS: This is a suite of applications
+       - grabber
+       - httrack
+       - httrack-doc
+       - jboss-autopwn
+       - joomscan
+       - jsql
+       - maltego-teeth
+       - padbuster
+       - paros
+       - parsero
+       - plecost
+       - powerfuzzer
+       - proxystrike
+       - recon-ng
+       - skipfish
+       - sqlmap
+       - sqlninja
+       - sqlsus
+       - ua-tester
+       - uniscan
+       - vega
+       - wapiti
+       - w3af
+       - webhttrack
+       - webscarab
+       - websploit
+       - wfuzz
+       - whatweb
+       - wpscan
+       - xsser
+       - zaproxy

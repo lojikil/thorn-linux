@@ -1067,6 +1067,403 @@
       </item>
     </menu>
   </menu>
+  <menu id="web-application-analysis" label="Web Application Analysis">
+    <item label="burpsuite">
+      <action name="Execute">
+        <command>
+          java -jar /usr/bin/burpsuite
+        </command>
+      </action>
+    </item>
+    <item label="commix">
+      <action name="Execute">
+        <command>
+          terminator -e 'commix; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="httrack">
+      <action name="Execute">
+        <command>
+          terminator -e 'httrack -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="owasp-zap">
+      <action name="Execute">
+        <command>
+          owasp-zap
+        </command>
+      </action>
+    </item>
+    <item label="paros">
+      <action name="Execute">
+        <command>
+          paros
+        </command>
+      </action>
+    </item>
+    <item label="skipfish">
+      <action name="Execute">
+        <command>
+          terminator -e 'skipfish -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="sqlmap">
+      <action name="Execute">
+        <command>
+          terminator -e 'sqlmap -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="w3af">
+      <action name="Execute">
+        <command>
+          w3af
+        </command>
+      </action>
+    </item>
+    <item label="webscarab">
+      <action name="Execute">
+        <command>
+          webscarab
+        </command>
+      </action>
+    </item>
+    <item label="wpscan">
+      <action name="Execute">
+        <command>
+          terminator -e 'sudo wpscan -help; bash -l'
+        </command>
+      </action>
+    </item>
+    <menu id="cms-and-framework-analysis" label="CMS & Framework Analysis">
+      <item label="blindelephant">
+        <action name="Execute">
+          <command>
+            terminator -e 'BlindElephant.py; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="clusterd">
+        <action name="Execute">
+          <command>
+            terminator -e 'clusterd -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="jboss-autopwn-linux">
+        <action name="Execute">
+          <command>
+            terminator -e 'jboss-linux; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="jboss-autopwn-win">
+        <action name="Execute">
+          <command>
+            terminator -e 'jboss-win; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="joomscan">
+        <action name="Execute">
+          <command>
+            terminator -e 'joomscan; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="plecost">
+        <action name="Execute">
+          <command>
+            terminator -e 'plecost -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="ua-tester">
+        <action name="Execute">
+          <command>
+            terminator -e 'ua-tester; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="wpscan">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo wpscan -help; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="web-application-proxies" label="Web Application Proxies">
+      <item label="burpsuite">
+        <action name="Execute">
+          <command>
+            java -jar /usr/bin/burpsuite
+          </command>
+        </action>
+      </item>
+      <item label="paros">
+        <action name="Execute">
+          <command>
+            paros
+          </command>
+        </action>
+      </item>
+      <item label="proxystrike">
+        <action name="Execute">
+          <command>
+            proxystrike
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="web-crawlers-and-directory-bruteforce" label="Web Crawlers & Directory Bruteforce">
+      <item label="apache-users">
+        <action name="Execute">
+          <command>
+            terminator -e 'apache-users; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="dirb">
+        <action name="Execute">
+          <command>
+            terminator -e 'dirb; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="dirbuster">
+        <action name="Execute">
+          <command>
+            terminator -e 'dirbuster; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="uniscan-gui">
+        <action name="Execute">
+          <command>
+            uniscan-gui
+          </command>
+        </action>
+      </item>
+      <item label="wfuzz">
+        <action name="Execute">
+          <command>
+            terminator -e 'wfuzz -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="web-vulnerability-scanners" label="Web Vulnerability Scanners">
+      <item label="cadaver">
+        <action name="Execute">
+          <command>
+            terminator -e 'cadaver -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="clusterd">
+        <action name="Execute">
+          <command>
+            terminator -e 'clusterd -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="davtest">
+        <action name="Execute">
+          <command>
+            terminator -e 'davtest; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="deblaze">
+        <action name="Execute">
+          <command>
+            terminator -e 'deblaze.py -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="fimap">
+        <action name="Execute">
+          <command>
+            terminator -e 'fimap -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="golismero">
+        <action name="Execute">
+          <command>
+            terminator -e 'golismero -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="grabber">
+        <action name="Execute">
+          <command>
+            terminator -e 'grabber -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="jboss-autopwn-linux">
+        <action name="Execute">
+          <command>
+            terminator -e 'jboss-linux; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="jboss-autopwn-win">
+        <action name="Execute">
+          <command>
+            terminator -e 'jboss-win; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="joomscan">
+        <action name="Execute">
+          <command>
+            terminator -e 'joomscan; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="jsql">
+        <action name="Execute">
+          <command>
+            jsql
+          </command>
+        </action>
+      </item>
+      <item label="padbuster">
+        <action name="Execute">
+          <command>
+            terminator -e 'padbuster; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="skipfish">
+        <action name="Execute">
+          <command>
+            terminator -e 'skipfish -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="wapiti">
+        <action name="Execute">
+          <command>
+            terminator -e 'wapiti -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="whatweb">
+        <action name="Execute">
+          <command>
+            terminator -e 'whatweb -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="wpscan">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo wpscan -help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="xsser">
+        <action name="Execute">
+          <command>
+            terminator -e 'xsser -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="web-application-analysis-misc" label="Miscellaneous">
+      <item label="arachni">
+        <action name="Execute">
+          <command>
+            terminator -e 'arachni -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="bbqsql">
+        <action name="Execute">
+          <command>
+            terminator -e 'bbqsql; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cutycapt">
+        <action name="Execute">
+          <command>
+            terminator -e 'cutycapt; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="grabber">
+        <action name="Execute">
+          <command>
+            terminator -e 'grabber -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="Maltego Teeth">
+        <action name="Execute">
+          <command>
+            maltegoce
+          </command>
+        </action>
+      </item>
+      <item label="parsero">
+        <action name="Execute">
+          <command>
+            terminator -e 'parsero; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="powerfuzzer">
+        <action name="Execute">
+          <command>
+            powerfuzzer
+          </command>
+        </action>
+      </item>
+      <item label="recon-ng">
+        <action name="Execute">
+          <command>
+            recon-ng
+          </command>
+        </action>
+      </item>
+      <item label="sqlninja">
+        <action name="Execute">
+          <command>
+            sqlninja
+          </command>
+        </action>
+      </item>
+      <item label="sqlsus">
+        <action name="Execute">
+          <command>
+            terminator -e 'sqlsus; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="vega">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo vega; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="websploit">
+        <action name="Execute">
+          <command>
+            terminator -e 'websploit; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">
@@ -1100,23 +1497,8 @@
       <item label="Eye of GNOME">
         <action name="Execute"><execute>eog</execute></action>
       </item>
-      <item label="Gimp">
-        <action name="Execute"><execute>gimp</execute></actoin>
-      </item>
     </menu>
     <menu id="multimedia" label="Multimedia">
-      <item label="Audacity">
-        <action name="Execute"><execute>audacity</execute></action>
-      </item>
-      <item label="Guitarix">
-        <action name="Execute"><execute>guitarix</execute></action>
-      </item>
-      <item label="Mixxx">
-        <action name="Execute"><execute>mixxx</execute></action>
-      </item>
-      <item label="Pithos">
-        <action name="Execute"><execute>pithos</execute></action>
-      </item>
       <item label="VLC">
         <action name="Execute"><execute>vlc</execute></action>
       </item>
