@@ -24,6 +24,10 @@
    - name: Install Kali apt key
      copy: src=ROOT/etc/apt/trusted.gpg.d/kali-archive-keyring.gpg dest=/etc/apt/trusted.gpg.d/
 
+   - name: Add 32 bit apt support
+     command: dpkg --add-architecture i386
+     ignore_errors: yes
+
    - name: Update package cache and upgrade installed packages
      apt: update_cache=true upgrade=dist
 
@@ -328,3 +332,11 @@
        - wpscan
        - xsser
        - zaproxy
+
+   - name: Install Database Assessment Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - mdbtools
+       - sqlitebrowsre
+       - sqldict
+       - wine32

@@ -1430,14 +1430,14 @@
       <item label="recon-ng">
         <action name="Execute">
           <command>
-            recon-ng
+            terminator -e 'recon-ng; bash -l'
           </command>
         </action>
       </item>
       <item label="sqlninja">
         <action name="Execute">
           <command>
-            sqlninja
+            terminator -e 'sqlninja; bash -l'
           </command>
         </action>
       </item>
@@ -1463,6 +1463,92 @@
         </action>
       </item>
     </menu>
+  </menu>
+  <menu id="database-assessment" label="Database Assessment">
+    <item label="bbqsql">
+      <action name="Execute">
+        <command>
+          terminator -e 'bbqsql; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="hexorbase">
+      <action name="Execute">
+        <command>
+          hexorbase
+        </command>
+      </action>
+    </item>
+    <item label="jsql">
+      <action name="Execute">
+        <command>
+          jsql
+        </command>
+      </action>
+    </item>
+    <item label="mdb-sql">
+      <action name="Execute">
+        <command>
+          terminator -e 'mdb-sql -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="oscanner">
+      <action name="Execute">
+        <command>
+          terminator -e 'oscanner; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="sidguesser">
+      <action name="Execute">
+        <command>
+          terminator -e 'sidguess; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="sqldict">
+      <action name="Execute">
+        <command>
+          sqldict
+        </command>
+      </action>
+    </item>
+    <item label="SQLite Database Browser">
+      <action name="Execute">
+        <command>
+          sqlitebrowser
+        </command>
+      </action>
+    </item>
+    <item label="sqlmap">
+      <action name="Execute">
+        <command>
+          terminator -e 'sqlmap -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="sqlninja">
+      <action name="Execute">
+        <command>
+          terminator -e 'sqlninja; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="sqlsus">
+      <action name="Execute">
+        <command>
+          terminator -e 'sqlsus -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="tnscmd10g">
+      <action name="Execute">
+        <command>
+          terminator -e 'tnscmd10g; bash -l'
+        </command>
+      </action>
+    </item>
   </menu>
 </menu>
 <separator/>
