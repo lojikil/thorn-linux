@@ -2010,6 +2010,354 @@
       </item>
     </menu>
   </menu>
+  <menu id="wireless-attacks" label="Wireless Attacks">
+    <item label='aircrack-ng'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'aircrack-ng --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='chirp'>
+      <action name='Execute'>
+        <command>
+          chirpw
+        </command>
+      </action>
+    </item>
+    <item label='cowpatty'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'cowpatty; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='fern wifi cracker'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo fern-wifi-cracker; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='ghost phisher'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo ghost-phisher; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='giskismet'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'giskismet -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='kismet'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'kismet -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='mdk3'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo mdk3 --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='mfoc'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'mfoc -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='mfterm'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'mfterm -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='pixiewps'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'pixiewps -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='reaver'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'reaver -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='wifite'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'wifite --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <menu id='802.11-wireless-tools' label="802.11 Wireless Tools">>
+      <item label='asleap'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'asleap -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='bully'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'bully; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='cowpatty'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'cowpatty; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='eapmd5pass'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'eapmd5pass; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='fern wifi cracker'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo fern-wifi-cracker; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='giskismet'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'giskismet -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='wifiarp'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'wifiarp -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='wifidns'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'wifidns -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='wifi-honey'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'wifi-honey -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='wifiping'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'wifiping -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='wifitap'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'wifitap -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id='bluetooth-tools' label="Bluetooth tools">
+      <item label='bluelog'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'bluelog -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='blueranger'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'blueranger.sh; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='bluesnarfer'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'bluesnarfer; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='btscanner'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'btscanner -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='redfang'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'fang -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='spooftooph'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'spooftooph -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id='rfid-and-nfc-tools' label="RFID & NFC Tools">
+      <item label='mfcuk'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mfcuk -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='mfoc'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mfoc -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='mfterm'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mfterm -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='nfc-list'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'nfc-list -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='nfc-mfclassic'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'nfc-mfclassic -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id='software-defined-radio' label="Software Defined Radio">
+      <item label='chirp'>
+        <action name='Execute'>
+          <command>
+            chirpw
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="wireless-attacks-misc" label="Miscellaneous">
+      <item label='cracker'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'cracker; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='gqrx'>
+        <action name='Execute'>
+          <command>
+            gqrx
+          </command>
+        </action>
+      </item>
+      <item label='hackrf-info'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'hackrf_info -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='kalibrate'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'kal -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='Multimon-NG'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'multimon-ng -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='zbassocflood'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'zbassocflood -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='zbdsniff'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'zbdsniff; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='zbdump'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'zbdump -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='zbfind'>
+        <action name='Execute'>
+          <command>
+            zbfind
+          </command>
+        </action>
+      </item>
+      <item label='zbgoodfind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'zbgoodfind -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='zbreplay'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'zbreplay -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='zbstumbler'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'zbstumbler -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">

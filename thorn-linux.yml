@@ -387,3 +387,38 @@
        - webscarab
        - wordlists
        - zaproxy
+
+   - name: Install Wireless Attack Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - aircrack-ng
+       - asleap
+       - bluelog
+       - blueranger
+       - bluesnarfer
+       - btscanner
+       - bully
+       - chirp
+       - cowpatty
+       - crackle
+       - eapmd5pass
+       - fern-wifi-cracker
+       - ghost-phisher
+       - giskismet
+       - gqrx
+       - kalibrate-rtl
+       - killerbee
+       - kismet
+       - libnfc-bin
+       - mdk3
+       - mfcuk
+       - mfoc
+       - mfterm
+       - multimon-ng
+       - pixiewps
+       - reaver
+       - redfang
+       - spooftooph
+       - wifi-honey
+       - wifitap
+       - wifite
