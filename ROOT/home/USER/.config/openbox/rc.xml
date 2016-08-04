@@ -205,6 +205,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-v">
+      <action name="Execute">
+        <command>vlc</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>vlc</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-S-w">
       <action name="Execute">
         <command>tor-browser.sh</command>

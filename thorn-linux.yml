@@ -145,14 +145,17 @@
    - name: Copy over a dmenu launcher
      copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
 
-   - name: Download the Tor Browser Bundle
-     get_url: url=https://www.torproject.org/dist/torbrowser/6.0.2/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/tmp
+   - name: Copy over a tint2 config file
+     copy: src=ROOT/home/USER/.config/tint2/tint2rc dest=/home/{{ username }}/.config/tint2/tint2rc owner={{ username }} group={{ username }}
 
-   - name: Extract the Tor Browser Bundle
-     unarchive: src=/tmp/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/usr/local/bin copy=no owner={{ username }} group={{ username }}
+#   - name: Download the Tor Browser Bundle
+#     get_url: url=https://www.torproject.org/dist/torbrowser/6.0.2/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/tmp
 
-   - name: Copy over Tor Browser launcher script
-     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
+#   - name: Extract the Tor Browser Bundle
+#     unarchive: src=/tmp/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/usr/local/bin copy=no owner={{ username }} group={{ username }}
+
+#   - name: Copy over Tor Browser launcher script
+#     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
 # Time to start thinking about splitting this into multiple playbooks/vars files...
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
@@ -422,3 +425,20 @@
        - wifi-honey
        - wifitap
        - wifite
+
+   - name: Reverse Engineering
+     apt: name={{ item }} state=installed
+     with_items:
+       - apktool
+       - clang
+       - dex2jar
+       - edb-debugger
+       - flasm
+       - jad
+       - javasnoop
+       - ollydbg
+       - python-distorm3
+       - radare2
+       - smali
+       - valgrind
+       - yara

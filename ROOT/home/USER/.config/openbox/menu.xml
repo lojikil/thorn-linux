@@ -2358,6 +2358,106 @@
       </item>
     </menu>
   </menu>
+  <menu id="reverse-engineering" label="Reverse Engineering">
+    <item label='apktool'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'apktool; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='clang'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'clang --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='clang++'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'clang++ --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='dex2jar'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'd2j-dex2jar -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='edb-debugger'>
+      <action name='Execute'>
+        <command>
+          edb
+        </command>
+      </action>
+    </item>
+    <item label='flasm'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'flasm; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='jad'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'jad; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='javasnoop'>
+      <action name='Execute'>
+        <command>
+          javasnoop
+        </command>
+      </action>
+    </item>
+    <item label='NASM Shell'>
+      <action name='Execute'>
+        <command>
+          terminator -e '/usr/share/metasploit-framework/tools/exploit/nasm_shell.rb; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='ollydbg'>
+      <action name='Execute'>
+        <command>
+          ollydbg
+        </command>
+      </action>
+    </item>
+    <item label='radare2'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'radare2 -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='smali'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'smali; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='valgrind'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'valgrind --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='yara'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'yara --help; bash -l'
+        </command>
+      </action>
+    </item>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">
