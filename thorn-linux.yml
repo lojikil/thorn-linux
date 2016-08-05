@@ -65,6 +65,7 @@
        - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
        - pavucontrol # A volume control tool
        - chromium # A web browser
+       - iceweasel # A web browser
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
@@ -442,3 +443,25 @@
        - smali
        - valgrind
        - yara
+
+   - name: Exploitation Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - armitage
+       - backdoor-factory
+       - beef-xss
+       - cisco-auditing-tool
+       - cisco-global-exploiter
+       - cisco-ocs
+       - cisco-torch
+       - crackle
+       - jboss-autopwn
+       - linux-exploit-suggester
+       - maltego-teeth
+       - msfpc
+       - set
+       - shellnoob
+       - sqlmap
+       - termineter
+       - thc-ipv6
+       - yersinia

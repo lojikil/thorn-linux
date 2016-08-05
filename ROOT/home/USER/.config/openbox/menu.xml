@@ -2279,6 +2279,13 @@
           </command>
         </action>
       </item>
+      <item label='crackle'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'crackle; bash -l'
+          </command>
+        </action>
+      </item>
       <item label='gqrx'>
         <action name='Execute'>
           <command>
@@ -2454,6 +2461,155 @@
       <action name='Execute'>
         <command>
           terminator -e 'yara --help; bash -l'
+        </command>
+      </action>
+    </item>
+  </menu>
+  <menu id="exploitation-tools" label="Exploitation Tools">
+    <item label='armitage'>
+      <action name='Execute'>
+        <command>
+          armitage
+        </command>
+      </action>
+    </item>
+    <item label='backdoor-factory'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'backdoor-factory; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='beef xss framework'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo beef-xss; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="cisco-auditing-tool">
+      <action name="Execute">
+        <command>
+          terminator -e 'CAT; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="cisco-global-exploiter">
+      <action name="Execute">
+        <command>
+          terminator -e 'cge.pl; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="cisco-ocs">
+      <action name="Execute">
+        <command>
+          terminator -e 'cisco-ocs; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="cisco-torch">
+      <action name="Execute">
+        <command>
+          terminator -e 'cisco-torch; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='crackle'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'crackle; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="jboss-autopwn-linux">
+      <action name="Execute">
+        <command>
+          terminator -e 'jboss-linux; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="jboss-autopwn-win">
+      <action name="Execute">
+        <command>
+          terminator -e 'jboss-win; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="linux-exploit-suggester">
+      <action name="Execute">
+        <command>
+          terminator -e 'linux-exploit-suggester; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="Maltego Teeth">
+      <action name="Execute">
+        <command>
+          maltegoce
+        </command>
+      </action>
+    </item>
+    <item label='metasploit framework'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'service postgresql start; sudo msfdb init; sudo msfconsole; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='msf payload creator'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'msfpc; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='searchsploit'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'searchsploit; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='shellnoob'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'shellnoob -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='social engineering toolkit'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo setoolkit; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='sqlmap'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sqlmap -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='termineter'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'termineter -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="thc-ipv6">
+      <action name="Execute">
+        <command>
+          terminator -e 'man thc-ipv6; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label="yersinia">
+      <action name="Execute">
+        <command>
+          terminator -e 'sudo yersinia -h; bash -l'
         </command>
       </action>
     </item>
