@@ -465,3 +465,45 @@
        - termineter
        - thc-ipv6
        - yersinia
+
+   - name: Sniffing and Spoofing
+     apt: name={{ item }} state=installed
+     with_items:
+       - bdfproxy
+       - burpsuite
+       - darkstat
+       - dnschef
+       - driftnet
+       - fiked
+       - hamster-sidejack
+       - hexinject
+       - iaxflood
+       - inviteflood
+       - ismtp
+       - mitmproxy
+       - netsniff-ng
+       - nfspy
+       - ohrwurm
+       - protos-sip
+       - rebind
+       - responder
+       - rtpbreak
+       - rtpinsertsound
+       - rtpmixsound
+       - sctpscan
+       - siparmyknife
+       - sipp
+       - sipvicious
+       - sniffjoke
+       - sslsniff
+       - sslsplit
+       - sslstrip
+       - tcpflow
+       - thc-ipv6
+       - voiphopper
+       - webscarab
+       - wifi-honey
+       - wireshark
+       - xspy
+       - yersinia
+       - zaproxy

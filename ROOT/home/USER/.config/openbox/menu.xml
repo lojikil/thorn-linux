@@ -2614,6 +2614,847 @@
       </action>
     </item>
   </menu>
+  <menu id="sniffing-and-spoofing" label="Sniffing and Spoofing">
+    <item label='bdfproxy'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'bdfproxy; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='driftnet'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'driftnet -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='ettercap-graphical'>
+      <action name='Execute'>
+        <command>
+          ettercap -G
+        </command>
+      </action>
+    </item>
+    <item label='hamster'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'hamster; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='macchanger'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'macchanger -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='mitmproxy'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'mitmproxy -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='netsniff-ng'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'netsniff-ng -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='responder'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'responder -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='wireshark'>
+      <action name='Execute'>
+        <command>
+          wireshark
+        </command>
+      </action>
+    </item>
+    <menu id="network-sniffers" label="Network Sniffers">
+      <item label='darkstat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'darkstat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dnschef'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dnschef -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dsniff'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dsniff -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='hexinject'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'hexinject -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='netsniff-ng'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'netsniff-ng -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='nfspy'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'nfspy -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sslsniff'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sslsniff; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tcpflow'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tcpflow -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="spoofing-and-mitm" label="Spoofing and MITM">
+      <item label='dnschef'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dnschef -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='fiked'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'fiked -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='nfspy'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'nfspy -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='rebind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'rebind; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sniffjoke'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo sniffjoke --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sslsplit'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sslsplit -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sslstrip'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sslstrip -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tcpreplay'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tcpreplay -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='wifi-honey'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'wifi-honey -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='yersinia'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'yersinia --help; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="misc-sniff-and-spoofing" label="Miscellaneous">
+      <item label='atk6-address6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-address6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-alive6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-alive6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-covert-send6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-covert_send6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-covert-send6d'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-covert_send6d; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-denial6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-denial6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-detect-new-ip6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-detect-new-ip6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-detect-sniffer6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-detect_sniffer6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dnsdict6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dnsdict6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dnsrevenum6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dnsrevenum6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dnssecwalk'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dnssecwalk; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dos-mld'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dos_mld; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dos-new-ip6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dos-new-ip6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dump-dhcp6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dump_dhcp6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-dump-router6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-dump_router6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-exploit6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-exploit6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-extract-hosts6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-extract_hosts6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-extract-networks6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-extract_networks6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-advertise6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_advertise6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-dhcps6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_dhcps6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-dns6d'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_dns6d; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-dnsupdate6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_dnsupdate6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-mipv6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_mipv6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-mld26'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_mld26; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-mld6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_mld6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-mldrouter6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_mldrouter6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-pim6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_pim6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-router26'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_router26; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-router6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_router6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fake-solicitate6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fake_solicitate6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-firewall6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-firewall6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-advertise6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_advertise6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-dhcpc6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_dhcpc6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-mld26'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_mld26; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-mld6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_mld6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-mldrouter6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_mldrouter6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-redir6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_redir6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-router26'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_router26; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-router6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_router6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-rs6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_rs6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-flood-solicitate6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-flood_solicitate6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-four2six'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-four2six; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fragmentation6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fragmentation6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fuzz-dhcpc6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fuzz_dhcpc6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fuzz-dhcps6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fuzz_dhcps6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-fuzz_ip6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-fuzz_ip6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-implementation6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-implementation6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-implementation6d'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-implementation6d; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-inject-alive6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-inject_alive6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-inverse-lookup6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-inverse_lookup6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-kill-router6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-kill_router6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-ndpexhaust26'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-ndpexhaust26; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-ndpexhaust6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-ndpexhaust6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-node-query6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-node_query6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-parasite6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-parasite6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-passive-discovery6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-passive_discovery6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-randicmp6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-randicmp6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-redir6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-redir6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-redirsniff6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-redirsniff6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-rsmurf6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-rsmurf6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-sendpees6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-sendpees6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-sendpeesmp6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-sendpeesmp6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-smurf6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-smurf6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-thcping6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-thcping6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-thcsyn6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-thcsyn6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-toobig6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-toobig6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='atk6-trace6'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-trace6; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="burpsuite">
+        <action name="Execute">
+          <command>
+            java -jar /usr/bin/burpsuite
+          </command>
+        </action>
+      </item>
+      <item label='hexinject'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'atk6-hexinject -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="iaxflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'atk6-iaxflood; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="inviteflood">
+        <action name="Execute">
+          <command>
+            terminator -e 'inviteflood -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="iSMTP">
+        <action name="Execute">
+          <command>
+            terminator -e 'ismtp; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="ohrwurm">
+        <action name="Execute">
+          <command>
+            terminator -e 'sudo ohrwurm; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="owasp-zap">
+        <action name="Execute">
+          <command>
+            owasp-zap
+          </command>
+        </action>
+      </item>
+      <item label="protos-sip">
+        <action name="Execute">
+          <command>
+            terminator -e 'protos-sip -help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='rebind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'rebind; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpbreak">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpbreak -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpinsertsound">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpinsertsound -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="rtpmixsound">
+        <action name="Execute">
+          <command>
+            terminator -e 'rtpmixsound -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sctpscan">
+        <action name="Execute">
+          <command>
+            terminator -e 'sctpscan; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="siparmyknife">
+        <action name="Execute">
+          <command>
+            terminator -e 'siparmyknife; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sipp">
+        <action name="Execute">
+          <command>
+            terminator -e 'sipp -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="sslsplit">
+        <action name="Execute">
+          <command>
+            terminator -e 'sslsplit -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sslstrip'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sslstrip -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svcrack">
+        <action name="Execute">
+          <command>
+            terminator -e 'svcrack -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svcrash">
+        <action name="Execute">
+          <command>
+            terminator -e 'svcrash -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svmap">
+        <action name="Execute">
+          <command>
+            terminator -e 'svmap -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svreport">
+        <action name="Execute">
+          <command>
+            terminator -e 'svreport -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="svwar">
+        <action name="Execute">
+          <command>
+            terminator -e 'svwar -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tcpflow'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tcpflow -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="voiphopper">
+        <action name="Execute">
+          <command>
+            terminator -e 'voiphopper -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="webscarab">
+        <action name="Execute">
+          <command>
+            webscarab
+          </command>
+        </action>
+      </item>
+      <item label="xspy">
+        <action name="Execute">
+          <command>
+            terminator -e 'xspy; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">
