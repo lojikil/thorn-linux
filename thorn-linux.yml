@@ -507,3 +507,26 @@
        - xspy
        - yersinia
        - zaproxy
+
+   - name: Post Exploitation
+     apt: name={{ item }} state=installed
+     with_items:
+       - cymothoa
+       - dbd
+       - dns2tcp
+       - exe2hexbat
+       - intersect
+       - iodine
+       - laudanum
+       - miredo
+       - powersploit
+       - proxychains
+       - proxytunnel
+       - ptunnel
+       - pwnat
+       - sbd
+       - stunnel4
+       - u3-pwn
+       - udptunnel
+       - webacoo
+       - weevely

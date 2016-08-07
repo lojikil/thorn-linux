@@ -3455,6 +3455,238 @@
       </item>
     </menu>
   </menu>
+  <menu id="post-exploitation" label="post-exploitation">
+    <item label='backdoor-factory'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'backdoor-factory -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='bdfproxy'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo bdfproxy; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='exe2hex'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'exe2hex; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='intersect'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo intersect bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='mimikatz'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'ls -l /usr/share/mimikatz; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='nishang'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'ls -l /usr/share/nishang; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='powersploit'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'ls -l /usr/share/powersploit; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='proxychains'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'proxychains; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='weevely'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'weevely; bash -l'
+        </command>
+      </action>
+    </item>
+    <menu id="os-backdoors" label="OS Backdoors">
+      <item label='cymothoa'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'cymothoa; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dbd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dbd -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='intersect'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo intersect; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='powersploit'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ls -l /usr/share/powersploit; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sbd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sbd -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='u3-pwn'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'u3-pwn; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="tunneling-and-exfiltration" label="Tunneling and Exfiltration">
+      <item label='dbd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dbd -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dns2tcpc'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dns2tcpc; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dns2tcpd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dns2tcpd; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='exe2hex'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'exe2hex; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='iodine'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'iodine-client-start -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='miredo'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'miredo -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='proxychains'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'proxychains; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='proxytunnel'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'proxytunnel -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='ptunnel'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ptunnel -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='pwnat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'pwnat -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sslh'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sslh -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='stunnel4'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'stunnel4 -help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='udptunnel'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'udptunnel -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="web-backdoors" label="Web Backdoors">
+      <item label='laudanum'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ls -l /usr/share/laudanum; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='nishang'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ls -l /usr/share/nishang; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='webacoo'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'webacoo -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='weevely'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'weevely; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">
