@@ -3455,7 +3455,7 @@
       </item>
     </menu>
   </menu>
-  <menu id="post-exploitation" label="post-exploitation">
+  <menu id="post-exploitation" label="Post Exploitation">
     <item label='backdoor-factory'>
       <action name='Execute'>
         <command>
@@ -3682,6 +3682,517 @@
         <action name='Execute'>
           <command>
             terminator -e 'weevely; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
+  <menu id="forensics" label="Forensics">
+    <item label='autopsy'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo autopsy; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='binwalk'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'binwalk -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='bulk-extractor'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'bulk_extractor -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='chkrootkit'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'chkrootkit -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='foremost'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'foremost -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='galleta'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'galleta; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='hashdeep'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'hashdeep -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='volafox'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'volafox; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='volatility'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'volatility -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <menu id="digital-forensics" label="Digital Forensics">
+      <item label='dc3dd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dc3dd --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dcfldd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dcfldd --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='extundelete'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'extundelete --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='missidentify'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'missidentify -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='pdgmail'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'pdgmail -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='readpst'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'readpst -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='reglookup'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'reglookup; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='regripper'>
+        <action name='Execute'>
+          <command>
+            regripper
+          </command>
+        </action>
+      </item>
+      <item label='vinetto'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'vinetto -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="forensic-carving-tools" label="Forensic Carving Tools">
+      <item label='foremost'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'foremost -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='magicrescue'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'magicrescue; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='pasco'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'pasco; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='pev'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'pev -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='recoverjpeg'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'recoverjpeg -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='rifiuti'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'rifiuti; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='rifiuti2'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'rifiuti2 -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='safecopy'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'safecopy -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='scalpel'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'scalpel -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='scrounge-ntfs'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'scrounge-ntfs -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="forensic-imaging-tools" label="Forensic Imaging Tools">
+      <item label='affcat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'affcat -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dc3dd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dc3dd --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='dcfldd'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dcfldd --help; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='ddrescue'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'dd_rescue -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='ewfacquire'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ewfacquire -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='guymager'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo guymager; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="pdf-forensics-tools" label="PDF Forensics Tools">
+      <item label='pdfid'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'pdfid -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='pdf-parser'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'pdf-parser -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='peepdf'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'peepdf -h; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="sleuth-kit-suite" label="Sleuth Kit Suite">
+      <item label='autopsy'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo autopsy; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='blkcalc'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'blkcalc; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='blkcat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'blkcat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='blkls'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'blkls; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='blkstat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'blkstat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='ffind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ffind; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='fls'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'fls; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='fsstat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'fsstat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='hfind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'hfind; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='icat-sleuthkit'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'icat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='ifind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ifind; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='ils-sleuthkit'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'ils; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='img-cat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'img_cat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='img-stat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'img_stat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='istat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'istat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='jcat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'jcat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='jls'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'jls; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='mactime-sleuthkit'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mactime; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='mmcat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mmcat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='mmls'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mmls; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='mmstat'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'mmstat; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sigfind'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sigfind; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='sorter'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sorter; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='srch-strings'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'srch_strings -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tsk-comparedir'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tsk_comparedir; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tsk-gettimes'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tsk_gettimes -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tsk-loaddb'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tsk_loaddb; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='tsk-recover'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'tsk_recover; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="forensics-miscellaneous" label="Miscellaneous">
+      <item label="chntpw">
+        <action name="Execute">
+          <command>
+            terminator -e 'chntpw -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="cuckoo">
+        <action name="Execute">
+          <command>
+            cuckoo-launcher.sh
+          </command>
+        </action>
+      </item>
+      <item label="dumpzilla">
+        <action name="Execute">
+          <command>
+            terminator -e 'dumpzilla; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="iphone-backup-analyzer">
+        <action name="Execute">
+          <command>
+            iphone-backup-analyzer
+          </command>
+        </action>
+      </item>
+      <item label="p0f">
+        <action name="Execute">
+          <command>
+            terminator -e 'p0f -h; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="Xplico">
+        <action name="Execute">
+          <command>
+            terminator -e 'xplico -h; bash -l'
           </command>
         </action>
       </item>

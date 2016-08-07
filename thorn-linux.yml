@@ -427,7 +427,7 @@
        - wifitap
        - wifite
 
-   - name: Reverse Engineering
+   - name: Install Reverse Engineering Tools
      apt: name={{ item }} state=installed
      with_items:
        - apktool
@@ -444,7 +444,7 @@
        - valgrind
        - yara
 
-   - name: Exploitation Tools
+   - name: Install Exploitation Tools
      apt: name={{ item }} state=installed
      with_items:
        - armitage
@@ -466,7 +466,7 @@
        - thc-ipv6
        - yersinia
 
-   - name: Sniffing and Spoofing
+   - name: Install Sniffing and Spoofing Tools
      apt: name={{ item }} state=installed
      with_items:
        - bdfproxy
@@ -508,7 +508,7 @@
        - yersinia
        - zaproxy
 
-   - name: Post Exploitation
+   - name: Install Post Exploitation Tools
      apt: name={{ item }} state=installed
      with_items:
        - cymothoa
@@ -530,3 +530,50 @@
        - udptunnel
        - webacoo
        - weevely
+
+   - name: Install Forensics Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - afflib-tools
+       - autopsy
+       - binwalk
+       - bulk-extractor
+       - chkrootkit
+       - chntpw
+       - cuckoo # COME BACK TO THIS: Needs a working default config at /etc/cuckoo to work properly
+       - dc3dd
+       - dcfldd
+       - ddrescue
+       - dumpzilla
+       - ewf-tools
+       - extundelete
+       - foremost
+       - galleta
+       - guymager
+       - hashdeep
+       - iphone-backup-analyzer
+       - magicrescue
+       - missidentify
+       - p0f
+       - pasco
+       - pdf-parser
+       - pdfid
+       - pdgmail
+       - peepdf
+       - pev
+       - readpst
+       - recoverjpeg
+       - reglookup
+       - regripper
+       - rifiuti
+       - rifiuti2
+       - safecopy
+       - scalpel
+       - scrounge-ntfs
+       - vinetto
+       - volafox
+       - volatility
+       - xplico
+
+   - name: Copy over cuckoo launcher
+     copy: src=ROOT/usr/local/bin/cuckoo-launcher.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
