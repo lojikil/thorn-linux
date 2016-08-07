@@ -369,6 +369,76 @@
         <menu>root-menu</menu>
       </action>
     </keybind>
+    <keybind key="C-F1">
+      <action name="ShowMenu">
+        <menu>information-gathering</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F2">
+      <action name="ShowMenu">
+        <menu>vulnerability-analysis</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F3">
+      <action name="ShowMenu">
+        <menu>web-application-analysis</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F4">
+      <action name="ShowMenu">
+        <menu>database-assessment</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F5">
+      <action name="ShowMenu">
+        <menu>password-attacks</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F6">
+      <action name="ShowMenu">
+        <menu>wireless-attacks</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F7">
+      <action name="ShowMenu">
+        <menu>reverse-engineering</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F8">
+      <action name="ShowMenu">
+        <menu>exploitation-tools</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F9">
+      <action name="ShowMenu">
+        <menu>sniffing-and-spoofing</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F10">
+      <action name="ShowMenu">
+        <menu>post-exploitation</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F11">
+      <action name="ShowMenu">
+        <menu>forensics</menu>
+      </action>
+    </keybind>
+    <keybind key="C-F12">
+      <action name="ShowMenu">
+        <menu>reporting-tools</menu>
+      </action>
+    </keybind>
+    <keybind key="C-W-F1">
+      <action name="ShowMenu">
+        <menu>social-engineering-tools</menu>
+      </action>
+    </keybind>
+    <keybind key="C-W-F2">
+      <action name="ShowMenu">
+        <menu>hardware-hacking</menu>
+      </action>
+    </keybind>
     <!-- Take a screenshot of the current window with scrot when Alt+Print are pressed -->
     <keybind key="A-Print">
       <action name="Execute">
