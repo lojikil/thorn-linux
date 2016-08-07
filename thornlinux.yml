@@ -1,0 +1,596 @@
+---
+- name: Thorn Linux
+  hosts: all
+  become: yes
+  become_user: root
+  vars_files:
+  - vars.yml
+  tasks:
+   - name: Create group for new user account
+     group: name={{ username }}
+
+   - name: Create account with sudo privileges
+     user: name={{ username }} createhome=yes password={{ password }} group={{ username }} groups="sudo" shell=/bin/bash
+
+   - name: Remove the default entry in the apt sources list for the cdrom
+     lineinfile: dest=/etc/apt/sources.list line="Debian GNU/Linux 8.5.0 _Jessie_ - Official amd64 CD Binary-1 20160604-15:35/ jessie main" state=absent
+
+   - name: Install Kali apt repositories
+     lineinfile: line="deb http://http.kali.org/kali kali-rolling main non-free contrib" create=yes dest=/etc/apt/sources.list.d/kali.list
+
+   - name: Install Kali apt key
+     copy: src=ROOT/etc/apt/trusted.gpg.d/kali-archive-keyring.gpg dest=/etc/apt/trusted.gpg.d/
+
+   - name: Add 32 bit apt support
+     command: dpkg --add-architecture i386
+     ignore_errors: yes
+
+   - name: Update package cache and upgrade installed packages
+     apt: update_cache=true upgrade=dist
+
+   - name: Install system packages
+     apt: name={{ item }} state=installed update_cache=yes
+     with_items:
+      - lightdm # A Display manager
+      - openbox # A Window manager
+      - tint2 #  A panel with clock included
+      - fonts-inconsolata # A collection of fonts
+      - software-properties-common # Contains apt-add-repository
+      - pulseaudio # a sound server
+      - alsa-utils # Utilities for controling ALSA
+      - compton # A compositor
+     ignore_errors: yes
+
+   - name: Install user applications
+     apt: name={{ item }} state=installed
+     with_items:
+       - dmenu # An application launcher
+       - nitrogen # A wallpaper setter
+       - terminator # A multiplexing terminal emulator
+       - vlc # A multimedia player
+       - geany # A "medium" editor/IDE
+       - leafpad # A light editor
+       - icedove # An email client
+       - thunar # A file manager
+       - libreoffice # An office suite
+       - galculator # A calculator
+       - eog # An image viewer
+       - transmission # A torrent client
+       - filezilla # A FTP client
+       - hexchat # An IRC client
+       - lxappearance # A theme manager
+       - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
+       - pavucontrol # A volume control tool
+       - chromium # A web browser
+       - iceweasel # A web browser
+
+   - name: Install user utilities
+     apt: name={{ item }} state=installed
+     with_items:
+       - git
+       - vim
+       - htop
+
+   - name: Copy over the global environment configuration
+     copy: src=ROOT/etc/environment dest=/etc/environment owner=root group=root mode=0644
+
+   - name: Ensure the openbox configuration directory exists and is owned by the correct user
+     file: path=/home/{{ username }}/.config/openbox recurse=yes state=directory owner={{ username }} group={{ username }}
+
+   - name: Override the default startup file
+     copy: src=ROOT/home/USER/.config/openbox/autostart dest=/home/{{ username }}/.config/openbox/autostart owner={{ username }} group={{ username }}
+
+   - name: Override the default menu file
+     copy: src=ROOT/home/USER/.config/openbox/menu.xml dest=/home/{{ username }}/.config/openbox/menu.xml owner={{ username }} group={{ username }}
+
+   - name: Override the default openbox configuration file
+     copy: src=ROOT/home/USER/.config/openbox/rc.xml dest=/home/{{ username }}/.config/openbox/rc.xml owner={{ username }} group={{ username }}
+
+   - name: Ensure the wallpaper directory exists
+     file: path=/home/{{ username }}/Pictures/wallpapers state=directory recurse=yes owner={{ username }} group={{ username }}
+
+   - name: Copy over wallpapers
+     copy: src={{ item }} dest=/home/{{ username }}/Pictures/wallpapers owner={{ username }} group={{ username }}
+     with_fileglob:
+       - ROOT/home/USER/Pictures/wallpapers/*
+
+   - name: Ensure the wallpaper setter configuration directory exists
+     file: path=/home/{{ username }}/.config/nitrogen state=directory owner={{ username }} group={{ username }}
+
+   - name: Copy over wallpaper setter configuration files - Part 1
+     template: src=ROOT/home/USER/.config/nitrogen/bg-saved.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/bg-saved.cfg owner={{ username }} group={{ username }}
+
+   - name: Copy over wallpaper setter configuration files - Part 2
+     template: src=ROOT/home/USER/.config/nitrogen/nitrogen.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/nitrogen.cfg owner={{ username }} group={{ username }}
+
+   - name: Add apt repository for Noobslabs icons
+     copy: src=ROOT/etc/apt/sources.list.d/noobslabs.list dest=/etc/apt/sources.list.d/noobslabs.list
+
+   - name: Import signing key for Noobslabs apt repository
+     apt_key: url=http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0xD530E028F59EAE4D
+
+   - name: Install icon packs
+     apt: name={{ item }} state=present update_cache=yes
+     with_items:
+       - breeze-icon-theme
+
+   - name: Install themes
+     apt: name={{ item }} state=present update_cache=yes
+     with_items:
+       - arc-flatabulous-theme
+
+   - name: Download Flatabulous Thorn theme
+     git: repo=https://github.com/dovellr177/Flatabulous-Thorn.git dest=/usr/share/themes/Flatabulous-Thorn
+
+   - name: Copy over GTK config file
+     copy: src=ROOT/home/USER/.gtkrc-2.0 dest=/home/{{ username }}/.gtkrc-2.0 owner={{ username }} group={{ username }}
+
+   - name: Ensure the terminator config directory exists
+     file: path=/home/{{ username }}/.config/terminator state=directory owner={{ username }} group={{ username }}
+
+   - name: Copy over terminator config
+     copy: src=ROOT/home/USER/.config/terminator/config dest=/home/{{ username }}/.config/terminator/config owner={{ username }} group={{ username }}
+
+   - name: Ensure the Chromium configuration directory exists
+     file: path=/home/{{ username }}/.config/chromium/Default state=directory recurse=yes owner={{ username }} group={{ username }}
+
+   - name: Copy over the Chromium default preferences file
+     copy: src=ROOT/home/USER/.config/chromium/Default/Preferences dest=/home/{{ username }}/.config/chromium/Default/Preferences owner={{ username }} group={{ username }}
+
+   - name: Ensure the dmenu configuration directory exists
+     file: path=/home/{{username}}/.config/dmenu/ state=directory owner={{ username }} group={{ username }}
+
+   - name: Copy over a dmenu launcher
+     copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
+
+   - name: Copy over a tint2 config file
+     copy: src=ROOT/home/USER/.config/tint2/tint2rc dest=/home/{{ username }}/.config/tint2/tint2rc owner={{ username }} group={{ username }}
+
+#   - name: Download the Tor Browser Bundle
+#     get_url: url=https://www.torproject.org/dist/torbrowser/6.0.2/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/tmp
+
+#   - name: Extract the Tor Browser Bundle
+#     unarchive: src=/tmp/tor-browser-linux64-6.0.2_en-US.tar.xz dest=/usr/local/bin copy=no owner={{ username }} group={{ username }}
+
+#   - name: Copy over Tor Browser launcher script
+#     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
+# Time to start thinking about splitting this into multiple playbooks/vars files...
+
+   - name: Install Information Gathering Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - 0trace
+       - acccheck
+       - ace-voip
+       - amap
+       - arping
+       - automater
+       - braa
+       - casefile
+       - cdpsnarf
+       - cisco-torch
+       - cookie-cadger
+       - copy-router-config
+       - dmitry
+       - dnmap
+       - dnsenum
+       - dnsmap
+       - dnsrecon
+       - dnstracer
+       - dnswalk
+       - dotdotpwn
+       - enum4linux
+       - enumiax
+       - exploitdb
+       - fierce
+       - firewalk
+       - fping
+       - fragroute
+       - fragrouter
+       - ftester
+       - ghost-phisher
+       - golismero
+       - goofile
+       - hping3
+       - ike-scan
+       - intrace
+       - irpas
+       - ismtp
+       - lbd
+       - maltego-teeth
+       - masscan
+       - metagoofil
+       - miranda
+       - nbtscan
+       - netdiscover
+       - netmask
+       - nmap
+       - ntop
+       - onesixtyone
+       - p0f
+       - parsero
+       - recon-ng
+       - set
+       - smbmap
+       - smtp-user-enum
+       - snmpcheck
+       - sparta
+       - sslcaudit
+       - ssldump
+       - sslh
+       - sslsplit
+       - sslstrip
+       - sslyze
+       - swaks
+       - thc-ipv6
+       - theharvester
+       - tlssled
+       - twofi
+       - unicornscan
+       - urlcrazy
+       - wafw00f
+       - wireshark
+       - wol-e
+       - xplico
+       - xprobe
+       - zenmap
+       #&& wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz && tar -xzvf bing-ip2hosts-0.4.tar.gz && cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/")
+
+   - name: Install Vulnerability Analysis Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - bbqsql
+       - bed
+       - cisco-auditing-tool
+       - cisco-global-exploiter
+       - cisco-ocs
+       - cisco-torch
+       - copy-router-config
+       - dhcpig
+       - doona
+       - dotdotpwn
+       - greenbone-security-assistant
+       - hexorbase
+       - iaxflood
+       - inviteflood
+       - jsql
+       - lynis
+       - nmap
+       - ohrwurm
+       - openvas-cli # COME BACK TO THIS: Need to add service to menu
+       - openvas-manager
+       - openvas-scanner
+       - oscanner
+       - powerfuzzer
+       - protos-sip
+       - rtpbreak
+       - rtpflood
+       - rtpinsertsound
+       - rtpmixsound
+       - sctpscan
+       - sfuzz
+       - sidguesser
+       - siege
+       - siparmyknife
+       - sipp
+       - spike
+       - sqlmap
+       - sqlninja
+       - sqlsus
+       - t50
+       - thc-ipv6
+       - thc-ssl-dos
+       - tnscmd10g
+       - unix-privesc-check
+       - voiphopper
+       - yersinia
+
+   - name: Install Web Application Analysis Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - apache-users
+       - arachni
+       - bbqsql
+       - blindelephant
+       - burpsuite
+       - cadaver
+       - clusterd
+       - commix
+       - cutycapt
+       - davtest
+       - deblaze
+       - dirb
+       - dirbuster
+       - fimap
+       - funkload  # COME BACK TO THIS: This is a suite of applications
+       - grabber
+       - httrack
+       - httrack-doc
+       - jboss-autopwn
+       - joomscan
+       - jsql
+       - maltego-teeth
+       - padbuster
+       - paros
+       - parsero
+       - plecost
+       - powerfuzzer
+       - proxystrike
+       - recon-ng
+       - skipfish
+       - sqlmap
+       - sqlninja
+       - sqlsus
+       - ua-tester
+       - uniscan
+       - vega
+       - wapiti
+       - w3af
+       - webhttrack
+       - webscarab
+       - websploit
+       - wfuzz
+       - whatweb
+       - wpscan
+       - xsser
+       - zaproxy
+
+   - name: Install Database Assessment Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - mdbtools
+       - sqlitebrowser
+       - sqldict
+       - wine32
+
+   - name: Install Password Attack Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - acccheck
+       - burpsuite
+       - cewl
+       - chntpw
+       - cisco-auditing-tool
+       - cmospwd
+       - creddump
+       - crunch
+       - fcrackzip
+       - findmyhash
+       - gpp-decrypt # COME BACK TO THIS: Currently in menu, but has no documentation/helptext
+       - hash-identifier
+       - hashcat
+       - hashid
+       - hexorbase
+       - hydra-gtk
+       - john
+       - johnny
+       - keimpx
+       - maltego-teeth
+       - maskprocessor
+       - medusa
+       - mimikatz
+       - ncrack
+       - ophcrack
+       - ophcrack-cli
+       - pack
+       - passing-the-hash
+       - patator
+       - polenum
+       - pyrit
+       - rainbowcrack
+       - rcracki-mt
+       - rsmangler
+       - samdump2
+       - sipcrack
+       - statsprocessor
+       - sucrack
+       - thc-pptp-bruter
+       - truecrack
+       - webscarab
+       - wordlists
+       - zaproxy
+
+   - name: Install Wireless Attack Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - aircrack-ng
+       - asleap
+       - bluelog
+       - blueranger
+       - bluesnarfer
+       - btscanner
+       - bully
+       - chirp
+       - cowpatty
+       - crackle
+       - eapmd5pass
+       - fern-wifi-cracker
+       - ghost-phisher
+       - giskismet
+       - gqrx
+       - kalibrate-rtl
+       - killerbee
+       - kismet
+       - libnfc-bin
+       - mdk3
+       - mfcuk
+       - mfoc
+       - mfterm
+       - multimon-ng
+       - pixiewps
+       - reaver
+       - redfang
+       - spooftooph
+       - wifi-honey
+       - wifitap
+       - wifite
+
+   - name: Install Reverse Engineering Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - apktool
+       - clang
+       - dex2jar
+       - edb-debugger
+       - flasm
+       - jad
+       - javasnoop
+       - ollydbg
+       - python-distorm3
+       - radare2
+       - smali
+       - valgrind
+       - yara
+
+   - name: Install Exploitation Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - armitage
+       - backdoor-factory
+       - beef-xss
+       - cisco-auditing-tool
+       - cisco-global-exploiter
+       - cisco-ocs
+       - cisco-torch
+       - crackle
+       - jboss-autopwn
+       - linux-exploit-suggester
+       - maltego-teeth
+       - msfpc
+       - set
+       - shellnoob
+       - sqlmap
+       - termineter
+       - thc-ipv6
+       - yersinia
+
+   - name: Install Sniffing and Spoofing Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - bdfproxy
+       - burpsuite
+       - darkstat
+       - dnschef
+       - driftnet
+       - fiked
+       - hamster-sidejack
+       - hexinject
+       - iaxflood
+       - inviteflood
+       - ismtp
+       - mitmproxy
+       - netsniff-ng
+       - nfspy
+       - ohrwurm
+       - protos-sip
+       - rebind
+       - responder
+       - rtpbreak
+       - rtpinsertsound
+       - rtpmixsound
+       - sctpscan
+       - siparmyknife
+       - sipp
+       - sipvicious
+       - sniffjoke
+       - sslsniff
+       - sslsplit
+       - sslstrip
+       - tcpflow
+       - thc-ipv6
+       - voiphopper
+       - webscarab
+       - wifi-honey
+       - wireshark
+       - xspy
+       - yersinia
+       - zaproxy
+
+   - name: Install Post Exploitation Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - cymothoa
+       - dbd
+       - dns2tcp
+       - exe2hexbat
+       - intersect
+       - iodine
+       - laudanum
+       - miredo
+       - powersploit
+       - proxychains
+       - proxytunnel
+       - ptunnel
+       - pwnat
+       - sbd
+       - stunnel4
+       - u3-pwn
+       - udptunnel
+       - webacoo
+       - weevely
+
+   - name: Install Forensics Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - afflib-tools
+       - autopsy
+       - binwalk
+       - bulk-extractor
+       - chkrootkit
+       - chntpw
+       - cuckoo # COME BACK TO THIS: Needs a working default config at /etc/cuckoo to work properly
+       - dc3dd
+       - dcfldd
+       - ddrescue
+       - dumpzilla
+       - ewf-tools
+       - extundelete
+       - foremost
+       - galleta
+       - guymager
+       - hashdeep
+       - iphone-backup-analyzer
+       - magicrescue
+       - missidentify
+       - p0f
+       - pasco
+       - pdf-parser
+       - pdfid
+       - pdgmail
+       - peepdf
+       - pev
+       - readpst
+       - recoverjpeg
+       - reglookup
+       - regripper
+       - rifiuti
+       - rifiuti2
+       - safecopy
+       - scalpel
+       - scrounge-ntfs
+       - vinetto
+       - volafox
+       - volatility
+       - xplico
+
+   - name: Copy over cuckoo launcher
+     copy: src=ROOT/usr/local/bin/cuckoo-launcher.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
+
+   - name: Copy over dradis launcher
+     copy: src=ROOT/usr/local/bin/dradis-launcher.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
+
+   - name: Install Reporting Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - casefile
+       - cutycapt
+       - dos2unix
+       - dradis
+       - gtk-recordmydesktop
+       - keepnote
+       - magictree
+       - metagoofil
+       - nipper-ng
+       - pipal
+       - python-faraday # COME BACK TO THIS:  You are missing some of the required dependencies. Check that you have GTK+3 and Vte installed.
+       - recordmydesktop
