@@ -4368,7 +4368,7 @@
     <action name="Execute"><execute>thunar</execute></action>
   </item>
   <item label="Web Browser">
-    <action name="Execute"><execute>chromium</execute></action>
+    <action name="Execute"><execute>iceweasel</execute></action>
   </item>
   <item label="Tor Browser">
     <action name="Execute"><execute>/usr/local/bin/tor-browser.sh</execute></action>
@@ -4402,14 +4402,14 @@
       <item label="Filezilla">
         <action name="Execute"><execute>filezilla</execute></action>
       </item>
-      <item label="Chromium">
-        <action name="Execute"><execute>chromium</execute></action>
-      </item>
       <item label="Hexchat">
         <action name="Execute"><execute>hexchat</execute></action>
       </item>
       <item label="IceDove">
         <action name="Execute"><execute>icedove</execute></action>
+      </item>
+      <item label="IceWeasel">
+        <action name="Execute"><execute>iceweasel</execute></action>
       </item>
       <item label="Transmission">
         <action name="Execute"><execute>transmission-gtk</execute></action>

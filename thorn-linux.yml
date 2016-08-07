@@ -61,7 +61,6 @@
        - lxappearance # A theme manager
        - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
        - pavucontrol # A volume control tool
-       - chromium # A web browser
        - iceweasel # A web browser
 
    - name: Install user utilities
@@ -130,12 +129,6 @@
 
    - name: Copy over terminator config
      copy: src=ROOT/home/USER/.config/terminator/config dest=/home/{{ username }}/.config/terminator/config owner={{ username }} group={{ username }}
-
-   - name: Ensure the Chromium configuration directory exists
-     file: path=/home/{{ username }}/.config/chromium/Default state=directory recurse=yes owner={{ username }} group={{ username }}
-
-   - name: Copy over the Chromium default preferences file
-     copy: src=ROOT/home/USER/.config/chromium/Default/Preferences dest=/home/{{ username }}/.config/chromium/Default/Preferences owner={{ username }} group={{ username }}
 
    - name: Ensure the dmenu configuration directory exists
      file: path=/home/{{username}}/.config/dmenu/ state=directory owner={{ username }} group={{ username }}
