@@ -198,10 +198,10 @@
     </keybind>
     <keybind key="C-A-w">
       <action name="Execute">
-        <command>chromium</command>
+        <command>iceweasel</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>chromium</name>
+          <name>iceweasel</name>
         </startupnotify>
       </action>
     </keybind>

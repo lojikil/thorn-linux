@@ -594,3 +594,14 @@
        - pipal
        - python-faraday # COME BACK TO THIS:  You are missing some of the required dependencies. Check that you have GTK+3 and Vte installed.
        - recordmydesktop
+
+   - name: Install Hardware Hacking Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - android-platform-tools-base
+       - android-sdk
+       - apktool
+       - arduino
+       - dex2jar
+       - sakis3g
+       - smali

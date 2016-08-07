@@ -2443,13 +2443,7 @@
         </command>
       </action>
     </item>
-    <item label='smali'>
-      <action name='Execute'>
-        <command>
-          terminator -e 'smali; bash -l'
-        </command>
-      </action>
-    </item>
+
     <item label='valgrind'>
       <action name='Execute'>
         <command>
@@ -4320,7 +4314,51 @@
         </command>
       </action>
     </item>
-   </menu>
+  </menu>
+  <menu id="hardware-hacking" label="Hardware Hacking">
+    <item label='Android SDK'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo android; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='apktool'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'apktool; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='Arduino IDE'>
+      <action name='Execute'>
+        <command>
+          arduino
+        </command>
+      </action>
+    </item>
+    <item label='dex2jar'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'd2j-dex2jar -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='sakis3g'>
+      <action name='Execute'>
+        <command>
+          sakis3g
+        </command>
+      </action>
+    </item>
+    <item label='smali'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'smali; bash -l'
+        </command>
+      </action>
+    </item>
+  </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">
