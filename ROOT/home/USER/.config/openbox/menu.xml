@@ -4198,6 +4198,129 @@
       </item>
     </menu>
   </menu>
+  <menu id="reporting-tools" label="Reporting Tools">
+    <item label='casefile'>
+      <action name='Execute'>
+        <command>
+          casefile
+        </command>
+      </action>
+    </item>
+    <item label='cutycapt'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'cutycapt --help; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='dradis'>
+      <action name='Execute'>
+        <command>
+          dradis-launcher.sh
+        </command>
+      </action>
+    </item>
+    <item label='faraday IDE'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'python-faraday; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='keepnote'>
+      <action name='Execute'>
+        <command>
+          keepnote
+        </command>
+      </action>
+    </item>
+    <item label='magictree'>
+      <action name='Execute'>
+        <command>
+          magictree
+        </command>
+      </action>
+    </item>
+    <item label="Metagoofil">
+      <action name="Execute">
+        <command>
+          terminator -e 'metagoofil; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='Nipper'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'nipper; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='pipal'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'pipal -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='recordmydesktop'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'recordmydesktop -h; bash -l'
+        </command>
+      </action>
+    </item>
+  </menu>
+  <menu id="social-engineering-tools" label="Social Engineering Tools">
+    <item label='backdoor-factory'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'backdoor-factory -h; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='beef xss framework'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo beef-xss; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='ghost phisher'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo ghost-phisher; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='maltegoce'>
+      <action name='Execute'>
+        <command>
+          maltegoce
+        </command>
+      </action>
+    </item>
+    <item label='msf payload creator'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'msfpc; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='social engineering toolkit'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'sudo setoolkit; bash -l'
+        </command>
+      </action>
+    </item>
+    <item label='u3-pwn'>
+      <action name='Execute'>
+        <command>
+          terminator -e 'u3-pwn; bash -l'
+        </command>
+      </action>
+    </item>
+   </menu>
 </menu>
 <separator/>
   <item label="Terminal emulator">

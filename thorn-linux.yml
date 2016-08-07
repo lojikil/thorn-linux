@@ -577,3 +577,25 @@
 
    - name: Copy over cuckoo launcher
      copy: src=ROOT/usr/local/bin/cuckoo-launcher.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
+
+   - name: Copy over dradis launcher
+     copy: src=ROOT/usr/local/bin/dradis-launcher.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
+
+   - name: Install Reporting Tools
+     apt: name={{ item }} state=installed
+     with_items:
+       - casefile
+       - cutycapt
+       - dos2unix
+       - dradis
+       - gtk-recordmydesktop
+       - keepnote
+       - magictree
+       - metagoofil
+       - nipper-ng
+       - pipal
+       - python-faraday # COME BACK TO THIS:  You are missing some of the required dependencies. Check that you have GTK+3 and Vte installed.
+       - recordmydesktop
+
+
+    # - name: 
