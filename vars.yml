@@ -2,3 +2,4 @@
 username: thornlinux
 # The default password is 'thornlinux', See this article on creating crypted passwords to change it: http://docs.ansible.com/ansible/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module
 password:  $6$rounds=656000$bEFE6/m8aTVDfxfF$qmRU7aESYdQIAO/9Z6TtAlULxsOrL0U8YeD74JgcUi9AbgXEkBiqbaSgP4xfTWl41z.MxcrlF/MtSOR/zYHF0.
+hostname: thorn-linux

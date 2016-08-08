@@ -6,6 +6,15 @@
   vars_files:
   - vars.yml
   tasks:
+   - name: Set hostname - part 1
+     hostname: name={{ hostname }}
+
+   - name: Set hostname - part 2
+     template: src=ROOT/etc/hostname.j2 dest=/etc/hostname mode=0644 owner=root group=root
+
+   - name: Set hostname - part 3
+     lineinfile: line="127.0.0.1 {{ hostname }}" dest=/etc/hosts
+
    - name: Create group for new user account
      group: name={{ username }}
 
@@ -62,6 +71,7 @@
        - lxappearance-obconf # A plugin for lxappearance that allows it to set openbox themes
        - pavucontrol # A volume control tool
        - iceweasel # A web browser
+       - liferea # A RSS Reader
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
