@@ -159,6 +159,9 @@
 #     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
 # Time to start thinking about splitting this into multiple playbooks/vars files...
 
+   - name: Copy over liferea feedlist
+     copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=ROOT/home/USER/.config/liferea/feedlist.opml owner={{ username }} group = {{ username }}
+
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
      with_items:
