@@ -4411,6 +4411,9 @@
       <item label="IceWeasel">
         <action name="Execute"><execute>iceweasel</execute></action>
       </item>
+      <item label="Liferea">
+        <action name="Execute"><execute>liferea</execute></action>
+      </item>
       <item label="Transmission">
         <action name="Execute"><execute>transmission-gtk</execute></action>
       </item>

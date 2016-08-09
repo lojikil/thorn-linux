@@ -205,6 +205,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-l">
+      <action name="Execute">
+        <command>liferea</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>liferea</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-v">
       <action name="Execute">
         <command>vlc</command>
