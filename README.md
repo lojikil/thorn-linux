@@ -5,7 +5,7 @@ A Debian-based penetration testing oriented Linux distribution with an additiona
 Current State: Work in Progress, pre-first release
 
 ### Features
-* The full Kali Linux Penetration Testing Toolset
+* The full Kali Linux penetration testing Toolset
 * A highly customized Openbox desktop environment modeled after BunsenLabs and several other distributions
 * An RSS reader pre-configured with 150+ cybersecurity blogs, exploit databases, and CVE trackers
 
