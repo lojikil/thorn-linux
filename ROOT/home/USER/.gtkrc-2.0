@@ -1,5 +1,5 @@
 include "/home/thornlinux/.gtkrc-2.0.mine"
-gtk-theme-name="Arc-Flatabulous-Dark"
+gtk-theme-name="Arc"
 gtk-icon-theme-name="breeze-dark"
 gtk-font-name="Inconsolata 12"
 gtk-cursor-theme-name="Adwaita"
