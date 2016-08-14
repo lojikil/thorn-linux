@@ -7,4 +7,4 @@
   "exception-reporting":
     userId: "8d86887a-1a06-cae2-24b2-1ebbfdd0ff02"
   welcome:
-    showOnStartup: false
+    showOnStartup: true
