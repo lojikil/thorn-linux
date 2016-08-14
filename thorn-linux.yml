@@ -38,7 +38,7 @@
      apt: update_cache=true upgrade=dist
 
    - name: Install system packages
-     apt: name={{ item }} state=installed update_cache=yes
+     apt: name={{ item }} state=installed
      with_items:
       - lightdm # A Display manager
       - openbox # A Window manager
@@ -60,7 +60,7 @@
        - geany # A "medium" editor/IDE
        - leafpad # A light editor
        - icedove # An email client
-       - thunar # A file manager
+       - nautilus # A file manager
        - libreoffice # An office suite
        - galculator # A calculator
        - eog # An image viewer
@@ -72,6 +72,8 @@
        - pavucontrol # A volume control tool
        - iceweasel # A web browser
        - liferea # A RSS Reader
+       - pithos # A Pandora client
+
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
@@ -123,13 +125,16 @@
      with_items:
        - breeze-icon-theme
 
-   - name: Install themes
-     apt: name={{ item }} state=present update_cache=yes
+   - name: Install third-party themes
+     apt: name={{ item }} state=present
      with_items:
-       - arc-flatabulous-theme
+       - arc-theme
 
-   - name: Download Flatabulous Thorn theme
-     git: repo=https://github.com/dovellr177/Flatabulous-Thorn.git dest=/usr/share/themes/Flatabulous-Thorn
+   - name: Copy over custom themes
+     unarchive: src=ROOT/tmp/arc-openbox.tar.gz dest=/tmp copy=yes
+
+   - name: Move custom themes into place
+     command: mv /tmp/openbox-3 /usr/share/themes/Arc/
 
    - name: Copy over GTK config file
      copy: src=ROOT/home/USER/.gtkrc-2.0 dest=/home/{{ username }}/.gtkrc-2.0 owner={{ username }} group={{ username }}
@@ -160,7 +165,7 @@
 # Time to start thinking about splitting this into multiple playbooks/vars files...
 
    - name: Copy over liferea feedlist
-     copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=ROOT/home/USER/.config/liferea/feedlist.opml owner={{ username }} group = {{ username }}
+     copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=/home/{{ username }}/.config/liferea/feedlist.opml owner={{ username }} group = {{ username }}
 
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed

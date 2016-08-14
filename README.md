@@ -1,5 +1,3 @@
-![Alt text](logo.png?raw=true)
-
 A Debian-based penetration testing oriented Linux distribution with an additional focus on being a daily-driver with anonymity features
 
 Current State: Work in progress, pre-first release

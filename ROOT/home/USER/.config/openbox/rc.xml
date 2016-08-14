@@ -42,7 +42,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Flatabulous-Thorn</name>
+    <name>Arc</name>
     <titleLayout>NLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -243,10 +243,10 @@
     </keybind>
     <keybind key="C-A-f">
       <action name="Execute">
-        <command>thunar</command>
+        <command>nautilus</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>thunar</name>
+          <name>nautilus</name>
         </startupnotify>
       </action>
     </keybind>

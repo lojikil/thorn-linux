@@ -4365,7 +4365,7 @@
     <action name="Execute"><execute>terminator</execute></action>
   </item>
   <item label="File Manager">
-    <action name="Execute"><execute>thunar</execute></action>
+    <action name="Execute"><execute>nautilus</execute></action>
   </item>
   <item label="Web Browser">
     <action name="Execute"><execute>iceweasel</execute></action>
