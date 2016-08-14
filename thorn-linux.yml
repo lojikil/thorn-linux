@@ -82,6 +82,12 @@
    - name: Install atom
      apt: deb=/tmp/atom-amd64.deb
 
+   - name: Ensure the atom configuration directory exists
+     file: path=/home/{{ username }}/.atom owner={{ username }} group={{ username }}
+
+   - name: Copy over the atom configuration
+     copy: src=ROOT/home/USER/.atom/config.cson dest=/home/{{ username }}/.atom/config.cson owner={{ username }} group={{ username }}
+
    - name: Install user utilities
      apt: name={{ item }} state=installed
      with_items:
