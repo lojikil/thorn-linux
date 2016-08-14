@@ -73,7 +73,14 @@
        - iceweasel # A web browser
        - liferea # A RSS Reader
        - pithos # A Pandora client
+       - gimp # An image editor
+       - audacity # An audio editor
 
+   - name: Download the atom deb package
+     get_url: url=https://github.com/atom/atom/releases/download/v1.10.0-beta5/atom-amd64.deb dest=/tmp
+
+   - name: Install atom
+     apt: deb=/tmp/atom-amd64.deb
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
@@ -135,6 +142,7 @@
 
    - name: Move custom themes into place
      command: mv /tmp/openbox-3 /usr/share/themes/Arc/
+     ignore_errors: yes
 
    - name: Copy over GTK config file
      copy: src=ROOT/home/USER/.gtkrc-2.0 dest=/home/{{ username }}/.gtkrc-2.0 owner={{ username }} group={{ username }}

@@ -234,10 +234,10 @@
     </keybind>
     <keybind key="C-A-a">
       <action name="Execute">
-        <command>atom</command>
+        <command>atom-beta</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>atom</name>
+          <name>atom-beta</name>
         </startupnotify>
       </action>
     </keybind>

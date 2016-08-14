@@ -4381,25 +4381,27 @@
   </item>
   <separator />
     <menu id="accessories" label="Accessories">
+      <item label="Atom">
+        <action name="Execute"><execute>atom-beta</execute></action>
+      </item>
       <item label="Galculator">
         <action name="Execute"><execute>galculator</execute></action>
+      </item>
+      <item label="Geany">
+        <action name="Execute"><execute>geany</execute></action>
       </item>
       <item label="Leafpad">
         <action name="Execute"><execute>leafpad</execute></action>
       </item>
-    </menu>
-    <menu id="graphics" label="Graphics">
-      <item label="Eye of GNOME">
-        <action name="Execute"><execute>eog</execute></action>
+      <item label="Nautilus">
+        <action name="Execute"><execute>nautilus</execute></action>
+      </item>
+      <item label="Terminator">
+        <action name="Execute"><execute>terminator</execute></action>
       </item>
     </menu>
-    <menu id="multimedia" label="Multimedia">
-      <item label="VLC">
-        <action name="Execute"><execute>vlc</execute></action>
-      </item>
-    </menu>
-    <menu id="network" label="Network">
-      <item label="Filezilla">
+    <menu id="internet" label="Internet">
+      <item label="FileZilla">
         <action name="Execute"><execute>filezilla</execute></action>
       </item>
       <item label="Hexchat">
@@ -4416,6 +4418,28 @@
       </item>
       <item label="Transmission">
         <action name="Execute"><execute>transmission-gtk</execute></action>
+      </item>
+    </menu>
+    <menu id="multimedia" label="Multimedia">
+      <item label="Audacity">
+        <action name="Execute"><execute>audacity</execute></action>
+      </item>
+      <item label="Eye of GNOME">
+        <action name="Execute"><execute>eog</execute></action>
+      </item>
+      <item label="Gimp">
+        <action name="Execute"><execute>gimp</execute></action>
+      </item>
+      <item label="Pithos">
+        <action name="Execute"><execute>pithos</execute></action>
+      </item>
+      <item label="VLC">
+        <action name="Execute"><execute>vlc</execute></action>
+      </item>
+    </menu>
+    <menu id="office" label="Office">
+      <item label="LibreOffice">
+        <action name="Execute"><execute>libreoffice</execute></action>
       </item>
     </menu>
   <separator />
