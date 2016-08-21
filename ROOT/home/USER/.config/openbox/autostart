@@ -6,3 +6,6 @@ compton &
 
 # Start the panel
 tint2 &
+
+# Start conky
+conky &

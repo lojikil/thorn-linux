@@ -75,6 +75,14 @@
        - pithos # A Pandora client
        - gimp # An image editor
        - audacity # An audio editor
+       - conky
+
+   - name: Install SELinux
+     apt: name={{ item }}
+     with_items:
+       - selinux-basics
+       - selinux-policy-default
+       - auditd
 
    - name: Download the atom deb package
      get_url: url=https://github.com/atom/atom/releases/download/v1.10.0-beta5/atom-amd64.deb dest=/tmp
@@ -180,6 +188,9 @@
 
    - name: Copy over liferea feedlist
      copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=/home/{{ username }}/.config/liferea/feedlist.opml owner={{ username }} group = {{ username }}
+
+   - name: Copy over conky config
+     copy: src=ROOT/home/USER/.conkyrc dest=/home/{{ username }}/.conkyrc owner={{ username }} group={{ username }} mode=0644
 
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
