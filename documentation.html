@@ -7846,7 +7846,7 @@ Error message and password prompt
 <div created="20160821221951260" modified="20160822000456697" title="$:/state/tab/sidebar--1835078512">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
-<div list="[[Thorn Linux]] Install [[Virtual Machine Creation Screenshots]] [[Keyboard Shortcuts]]" title="$:/StoryList">
+<div list="Install" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -7995,9 +7995,8 @@ Error message and password prompt
 [img[./documentation-resources/install/screen26.png]]
 [img[./documentation-resources/install/screen27.png]]</pre>
 </div>
-<div created="20160821222052987" modified="20160822024155931" title="Install">
-<pre>
-Here are some install instructions for a development Virtualbox VM of the current state of Thorn Linux until I can get an installable ISO out.  
+<div created="20160821222052987" modified="20160822035843847" title="Install">
+<pre>Here are some install instructions for a development Virtualbox VM of the current state of Thorn Linux until I can get an installable ISO out.  
 
 First download the Debian Live Standard CD from the Debian web site.
 
@@ -8029,7 +8028,7 @@ Create a hosts file at /etc/ansible/hosts.  Although not recommended by ansible,
 
 
 ```
-192.168.2.100 ansible_user=root ansible ansible_password=&quot;rootpassword&quot; 
+192.168.0.100 ansible_user=testuser ansible_password=&quot;testpassword&quot; ansible_become=true ansible_become_user=root ansible_become_pass=&quot;testpassword&quot;
 ```
 
 Now manually SSH into the instance, establishing a SSH trust relationship and giving administrator privileges to the user we created during the Debian install

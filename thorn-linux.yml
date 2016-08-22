@@ -21,8 +21,11 @@
    - name: Create account with sudo privileges
      user: name={{ username }} createhome=yes password={{ password }} group={{ username }} groups="sudo" shell=/bin/bash
 
-   - name: Remove the default entry in the apt sources list for the cdrom
+   - name: Remove the default entry in the apt sources list for the cdrom - part 1
      lineinfile: dest=/etc/apt/sources.list line="Debian GNU/Linux 8.5.0 _Jessie_ - Official amd64 CD Binary-1 20160604-15:35/ jessie main" state=absent
+
+   - name: Remove the default entry in the apt sources list for the cdrom - part 2
+     lineinfile: dest=/etc/apt/sources.list line="deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20160609-11:29]/ jessie main" state=absent
 
    - name: Install Kali apt repositories
      lineinfile: line="deb http://http.kali.org/kali kali-rolling main non-free contrib" create=yes dest=/etc/apt/sources.list.d/kali.list
