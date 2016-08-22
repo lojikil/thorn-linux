@@ -123,11 +123,17 @@ Error message and password prompt
 
 <li>$:/DefaultTiddlers</li>
 
+<li>$:/Import</li>
+
 <li>$:/isEncrypted</li>
 
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
+
+<li>$:/state/sidebar</li>
+
+<li>$:/state/tab/sidebar--1835078512</li>
 
 <li>$:/StoryList</li>
 
@@ -137,7 +143,15 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Debian Install Screenshots</li>
+
 <li>Install</li>
+
+<li>Keyboard Shortcuts</li>
+
+<li>Thorn Linux</li>
+
+<li>Virtual Machine Creation Screenshots</li>
 
 </ul>
 </p>
@@ -7801,6 +7815,17 @@ Error message and password prompt
 <pre>Install
 </pre>
 </div>
+<div plugin-type="import" status="pending" title="$:/Import" type="application/json">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;Untitled&quot;: {
+            &quot;title&quot;: &quot;Untitled&quot;,
+            &quot;text&quot;: &quot;http://tiddlywiki.com/static/Headings%2520in%2520WikiText.html&quot;,
+            &quot;type&quot;: &quot;text/plain&quot;
+        }
+    }
+}</pre>
+</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -7810,7 +7835,13 @@ Error message and password prompt
 <div created="20160819122712643" modified="20160819122716108" title="$:/SiteTitle">
 <pre>Thorn Linux</pre>
 </div>
-<div list="Install" title="$:/StoryList">
+<div created="20160822000055099" modified="20160822000412794" title="$:/state/sidebar">
+<pre>yes</pre>
+</div>
+<div created="20160821221951260" modified="20160821221951260" title="$:/state/tab/sidebar--1835078512">
+<pre>$:/core/ui/SideBar/Recent</pre>
+</div>
+<div list="[[Thorn Linux]] [[Keyboard Shortcuts]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div plugin-type="info" title="$:/temp/info-plugin" type="application/json">
@@ -7936,8 +7967,32 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20160821031003687" modified="20160821041535880" title="Install">
-<pre>Here are some install instructions for a Virtualbox VM of the current build of Thorn Linux until I can get an installable ISO out.
+<div created="20160821232400239" modified="20160821232607138" title="Debian Install Screenshots">
+<pre>[img[./documentation-resources/install/screen7.png]]
+[img[./documentation-resources/install/screen8.png]]
+[img[./documentation-resources/install/screen9.png]]
+[img[./documentation-resources/install/screen10.png]]
+[img[./documentation-resources/install/screen11.png]]
+[img[./documentation-resources/install/screen12.png]]
+[img[./documentation-resources/install/screen13.png]]
+[img[./documentation-resources/install/screen14.png]]
+[img[./documentation-resources/install/screen15.png]]
+[img[./documentation-resources/install/screen16.png]]
+[img[./documentation-resources/install/screen17.png]]
+[img[./documentation-resources/install/screen18.png]]
+[img[./documentation-resources/install/screen19.png]]
+[img[./documentation-resources/install/screen20.png]]
+[img[./documentation-resources/install/screen21.png]]
+[img[./documentation-resources/install/screen22.png]]
+[img[./documentation-resources/install/screen23.png]]
+[img[./documentation-resources/install/screen24.png]]
+[img[./documentation-resources/install/screen25.png]]
+[img[./documentation-resources/install/screen26.png]]
+[img[./documentation-resources/install/screen27.png]]</pre>
+</div>
+<div created="20160821222052987" modified="20160821232727345" title="Install">
+<pre>
+Here are some install instructions for a development Virtualbox VM of the current state of Thorn Linux until I can get an installable ISO out.
 
 First download the Debian Live Standard CD from the Debian web site.
 
@@ -7947,9 +8002,79 @@ Download and install Virtualbox from the virtualbox website for your operating s
 
 [[Virtualbox website|https://www.virtualbox.org/wiki/Downloads]]
 
-Create a new virtual machine using the following screenshots as reference.  Adjust the RAM settings as necessary, give the machine at least 20 GB of disk space to contain the full Kali Linux penetration testing toolset.
+Create a new virtual machine using the following screenshots as reference if needed.  Adjust the RAM settings as necessary, give the machine at least 20 GB of disk space to contain the full Kali Linux penetration testing toolset.
 
-[img[./documentation-resources/install/screen1.png]]
+[[Virtual Machine Creation Screenshots]]
+
+Now install Debian using the below screenshots if needed.  Adjust settings to fit your desired environment and note that my suggestions in the below screenshots do not reflect the desired security features of the finished product. 
+
+[[Debian Install Screenshots]]</pre>
+</div>
+<div created="20160821233235080" modified="20160822000217483" title="Keyboard Shortcuts">
+<pre>!! Menu management
+* Super+Space: Main menu
+* Ctrl+F1: Information gathering menu
+* Ctrl+F2: Vulnerability analysis menu
+* Ctrl+F3: Web application analysis menu
+* Ctrl+F4: Database assessment menu
+* Ctrl+F5: Password attack menu
+* Ctrl+F6: Wireless attack menu
+* Ctrl+F7: Reverse engineering menu
+* Ctrl+F8: Exploitation menu
+* Ctrl+F9: Sniffing and spoofing window
+* Ctrl+F10: Post exploitation menu
+* Ctrl+F11: Forensics menu
+* Ctrl+F12: Reporting tools menu
+* Ctrl+Super+F1: Social engineering menu
+* Ctrl+Super+F2: Hardware hacking menu
+* Alt+Space: dmenu
+
+!! Window and desktop management
+* Alt+tab: Next window
+* Alt+Shift+tab: Previous window
+* Ctrl+Alt+Left: Go to desktop left
+* Ctrl+Alt+Right: Go to desktop right
+* Super+Alt+Up: Toggle Full Maximize
+* Super+Alt+Down: Unmaximize
+* Ctrl+Alt+Shift+Left: Send window to desktop left(and follow)
+* Ctrl+Alt+Shift+Right: Send window to desktop right(and follow)
+* Super+F1: Go to desktop 1
+* Super+F2: Go to desktop 2
+* Super+F3: Go to desktop 3
+* Super+F4: Go to desktop 4
+* Super+F5: Go to desktop 5
+* Super+F6: Go to desktop 6
+* Super+F7: Go to desktop 7
+* Super+F8: Go to desktop 8
+* Super+F9: Go to desktop 9
+* Super+F10: Go to desktop 10
+* Alt+F4: Close window
+* Alt+Escape: Send window to back
+* Super+Alt+Left: Move + size window to fill left half of screen
+* Super+Alt+Right: Move + size window to fill right half of screen
+
+!! Application launchers
+* Ctrl+Alt+t: terminator
+* Ctrl+Alt+w: iceweasel
+* Ctrl+Alt+l: liferea
+* Ctrl+Alt+v: VLC
+* Ctrl+Alt+Shift+w: Tor Browser
+* Ctrl+Alt+a: atom
+* Ctrl+Alt+f: nautilus
+* Ctrl+Alt+p: pithos
+
+!! Other
+* Alt+Printscreen: screenshot of focused window
+* Printscreen: screenshot of entire desktop
+</pre>
+</div>
+<div created="20160821031003687" modified="20160821233141383" title="Thorn Linux">
+<pre>[[Install]]
+
+[[Keyboard Shortcuts]]</pre>
+</div>
+<div created="20160821232349983" modified="20160821232351258" title="Virtual Machine Creation Screenshots">
+<pre>[img[./documentation-resources/install/screen1.png]]
 
 [img[./documentation-resources/install/screen2.png]]
 
@@ -7959,8 +8084,7 @@ Create a new virtual machine using the following screenshots as reference.  Adju
 
 [img[./documentation-resources/install/screen5.png]]
 
-[img[./documentation-resources/install/screen6.png]]
-</pre>
+[img[./documentation-resources/install/screen6.png]]</pre>
 </div>
 
 </div>
