@@ -176,6 +176,9 @@
    - name: Copy over a dmenu launcher
      copy: src=ROOT/home/USER/.config/dmenu/dmenu-bind.sh dest=/home/{{ username }}/.config/dmenu/dmenu-bind.sh owner={{ username }} group={{ username }} mode=0755
 
+   - name: Ensure the tint2 config directory exists
+     file: path=/home/{{ username }}/.config/tint2 owner={{ username }} group={{ username }} state=directory
+
    - name: Copy over a tint2 config file
      copy: src=ROOT/home/USER/.config/tint2/tint2rc dest=/home/{{ username }}/.config/tint2/tint2rc owner={{ username }} group={{ username }}
 
@@ -189,12 +192,21 @@
 #     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
 # Time to start thinking about splitting this into multiple playbooks/vars files...
 
+   - name: Ensure the liferea config directory exists
+     file: path=/home/{{ username }}/.config/liferea owner={{ username }} group={{ username }} state=directory
+
    - name: Copy over liferea feedlist
      copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=/home/{{ username }}/.config/liferea/feedlist.opml owner={{ username }} group = {{ username }}
 
    - name: Copy over conky config
      copy: src=ROOT/home/USER/.conkyrc dest=/home/{{ username }}/.conkyrc owner={{ username }} group={{ username }} mode=0644
 
+   - name: Ensure the gtk3 config directory exists
+     file: path=/home/{{ username }}/.config/gtk-3.0 owner={{ username }} group={{ username }} state=directory
+
+   - name: Copy over gtk3 config
+     copy: src=ROOT/home/USER/.config/gtk-3.0/settings.ini dest=/home/{{ username }}/.config/gtk-3.0/settings.ini owner={{ username }} group = {{ username }}
+     
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
      with_items:
