@@ -120,7 +120,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>4</number>
+    <number>10</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -178,15 +178,6 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
-    <keybind key="A-F3">
-      <action name="Execute">
-        <command>~/.config/dmenu/dmenu-bind.sh</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>dmenu</name>
-        </startupnotify>
-      </action>
-    </keybind>
     <keybind key="C-A-t">
       <action name="Execute">
         <command>terminator</command>
@@ -250,15 +241,6 @@
         </startupnotify>
       </action>
     </keybind>
-    <keybind key="C-A-s">
-      <action name="Execute">
-        <command>steam</command>
-        <startupnotify>
-          <enabled>yes</enabled>
-          <name>steam</name>
-        </startupnotify>
-      </action>
-    </keybind>
     <keybind key="C-A-p">
       <action name="Execute">
         <command>pithos</command>
@@ -299,18 +281,6 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Up">
-      <action name="SendToDesktop">
-        <to>up</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
-    <keybind key="S-A-Down">
-      <action name="SendToDesktop">
-        <to>down</to>
-        <wrap>no</wrap>
-      </action>
-    </keybind>
     <keybind key="W-F1">
       <action name="GoToDesktop">
         <to>1</to>
@@ -324,6 +294,41 @@
     <keybind key="W-F3">
       <action name="GoToDesktop">
         <to>3</to>
+      </action>
+    </keybind>
+    <keybind key="W-F4">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-F5">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-F6">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-F7">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-F8">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-F9">
+      <action name="GoToDesktop">
+        <to>4</to>
+      </action>
+    </keybind>
+    <keybind key="W-F10">
+      <action name="GoToDesktop">
+        <to>4</to>
       </action>
     </keybind>
     <keybind key="W-F4">
@@ -471,33 +476,6 @@
           <action name="Raise"/>
           <action name="Unshade"/>
         </finalactions>
-      </action>
-    </keybind>
-    <keybind key="C-A-Tab">
-      <action name="NextWindow">
-        <panels>yes</panels>
-        <desktop>yes</desktop>
-        <finalactions>
-          <action name="Focus"/>
-          <action name="Raise"/>
-          <action name="Unshade"/>
-        </finalactions>
-      </action>
-    </keybind>
-    <!-- Keybindings for window switching with the arrow keys -->
-    <keybind key="W-S-Right">
-      <action name="DirectionalCycleWindows">
-        <direction>right</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Left">
-      <action name="DirectionalCycleWindows">
-        <direction>left</direction>
-      </action>
-    </keybind>
-    <keybind key="W-S-Up">
-      <action name="DirectionalCycleWindows">
-        <direction>up</direction>
       </action>
     </keybind>
     <!-- Launch scrot when Print is pressed -->
