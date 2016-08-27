@@ -4384,6 +4384,9 @@
       <item label="Atom">
         <action name="Execute"><execute>atom-beta</execute></action>
       </item>
+      <item label="Cool Retro Term">
+        <action name="Execute"><execute>cool-retro-term</execute></action>
+      </item>
       <item label="Galculator">
         <action name="Execute"><execute>galculator</execute></action>
       </item>

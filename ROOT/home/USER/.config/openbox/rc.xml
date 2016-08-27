@@ -187,6 +187,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-S-t">
+      <action name="Execute">
+        <command>cool-retro-term</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>cool-retro-term</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-w">
       <action name="Execute">
         <command>iceweasel</command>

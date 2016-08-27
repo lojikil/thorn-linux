@@ -79,6 +79,7 @@
        - gimp # An image editor
        - audacity # An audio editor
        - conky
+       - tor
 
    - name: Install SELinux
      apt: name={{ item }}
@@ -105,6 +106,44 @@
        - git
        - vim
        - htop
+       - moreutils
+       - ruby
+       - apg
+       - sssd
+
+   - name: Install dependencies for cool-retro-term
+     apt: name={{ item }} state=installed
+     with_items:
+       - build-essential
+       - qmlscene
+       - qt5-qmake
+       - qt5-default
+       - qtdeclarative5-dev
+       - qml-module-qtquick-controls
+       - qml-module-qtgraphicaleffects
+       - qml-module-qtquick-dialogs
+       - qml-module-qtquick-localstorage
+       - qml-module-qtquick-window2
+       - qml-module-qt-labs-folderlistmodel
+       - qml-module-qt-labs-settings
+
+   - name: Clone the cool-retro-term git repository
+     git: repo=https://github.com/Swordfish90/cool-retro-term.git dest=/opt/cool-retro-term update=no
+
+   - name: Build cool-retro-term - Part 1
+     command: chdir=/opt/cool-retro-term qmake
+
+   - name: Build cool-retro-term - Part 2
+     command: chdir=/opt/cool-retro-term make
+
+   - name: Install cool-retro-term
+     command: chdir=/opt/cool-retro-term make install
+
+   - name: Copy a preconfigured sssd.conf file to the expected location
+     copy: src=ROOT/etc/sssd/sssd.conf dest=/etc/sssd/sssd.conf mode=0600 group=root owner=root
+
+   - name: Start and enable SSSD
+     service: name=sssd enabled=yes state=started
 
    - name: Copy over the global environment configuration
      copy: src=ROOT/etc/environment dest=/etc/environment owner=root group=root mode=0644
@@ -206,7 +245,15 @@
 
    - name: Copy over gtk3 config
      copy: src=ROOT/home/USER/.config/gtk-3.0/settings.ini dest=/home/{{ username }}/.config/gtk-3.0/settings.ini owner={{ username }} group = {{ username }}
-     
+
+  #  - name: Copy over tor config file
+  #    copy: src=ROOT/etc/torrc dest=/etc/torrc owner=root group=root mode=0644
+   #
+  #  - name: Copy over tor scripts
+  #    copy: src=ROOT/usr/local/bin/{{ item }} dest=/usr/local/bin owner=root group=root mode=0755
+  #    with_items:
+  #      - tor-traffic.sh
+
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
      with_items:
