@@ -139,6 +139,15 @@
    - name: Install cool-retro-term
      command: chdir=/opt/cool-retro-term make install
 
+   - name: Ensure the cool-retro-term configuration directory exists
+     file: path=/home/{{ username }}/.local/share/cool-retro-term/QML/OfflineStorage/Databases/ owner={{ username }} group={{ username }}
+
+   - name: Copy over cool-retro-term configuration files
+     copy: src=ROOT/home/USER/.local/share/cool-retro-term/QML/OfflineStorage/Databases/bedee929e497810c699bbb114401f8d9.{{ item }} dest=/home/{{ username }}/.local/share/cool-retro-term/QML/OfflineStorage/Databases/ owner={{ username }} group={{ username }}
+     with_items:
+       - ini
+       - sqlite
+
    - name: Copy a preconfigured sssd.conf file to the expected location
      copy: src=ROOT/etc/sssd/sssd.conf dest=/etc/sssd/sssd.conf mode=0600 group=root owner=root
 
