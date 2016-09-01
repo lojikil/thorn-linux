@@ -158,6 +158,13 @@
             </command>
           </action>
         </item>
+        <item label="lbd">
+          <action name="Execute">
+            <command>
+              terminator -e 'lbd; bash -l'
+            </command>
+          </action>
+        </item>
         <item label="wafw00f">
           <action name="Execute">
             <command>
@@ -230,7 +237,7 @@
             </command>
           </action>
         </item>
-        <item label="xprobe">
+        <item label="xprobe2">
           <action name="Execute">
             <command>
               terminator -e 'xprobe2; bash -l'
@@ -338,6 +345,13 @@
           <action name="Execute">
             <command>
               maltegoce
+            </command>
+          </action>
+        </item>
+        <item label="theharvester">
+          <action name="Execute">
+            <command>
+              terminator -e 'theharvester; bash -l'
             </command>
           </action>
         </item>
@@ -1227,6 +1241,13 @@
           </command>
         </action>
       </item>
+      <item label="cutycapt">
+        <action name="Execute">
+          <command>
+            terminator -e 'cutycapt; bash -l'
+          </command>
+        </action>
+      </item>
       <item label="dirb">
         <action name="Execute">
           <command>
@@ -1334,10 +1355,24 @@
           </command>
         </action>
       </item>
+      <item label="nikto">
+        <action name="Execute">
+          <command>
+            terminator -e 'nikto -h; bash -l'
+          </command>
+        </action>
+      </item>
       <item label="padbuster">
         <action name="Execute">
           <command>
             terminator -e 'padbuster; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label="powerfuzzer">
+        <action name="Execute">
+          <command>
+            terminator -e 'powerfuzzer; bash -l'
           </command>
         </action>
       </item>
@@ -2443,7 +2478,6 @@
         </command>
       </action>
     </item>
-
     <item label='valgrind'>
       <action name='Execute'>
         <command>
@@ -4359,6 +4393,72 @@
       </action>
     </item>
   </menu>
+  <menu id="system-services" label="System Services">
+    <menu id="system-services-beef" label="Beef">
+      <item label='Beef start'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo service beef-xss start; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='Beef stop'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo service beef-xss stop; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+    <menu id="system-services-dradis" label="Dradis">
+      <item label='Dradis start'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo service dradis start; bash -l'
+          </command>
+        </action>
+      </item>
+      <item label='Dradis stop'>
+        <action name='Execute'>
+          <command>
+            terminator -e 'sudo service dradis stop; bash -l'
+          </command>
+        </action>
+      </item>
+    </menu>
+  </menu>
+</menu>
+<menu id="anonymization" label="Anonymization">
+  <item label='Tor all traffic'>
+    <action name='Execute'>
+      <command>
+        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+      </command>
+    </action>
+  </item>
+  <item label='Untor all traffic'>
+    <action name='Execute'>
+      <command>
+        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+      </command>
+    </action>
+  </item>
+</menu>
+<menu id="airplane-mode" label="Airplane Mode">
+  <item label='On'>
+    <action name='Execute'>
+      <command>
+        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+      </command>
+    </action>
+  </item>
+  <item label='Off'>
+    <action name='Execute'>
+      <command>
+        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+      </command>
+    </action>
+  </item>
 </menu>
 <separator/>
   <item label="Terminal emulator">

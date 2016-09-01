@@ -417,6 +417,7 @@
        - joomscan
        - jsql
        - maltego-teeth
+       - nikto
        - padbuster
        - paros
        - parsero

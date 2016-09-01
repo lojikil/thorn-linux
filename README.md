@@ -1,4 +1,4 @@
-﻿A Debian-based penetration testing oriented Linux distribution with an additional focus on being a daily-driver with anonymity features
+﻿A Debian-based research and development platform for information security, Thorn Linux is made to keep users up to date with the latest cybersecurity news while providing a hardened and anonymized penetration-testing environment.
 
 Current State: Work in progress, pre-first release
 
