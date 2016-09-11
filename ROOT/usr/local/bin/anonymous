@@ -200,8 +200,7 @@ redirect_to_tor() {
 	echo
 
 	if [ ! -e /var/run/tor/tor.pid ]; then
-		echo "\n[!] Tor is not running! Quitting...\n"
-		exit 1
+    service tor start
 	fi
 
 	if ! [ -f /etc/network/iptables.rules ]; then
@@ -292,7 +291,8 @@ do_start() {
 }
 
 do_stop() {
-
+  service tor stop
+	
 	check_root
 
 	echo "\n[i] Stopping anonymous mode\n"
