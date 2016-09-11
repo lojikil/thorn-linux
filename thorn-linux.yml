@@ -51,6 +51,7 @@
       - pulseaudio # a sound server
       - alsa-utils # Utilities for controling ALSA
       - compton # A compositor
+      - network-manager
      ignore_errors: yes
 
    - name: Install user applications
@@ -78,6 +79,7 @@
        - pithos # A Pandora client
        - gimp # An image editor
        - audacity # An audio editor
+       - bleachbit
        - conky
        - tor
 
@@ -87,6 +89,7 @@
        - selinux-basics
        - selinux-policy-default
        - auditd
+       - virt-what
 
    - name: Download the atom deb package
      get_url: url=https://github.com/atom/atom/releases/download/v1.10.0-beta5/atom-amd64.deb dest=/tmp
@@ -238,7 +241,6 @@
 
 #   - name: Copy over Tor Browser launcher script
 #     copy: src=ROOT/usr/local/bin/tor-browser.sh dest=/usr/local/bin/ mode=0755 owner=root group=root
-# Time to start thinking about splitting this into multiple playbooks/vars files...
 
    - name: Ensure the liferea config directory exists
      file: path=/home/{{ username }}/.config/liferea owner={{ username }} group={{ username }} state=directory
@@ -255,13 +257,21 @@
    - name: Copy over gtk3 config
      copy: src=ROOT/home/USER/.config/gtk-3.0/settings.ini dest=/home/{{ username }}/.config/gtk-3.0/settings.ini owner={{ username }} group = {{ username }}
 
-  #  - name: Copy over tor config file
-  #    copy: src=ROOT/etc/torrc dest=/etc/torrc owner=root group=root mode=0644
-   #
-  #  - name: Copy over tor scripts
-  #    copy: src=ROOT/usr/local/bin/{{ item }} dest=/usr/local/bin owner=root group=root mode=0755
-  #    with_items:
-  #      - tor-traffic.sh
+   - name: Copy over default tor options
+     copy: src=ROOT/etc/default/tor dest=/etc/default/tor owner=root group=root mode=0644
+
+   - name: Copy over tor configuration files
+     copy: src=ROOT/etc/tor/{{ item }} dest=/etc/tor/ owner=root group=root mode=0644
+     with_items:
+       - torrc
+       - torsocks.conf
+
+   - name: Enable the Network Manager service
+     service: name=network-manager enabled=yes
+
+   - name: Copy over the anonymization script
+     copy: src=ROOT/usr/local/bin/anonymous dest=/usr/local/bin/anonymous owner=root group=root mode=0755
+     # COME BACK TO THIS: The script sets the default hostname, this needs to be set during the install process
 
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed

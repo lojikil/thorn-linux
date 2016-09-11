@@ -187,6 +187,15 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="C-A-e">
+      <action name="Execute">
+        <command>icedove</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>icedove</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-S-t">
       <action name="Execute">
         <command>cool-retro-term</command>

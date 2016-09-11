@@ -4432,14 +4432,21 @@
   <item label='Tor all traffic'>
     <action name='Execute'>
       <command>
-        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+        terminator -e 'sudo anonymous start; bash -l'
       </command>
     </action>
   </item>
   <item label='Untor all traffic'>
     <action name='Execute'>
       <command>
-        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+        terminator -e 'sudo anonymous stop; bash -l'
+      </command>
+    </action>
+  </item>
+  <item label='Tor status'>
+    <action name='Execute'>
+      <command>
+        terminator -e 'sudo anonymous status; bash -l'
       </command>
     </action>
   </item>
