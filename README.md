@@ -1,4 +1,4 @@
-﻿A Debian-based research and development platform for information security, Thorn Linux is made to keep users up to date with the latest cybersecurity news while providing a hardened and anonymized penetration-testing environment.
+﻿A Debian-based research and development platform for information security, Thorn Linux is designed to keep users up to date with the latest cybersecurity news while providing a hardened and anonymized penetration-testing environment.
 
 Current State: Work in progress, pre-first release
 
