@@ -4,7 +4,7 @@ Current State: Work in progress, pre-first release
 
 ### Features
 * The full Kali Linux penetration testing toolset
-* A highly customized Openbox desktop environment modeled after BunsenLabs and several other distributions
+* A highly customized Openbox desktop environment modeled after BunsenLabs(Formerly CrunchBang)
 * A RSS reader pre-configured with 150+ cybersecurity blogs, exploit databases, and CVE trackers
 * A script from Backbox Linux that can be used to route all traffic through Tor
 
