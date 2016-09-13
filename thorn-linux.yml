@@ -131,16 +131,16 @@
        - qml-module-qt-labs-settings
 
    - name: Clone the cool-retro-term git repository
-     git: repo=https://github.com/Swordfish90/cool-retro-term.git dest=/opt/cool-retro-term update=no
+     git: repo=https://github.com/Swordfish90/cool-retro-term.git dest=/tmp/cool-retro-term update=no
 
    - name: Build cool-retro-term - Part 1
-     command: chdir=/opt/cool-retro-term qmake
+     command: chdir=/tmp/cool-retro-term qmake
 
    - name: Build cool-retro-term - Part 2
-     command: chdir=/opt/cool-retro-term make
+     command: chdir=/tmp/cool-retro-term make
 
    - name: Install cool-retro-term
-     command: chdir=/opt/cool-retro-term make install
+     command: chdir=/tmp/cool-retro-term make install
 
    - name: Ensure the cool-retro-term configuration directory exists
      file: path=/home/{{ username }}/.local/share/cool-retro-term/QML/OfflineStorage/Databases/ owner={{ username }} group={{ username }}
@@ -272,6 +272,18 @@
    - name: Copy over the anonymization script
      copy: src=ROOT/usr/local/bin/anonymous dest=/usr/local/bin/anonymous owner=root group=root mode=0755
      # COME BACK TO THIS: The script sets the default hostname, this needs to be set during the install process
+
+   - name: Clone repo for command line todo script
+     git: repo=https://github.com/ginatrapani/todo.txt-cli.git dest=/tmp/todo.sh
+
+   - name: Build command line todo script - Part 1
+     command: chdir=/tmp/todo.sh make
+
+   - name: Build command line todo script - Part 2
+     command: chdir=/tmp/todo.sh make install
+
+   - name: Symlink command line todo script
+     file: src=/usr/local/bin/todo.sh dest=/usr/local/bin/t state=link
 
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
