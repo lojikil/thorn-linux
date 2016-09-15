@@ -143,7 +143,7 @@
      command: chdir=/tmp/cool-retro-term make install
 
    - name: Ensure the cool-retro-term configuration directory exists
-     file: path=/home/{{ username }}/.local/share/cool-retro-term/QML/OfflineStorage/Databases/ owner={{ username }} group={{ username }}
+     file: path=/home/{{ username }}/.local/share/cool-retro-term/QML/OfflineStorage/Databases/ owner={{ username }} group={{ username }} state=directory recurse=yes
 
    - name: Copy over cool-retro-term configuration files
      copy: src=ROOT/home/USER/.local/share/cool-retro-term/QML/OfflineStorage/Databases/bedee929e497810c699bbb114401f8d9.{{ item }} dest=/home/{{ username }}/.local/share/cool-retro-term/QML/OfflineStorage/Databases/ owner={{ username }} group={{ username }}
