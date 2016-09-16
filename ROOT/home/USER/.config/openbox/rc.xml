@@ -223,9 +223,27 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="W-l">
+      <action name="Execute">
+        <command>xscreensaver-command -l</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>liferea</name>
+        </startupnotify>
+      </action>
+    </keybind>
     <keybind key="C-A-v">
       <action name="Execute">
         <command>vlc</command>
+        <startupnotify>
+          <enabled>yes</enabled>
+          <name>vlc</name>
+        </startupnotify>
+      </action>
+    </keybind>
+    <keybind key="C-A-s-v">
+      <action name="Execute">
+        <command>virtualbox</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>vlc</name>

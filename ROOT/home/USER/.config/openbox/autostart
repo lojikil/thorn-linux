@@ -1,3 +1,6 @@
+# Start Xscreensaver
+xscreensaver -nosplash &
+
 # Set the wallpaper
 nitrogen --restore &
 
@@ -6,6 +9,9 @@ compton &
 
 # Start the panel
 tint2 &
+
+# Start network manager applet
+nm-applet &
 
 # Start conky
 conky &

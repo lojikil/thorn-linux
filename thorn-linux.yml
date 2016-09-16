@@ -51,12 +51,18 @@
       - pulseaudio # a sound server
       - alsa-utils # Utilities for controling ALSA
       - compton # A compositor
-      - network-manager
+      - network-manager # network configuration tool suite
+      - network-manager-gnome # A networkmanager gui
+      - apt
+      - xscreensaver
+      - flashplugin-nonfree
      ignore_errors: yes
 
    - name: Install user applications
      apt: name={{ item }} state=installed
      with_items:
+       - arandr # A display config tool
+       - focuswriter # A distraction free note-taking application
        - dmenu # An application launcher
        - nitrogen # A wallpaper setter
        - terminator # A multiplexing terminal emulator
@@ -113,6 +119,7 @@
        - ruby
        - apg
        - sssd
+       - task
 
    - name: Install dependencies for cool-retro-term
      apt: name={{ item }} state=installed
@@ -275,15 +282,6 @@
 
    - name: Clone repo for command line todo script
      git: repo=https://github.com/ginatrapani/todo.txt-cli.git dest=/tmp/todo.sh
-
-   - name: Build command line todo script - Part 1
-     command: chdir=/tmp/todo.sh make
-
-   - name: Build command line todo script - Part 2
-     command: chdir=/tmp/todo.sh make install
-
-   - name: Symlink command line todo script
-     file: src=/usr/local/bin/todo.sh dest=/usr/local/bin/t state=link
 
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
