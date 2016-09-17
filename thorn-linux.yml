@@ -15,9 +15,11 @@
 
    - name: Create group for new user account
      group: name={{ username }}
+     when: username=="thornlinux"
 
    - name: Create account with sudo privileges
      user: name={{ username }} createhome=yes password={{ password }} group={{ username }} groups="sudo" shell=/bin/bash
+     when: username=="thornlinux"
 
    - name: Remove the default entry in the apt sources list for the cdrom - part 1
      lineinfile: dest=/etc/apt/sources.list line="Debian GNU/Linux 8.5.0 _Jessie_ - Official amd64 CD Binary-1 20160604-15:35/ jessie main" state=absent

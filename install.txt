@@ -1,0 +1,14 @@
+Run the following on a fresh installation of BunsenLabs.  During the Bunsenlabs installation, I would advise that you encrypt your system and split it among multiple partitions.
+
+sudo apt-get install git ansible
+git clone https://github.com/dovellr177/thorn-linux
+cd thorn-linux
+sudo ansible-playbook -i hosts -e username=`logname`. -c local thorn-linux.yml
+
+NOTE: Some commands(like the one that updates the system packages) could take so long that they cause ansible to timeout, just run the ansible-playbook command again if there is an error after an especially long step.
+
+UPDATING
+========
+from inside the thorn-linux directory, run the following
+git pull
+sudo ansible-playbook -i hosts -e username=`logname` -c local ./thorn-linux.yml
