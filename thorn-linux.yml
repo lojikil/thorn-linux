@@ -4,15 +4,6 @@
   vars_files:
   - vars.yml
   tasks:
-   - name: Set hostname - part 1
-     command: hostname {{ hostname }}
-
-   - name: Set hostname - part 2
-     template: src=ROOT/etc/hostname.j2 dest=/etc/hostname mode=0644 owner=root group=root
-
-   - name: Set hostname - part 3
-     lineinfile: line="127.0.0.1 {{ hostname }}" dest=/etc/hosts
-
    - name: Create group for new user account
      group: name={{ username }}
      when: username=="thornlinux"
@@ -26,6 +17,9 @@
 
    - name: Remove the default entry in the apt sources list for the cdrom - part 2
      lineinfile: dest=/etc/apt/sources.list line="deb cdrom:[Debian GNU/Linux 8 _Jessie_ - Official Snapshot amd64 LIVE/INSTALL Binary 20160609-11:29]/ jessie main" state=absent
+
+   - name: Ensure the bunsenlabs repository doesn't exist
+     file: path=/etc/apt/sources.list.d/bunsen.list state=absent
 
    - name: Install Kali apt repositories
      lineinfile: line="deb http://http.kali.org/kali kali-rolling main non-free contrib" create=yes dest=/etc/apt/sources.list.d/kali.list
@@ -98,7 +92,7 @@
        - virt-what
 
    - name: Download the atom deb package
-     get_url: url=https://github.com/atom/atom/releases/download/v1.10.0-beta5/atom-amd64.deb dest=/tmp
+     get_url: url=https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb dest=/tmp/atom-amd64.deb
 
    - name: Install atom
      apt: deb=/tmp/atom-amd64.deb
@@ -253,7 +247,7 @@
      file: path=/home/{{ username }}/.config/liferea owner={{ username }} group={{ username }} state=directory
 
    - name: Copy over liferea feedlist
-     copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=/home/{{ username }}/.config/liferea/feedlist.opml owner={{ username }} group = {{ username }}
+     copy: src=ROOT/home/USER/.config/liferea/feedlist.opml dest=/home/{{ username }}/.config/liferea/feedlist.opml owner={{ username }} group={{ username }}
 
    - name: Copy over conky config
      copy: src=ROOT/home/USER/.conkyrc dest=/home/{{ username }}/.conkyrc owner={{ username }} group={{ username }} mode=0644
