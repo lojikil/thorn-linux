@@ -1,4 +1,4 @@
-Run the following on a fresh installation of BunsenLabs.  During the Bunsenlabs installation, I would advise that you encrypt your system and split it among multiple partitions.
+Run the following on a fresh installation of BunsenLabs(https://www.bunsenlabs.org/installation.html).  During the Bunsenlabs installation, I would advise that you encrypt your system and split it among multiple partitions.
 
 sudo apt-get install git ansible
 git clone https://github.com/dovellr177/thorn-linux
