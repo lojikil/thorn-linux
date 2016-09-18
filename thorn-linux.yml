@@ -91,6 +91,9 @@
        - auditd
        - virt-what
 
+   - name: Copy over the lightdm configuratoin file
+     copy: src=ROOT/etc/lightdm/lightdm.conf dest=/etc/ligthdm/lightdm.conf mode=0600 group=root owner=root force=yes
+
    - name: Download the atom deb package
      get_url: url=https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb dest=/tmp/atom-amd64.deb
 
@@ -114,6 +117,7 @@
        - apg
        - sssd
        - task
+       - lynx
 
    - name: Install dependencies for cool-retro-term
      apt: name={{ item }} state=installed
