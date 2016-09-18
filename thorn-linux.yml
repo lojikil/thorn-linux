@@ -50,6 +50,10 @@
       - apt
       - xscreensaver
       - flashplugin-nonfree
+      - lightdm-kde-greeter
+      - libmtp9
+      - macchanger
+      - stunnel4
      ignore_errors: yes
 
    - name: Install user applications
@@ -91,8 +95,25 @@
        - auditd
        - virt-what
 
-   - name: Copy over the lightdm configuratoin file
-     copy: src=ROOT/etc/lightdm/lightdm.conf dest=/etc/ligthdm/lightdm.conf mode=0600 group=root owner=root force=yes
+   - name: Copy over the lightdm configuration file
+     copy: src=ROOT/etc/lightdm/lightdm.conf dest=/etc/lightdm/lightdm.conf mode=0600 group=root owner=root force=yes
+
+   - name: Copy over the lightdm kde greeter configuration file
+     copy: src=ROOT/etc/lightdm/lightdm-kde-greeter.conf dest=/etc/lightdm/lightdm-kde-greeter.conf owner=root group=root mode=0644
+
+   - name: Ensure the wallpaper directory exists
+     file: path=/usr/share/wallpapers owner=root group=root state=directory
+
+   - name: Copy over wallpapers
+     copy: src={{ item }} dest=/usr/share/wallpapers owner={{ username }} group={{ username }}
+     with_fileglob:
+       - ROOT/usr/share/wallpapers/*
+
+   - name: Copy over macchanger default options
+     copy: src=ROOT/etc/default/macchanger dest=/etc/default/macchanger owner=root group=root mode=0644
+
+   - name: Start and enable the stunnel4 service
+     service: name=stunnel4 state=started enabled=yes
 
    - name: Download the atom deb package
      get_url: url=https://github.com/atom/atom/releases/download/v1.10.2/atom-amd64.deb dest=/tmp/atom-amd64.deb
@@ -118,6 +139,8 @@
        - sssd
        - task
        - lynx
+       - docker.io
+       - ansible
 
    - name: Install dependencies for cool-retro-term
      apt: name={{ item }} state=installed
@@ -176,14 +199,6 @@
 
    - name: Override the default openbox configuration file
      copy: src=ROOT/home/USER/.config/openbox/rc.xml dest=/home/{{ username }}/.config/openbox/rc.xml owner={{ username }} group={{ username }}
-
-   - name: Ensure the wallpaper directory exists
-     file: path=/home/{{ username }}/Pictures/wallpapers state=directory recurse=yes owner={{ username }} group={{ username }}
-
-   - name: Copy over wallpapers
-     copy: src={{ item }} dest=/home/{{ username }}/Pictures/wallpapers owner={{ username }} group={{ username }}
-     with_fileglob:
-       - ROOT/home/USER/Pictures/wallpapers/*
 
    - name: Ensure the wallpaper setter configuration directory exists
      file: path=/home/{{ username }}/.config/nitrogen state=directory owner={{ username }} group={{ username }}
@@ -731,3 +746,6 @@
        - dex2jar
        - sakis3g
        - smali
+
+   - name: Reboot
+     command: reboot
