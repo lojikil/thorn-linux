@@ -141,6 +141,10 @@
        - lynx
        - docker.io
        - ansible
+       - python-pip
+
+   - name: Install rainbowstream
+     pip: name=rainbowstream
 
    - name: Install dependencies for cool-retro-term
      apt: name={{ item }} state=installed
