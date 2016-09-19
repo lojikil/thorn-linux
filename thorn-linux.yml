@@ -293,9 +293,6 @@
      copy: src=ROOT/usr/local/bin/anonymous dest=/usr/local/bin/anonymous owner=root group=root mode=0755
      # COME BACK TO THIS: The script sets the default hostname, this needs to be set during the install process
 
-   - name: Clone repo for command line todo script
-     git: repo=https://github.com/ginatrapani/todo.txt-cli.git dest=/tmp/todo.sh
-
    - name: Install Information Gathering Tools
      apt: name={{ item }} state=installed
      with_items:
