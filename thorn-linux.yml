@@ -48,7 +48,6 @@
       - network-manager # network configuration tool suite
       - network-manager-gnome # A networkmanager gui
       - apt
-      - xscreensaver
       - flashplugin-nonfree
       - lightdm-kde-greeter
       - libmtp9

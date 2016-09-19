@@ -1,6 +1,3 @@
-# Start Xscreensaver
-xscreensaver -nosplash &
-
 # Set the wallpaper
 nitrogen --restore &
 

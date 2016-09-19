@@ -225,7 +225,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <command>xscreensaver-command -l</command>
+        <command>light-locker-command -l</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>liferea</name>
