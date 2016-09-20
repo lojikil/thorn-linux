@@ -1,3 +1,6 @@
+# Mute the mute-microphone
+amixer set Capture nocap
+
 # Set the wallpaper
 nitrogen --restore &
 
