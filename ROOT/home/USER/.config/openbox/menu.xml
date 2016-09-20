@@ -4443,11 +4443,18 @@
       </command>
     </action>
   </item>
-  <item label='Tor status'>
+  <item label='Tor Status'>
     <action name='Execute'>
       <command>
         terminator -e 'sudo anonymous status; bash -l'
       </command>
+    </action>
+  </item>
+  <item label="Tor Browser">
+    <action name="Execute">
+      <execute>
+        /opt/tor-browser_en-US/Browser/start-tor-browser
+      </execute>
     </action>
   </item>
 </menu>
@@ -4478,7 +4485,7 @@
     <action name="Execute"><execute>iceweasel</execute></action>
   </item>
   <item label="Tor Browser">
-    <action name="Execute"><execute>/usr/local/bin/tor-browser.sh</execute></action>
+    <action name="Execute"><execute>/opt/tor-browser_en-US/Browser/start-tor-browser</execute></action>
   </item>
   <item label="Text Editor">
     <action name="Execute"><execute>geany</execute></action>

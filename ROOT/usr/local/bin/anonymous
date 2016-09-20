@@ -136,10 +136,10 @@ change_mac() {
 
 	while [ $VAR -eq 0 ]; do
 		echo -n "Select network interfaces ["
-		echo -n $(ifconfig -a | grep Ethernet | awk '{print $1}')
+		echo -n $(ifconfig -a | grep mtu | sed 's/:.*//')
 		read -p "] > " IFACE
 
-		ifconfig -a | grep Ethernet | awk '{print $1}' | grep -q -x "$IFACE"
+		ifconfig -a | grep mtu | sed 's/:.*//' | grep -q -x "$IFACE"
 
 		if [ $? -ne 1 ]; then
 			VAR=1
@@ -292,7 +292,7 @@ do_start() {
 
 do_stop() {
   service tor stop
-	
+
 	check_root
 
 	echo "\n[i] Stopping anonymous mode\n"

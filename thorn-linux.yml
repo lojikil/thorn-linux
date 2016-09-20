@@ -1,8 +1,12 @@
 ---
 - name: Thorn Linux
   hosts: all
-  vars_files:
-  - vars.yml
+  vars:
+   username: thornlinux
+    # The default password is 'thornlinux', See this article on creating crypted passwords to change it: http://docs.ansible.com/ansible/faq.html#how-do-i-generate-crypted-passwords-for-the-user-module
+   password:  $6$rounds=656000$bEFE6/m8aTVDfxfF$qmRU7aESYdQIAO/9Z6TtAlULxsOrL0U8YeD74JgcUi9AbgXEkBiqbaSgP4xfTWl41z.MxcrlF/MtSOR/zYHF0.
+   hostname: thorn-linux
+   tor_browser_version: 6.0.5
   tasks:
    - name: Create group for new user account
      group: name={{ username }}
@@ -125,6 +129,12 @@
 
    - name: Copy over the atom configuration
      copy: src=ROOT/home/USER/.atom/config.cson dest=/home/{{ username }}/.atom/config.cson owner={{ username }} group={{ username }}
+
+   - name: Download Tor Browser
+     get_url: url=https://www.torproject.org/dist/torbrowser/{{ tor_browser_version }}/tor-browser-linux64-{{ tor_browser_version}}_en-US.tar.xz dest=/tmp/tor-browser-linux64-{{ tor_browser_version}}_en-US.tar.xz
+
+   - name: Unarchive Tor Browser
+     unarchive: src=/tmp/tor-browser-linux64-{{ tor_browser_version }}_en-US.tar.xz dest=/opt/
 
    - name: Install user utilities
      apt: name={{ item }} state=installed
@@ -747,5 +757,5 @@
        - sakis3g
        - smali
 
-   - name: Reboot
-     command: reboot
+#   - name: Reboot
+#     command: reboot
