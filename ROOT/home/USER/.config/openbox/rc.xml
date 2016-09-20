@@ -413,6 +413,11 @@
         </startupnotify>
       </action>
     </keybind>
+    <keybind key="A-F2">
+      <action name="Execute">
+        <command>gmrun</command>
+      </action>
+    </keybind>
     <!-- Show menu -->
     <keybind key="W-space">
       <action name="ShowMenu">
@@ -495,6 +500,7 @@
         <command>scrot -s</command>
       </action>
     </keybind>
+
     <!-- Keybindings for window switching -->
     <keybind key="A-Tab">
       <action name="NextWindow">

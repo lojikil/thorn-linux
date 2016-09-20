@@ -4462,14 +4462,14 @@
   <item label='On'>
     <action name='Execute'>
       <command>
-        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+        terminator -e 'sudo rfkill block all'
       </command>
     </action>
   </item>
   <item label='Off'>
     <action name='Execute'>
       <command>
-        terminator -e 'echo "This feature is not yet implemented."; bash -l'
+        terminator -e 'sudo rfkill unblock all'
       </command>
     </action>
   </item>

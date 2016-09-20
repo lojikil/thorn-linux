@@ -97,6 +97,7 @@
        - conky
        - tor
        - gnome-clocks
+       - gmrun
 
    - name: Install SELinux
      apt: name={{ item }}
@@ -105,6 +106,9 @@
        - selinux-policy-default
        - auditd
        - virt-what
+
+   - name: Copy over module blacklist
+     copy: src=ROOT/etc/modprobe.d/blacklist.conf dest=/etc/modprobe.d/blacklist.conf
 
    - name: Copy over the lightdm configuration file
      copy: src=ROOT/etc/lightdm/lightdm.conf dest=/etc/lightdm/lightdm.conf mode=0600 group=root owner=root force=yes
