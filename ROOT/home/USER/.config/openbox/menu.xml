@@ -4564,6 +4564,9 @@
       </item>
     </menu>
     <menu id="office" label="Office">
+      <item label="HomeBank">
+        <action name="Execute"><execute>homebank</execute></action>
+      </item>
       <item label="LibreOffice">
         <action name="Execute"><execute>libreoffice</execute></action>
       </item>

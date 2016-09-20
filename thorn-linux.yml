@@ -98,6 +98,7 @@
        - tor
        - gnome-clocks
        - gmrun
+       - homebank
 
    - name: Install SELinux
      apt: name={{ item }}
