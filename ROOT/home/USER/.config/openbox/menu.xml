@@ -4501,17 +4501,26 @@
       <item label="Cool Retro Term">
         <action name="Execute"><execute>cool-retro-term</execute></action>
       </item>
+      <item label="Focuswriter">
+        <action name="Execute"><execute>focuswriter</execute></action>
+      </item>
       <item label="Galculator">
         <action name="Execute"><execute>galculator</execute></action>
       </item>
       <item label="Geany">
         <action name="Execute"><execute>geany</execute></action>
       </item>
+      <item label="GNOME Clocks">
+        <action name="Execute"><execute>gnome-clocks</execute></action>
+      </item>
       <item label="Leafpad">
         <action name="Execute"><execute>leafpad</execute></action>
       </item>
       <item label="Nautilus">
         <action name="Execute"><execute>nautilus</execute></action>
+      </item>
+      <item label="Screenshot">
+        <action name="Execute"><execute>xfce4-screenshooter</execute></action>
       </item>
       <item label="Terminator">
         <action name="Execute"><execute>terminator</execute></action>
@@ -4559,12 +4568,37 @@
         <action name="Execute"><execute>libreoffice</execute></action>
       </item>
     </menu>
+    <menu id="system-tools" label="System Tools">
+      <item label="Bleachbit">
+        <action name="Execute"><execute>bleachbit</execute></action>
+      </item>
+      <item label="Terminator">
+        <action name="Execute"><execute>terminator</execute></action>
+      </item>
+    </menu>
   <separator />
   <menu id="client-list-menu" />
   <separator />
-  <item label="ObConf">
-    <action name="Execute"><execute>obconf</execute></action>
-  </item>
+  <menu id="settings" label="Settings">
+    <item label="Arandr">
+      <action name="Execute"><execute>arandr</execute></action>
+    </item>
+    <item label="LXAppearance">
+      <action name="Execute"><execute>lxappearance</execute></action>
+    </item>
+    <item label="Nitrogen">
+      <action name="Execute"><execute>nitrogen</execute></action>
+    </item>
+    <item label="ObConf">
+      <action name="Execute"><execute>obconf</execute></action>
+    </item>
+    <item label="Pavucontrol">
+      <action name="Execute"><execute>pavucontrol</execute></action>
+    </item>
+    <item label="Power settings">
+      <action name="Execute"><execute>xfce4-power-manager-settings</execute></action>
+    </item>
+  </menu>
   <item label="Reconfigure">
     <action name="Reconfigure" />
   </item>

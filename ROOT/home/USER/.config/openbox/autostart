@@ -12,3 +12,9 @@ nm-applet &
 
 # Start conky
 conky &
+
+# Start Power manager applet
+xfce4-power-manager &
+
+# Start volume manager applet
+xfce4-volumed
