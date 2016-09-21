@@ -108,6 +108,12 @@
        - auditd
        - virt-what
 
+   - name: Set SELinux to autoreconfigure on reboot
+     command: selinux-activate
+
+   - name: Set SELinux to 'Enforcing' mode
+     command: setenforce 1
+
    - name: Copy over module blacklist
      copy: src=ROOT/etc/modprobe.d/blacklist.conf dest=/etc/modprobe.d/blacklist.conf owner=root group=root mode=0644
 
@@ -775,5 +781,5 @@
        - sakis3g
        - smali
 
-#   - name: Reboot
-#     command: reboot
+   - name: Reboot
+     command: reboot
