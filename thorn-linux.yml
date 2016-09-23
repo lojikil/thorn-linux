@@ -108,11 +108,13 @@
        - auditd
        - virt-what
 
+
    - name: Set SELinux to autoreconfigure on reboot
      command: selinux-activate
 
-   - name: Set SELinux to 'Enforcing' mode
-     command: setenforce 1
+# Refuses to turn on SELinux on a fresh install.., needs further investigation
+#   - name: Set SELinux to 'Enforcing' mode
+#     command: setenforce 1
 
    - name: Copy over module blacklist
      copy: src=ROOT/etc/modprobe.d/blacklist.conf dest=/etc/modprobe.d/blacklist.conf owner=root group=root mode=0644
@@ -173,8 +175,9 @@
        - apt-file
        - alsa-utils
 
-   - name: Update apt-file cache
-     command: apt-file update
+# Corrupts apt cache, needs further investigation
+#    - name: Update apt-file cache
+#     command: apt-file update
 
    - name: Install rainbowstream
      pip: name=rainbowstream
