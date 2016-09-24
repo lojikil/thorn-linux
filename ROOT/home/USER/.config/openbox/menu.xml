@@ -4479,7 +4479,7 @@
     <action name="Execute"><execute>terminator</execute></action>
   </item>
   <item label="File Manager">
-    <action name="Execute"><execute>nautilus</execute></action>
+    <action name="Execute"><execute>thunar</execute></action>
   </item>
   <item label="Web Browser">
     <action name="Execute"><execute>iceweasel</execute></action>
@@ -4519,14 +4519,14 @@
       <item label="Leafpad">
         <action name="Execute"><execute>leafpad</execute></action>
       </item>
-      <item label="Nautilus">
-        <action name="Execute"><execute>nautilus</execute></action>
-      </item>
       <item label="Screenshot">
         <action name="Execute"><execute>xfce4-screenshooter</execute></action>
       </item>
       <item label="Terminator">
         <action name="Execute"><execute>terminator</execute></action>
+      </item>
+      <item label="Thunar">
+        <action name="Execute"><execute>thunar</execute></action>
       </item>
     </menu>
     <menu id="internet" label="Internet">

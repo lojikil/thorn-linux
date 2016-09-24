@@ -261,19 +261,8 @@
        - mintinstall-icons_1.0.7_all.deb
        - mintinstall_7.7.4_all.deb
 
-  #  - name: Copy over deb package for breeze-icon-theme
-  #    copy: src=ROOT/tmp/breeze-icon-theme_5.25.0-2_all.deb dest=/tmp/breeze-icon-theme.deb
-   #
-  #  - name: Install breeze-icon-theme
-  #    apt: deb=/tmp/breeze-icon-theme.deb
-   #
-  #  - name: Copy over deb package for arc-theme
-  #    copy: src=ROOT/tmp/arc-theme_1474665338.1959509_all.deb dest=/tmp/arc-theme.deb
-   #
-  #  - name: Install arc-theme
-  #    apt: deb=/tmp/arc-theme.deb
-  #  - name: Copy over custom themes
-  #    unarchive: src=ROOT/tmp/arc-openbox.tar.gz dest=/tmp copy=yes
+   - name: Copy over custom themes
+     unarchive: src=ROOT/tmp/arc-openbox.tar.gz dest=/tmp copy=yes
 
    - name: Move custom themes into place
      command: mv /tmp/openbox-3 /usr/share/themes/Arc/
