@@ -97,6 +97,7 @@
        - gnome-clocks
        - gmrun
        - homebank
+       - mnemosyne
 
    - name: Install SELinux
      apt: name={{ item }}
@@ -563,6 +564,12 @@
        - webscarab
        - wordlists
        - zaproxy
+
+   - name: Download MyBFF
+     git: repo=https://github.com/MooseDojo/myBFF dest=/opt/myBFF
+
+   - name: Symlink myBFF
+     file: src=/opt/myBFF/myBFF.py dest=/usr/local/bin/myBFF.py state=link
 
    - name: Install Wireless Attack Tools
      apt: name={{ item }} state=installed

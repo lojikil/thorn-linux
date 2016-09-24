@@ -1834,6 +1834,13 @@
           </command>
         </action>
       </item>
+      <item label="myBFF">
+        <action name="Execute">
+          <command>
+            terminator -e 'myBFF.py -h; bash -l'
+          </command>
+        </action>
+      </item>
       <item label="onesixtyone">
         <action name="Execute">
           <command>
