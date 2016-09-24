@@ -675,6 +675,13 @@
             </command>
           </action>
         </item>
+        <item label="whois">
+          <action name="Execute">
+            <command>
+              terminator -e 'whois -h; bash -l'
+            </command>
+          </action>
+        </item>
         <item label="Xplico">
           <action name="Execute">
             <command>

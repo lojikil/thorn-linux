@@ -180,6 +180,7 @@
        - python-pip
        - apt-file
        - alsa-utils
+       - whois
 
 # Corrupts apt cache, needs further investigation
 #    - name: Update apt-file cache
