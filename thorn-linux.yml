@@ -63,6 +63,7 @@
       - xfce4-power-manager-data
       - xfce4-screenshooter
       - xfce4-volumed
+      - libsexy2
 
      ignore_errors: yes
 
@@ -78,7 +79,7 @@
        - geany # A "medium" editor/IDE
        - leafpad # A light editor
        - icedove # An email client
-       - nautilus # A file manager
+       - thunar # A file manager
        - libreoffice # An office suite
        - galculator # A calculator
        - eog # An image viewer
@@ -246,19 +247,33 @@
    - name: Copy over wallpaper setter configuration files - Part 2
      template: src=ROOT/home/USER/.config/nitrogen/nitrogen.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/nitrogen.cfg owner={{ username }} group={{ username }}
 
-   - name: Copy over deb package for breeze-icon-theme
-     copy: src=ROOT/tmp/breeze-icon-theme_5.25.0-2_all.deb dest=/tmp/breeze-icon-theme.deb
+   - name: Unpack deb_packages for custom themes and mintinstall
+     unarchive: src=ROOT/tmp/deb_packages.tar.gz dest=/tmp copy=yes
 
-   - name: Install breeze-icon-theme
-     apt: deb=/tmp/breeze-icon-theme.deb
+   - name: Install deb_packages for custom themes and mintinstall
+     apt: deb=/tmp/{{ item }}
+     with_items:
+       - arc-theme_1474665338.1959509_all.deb
+       - breeze-icon-theme_5.25.0-2_all.deb
+       - python-sexy_0.1.9-1ubuntu3-1mint3_amd64.deb
+       - mint-translations_2016.06.25_all.deb
+       - mint-common_1.2.6_all.deb
+       - mintinstall-icons_1.0.7_all.deb
+       - mintinstall_7.7.4_all.deb
 
-   - name: Copy over deb package for arc-theme
-     copy: src=ROOT/tmp/arc-theme_1474665338.1959509_all.deb dest=/tmp/arc-theme.deb
-
-   - name: Install arc-theme
-     apt: deb=/tmp/arc-theme.deb
-   - name: Copy over custom themes
-     unarchive: src=ROOT/tmp/arc-openbox.tar.gz dest=/tmp copy=yes
+  #  - name: Copy over deb package for breeze-icon-theme
+  #    copy: src=ROOT/tmp/breeze-icon-theme_5.25.0-2_all.deb dest=/tmp/breeze-icon-theme.deb
+   #
+  #  - name: Install breeze-icon-theme
+  #    apt: deb=/tmp/breeze-icon-theme.deb
+   #
+  #  - name: Copy over deb package for arc-theme
+  #    copy: src=ROOT/tmp/arc-theme_1474665338.1959509_all.deb dest=/tmp/arc-theme.deb
+   #
+  #  - name: Install arc-theme
+  #    apt: deb=/tmp/arc-theme.deb
+  #  - name: Copy over custom themes
+  #    unarchive: src=ROOT/tmp/arc-openbox.tar.gz dest=/tmp copy=yes
 
    - name: Move custom themes into place
      command: mv /tmp/openbox-3 /usr/share/themes/Arc/

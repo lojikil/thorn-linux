@@ -4475,7 +4475,7 @@
   </item>
 </menu>
 <separator/>
-  <item label="Terminal emulator">
+  <item label="Terminal Emulator">
     <action name="Execute"><execute>terminator</execute></action>
   </item>
   <item label="File Manager">
@@ -4492,6 +4492,9 @@
   </item>
   <item label="Media Player">
     <action name="Execute"><execute>vlc</execute></action>
+  </item>
+  <item label="Software Center">
+    <action name="Execute"><execute>mintinstall</execute></action>
   </item>
   <separator />
     <menu id="accessories" label="Accessories">
