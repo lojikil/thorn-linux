@@ -107,7 +107,6 @@
        - auditd
        - virt-what
 
-
    - name: Set SELinux to autoreconfigure on reboot
      command: selinux-activate
 
@@ -117,6 +116,14 @@
 
    - name: Copy over module blacklist
      copy: src=ROOT/etc/modprobe.d/blacklist.conf dest=/etc/modprobe.d/blacklist.conf owner=root group=root mode=0644
+
+   - name: Copy over scripts that allow users to easily disable and enable webcams and microphones
+     copy: src=ROOT/usr/local/bin/{{ item }}.sh dest=/usr/local/bin owner=root group=root mode=0755
+     with_items:
+       - disable-microphone
+       - disable-webcam
+       - enable-microphone
+       - enable-webcam
 
    - name: Copy over the lightdm configuration file
      copy: src=ROOT/etc/lightdm/lightdm.conf dest=/etc/lightdm/lightdm.conf mode=0600 group=root owner=root force=yes
@@ -786,6 +793,6 @@
        - dex2jar
        - sakis3g
        - smali
-
-   - name: Reboot
-     command: reboot
+   #
+  #  - name: Reboot
+  #    command: reboot

@@ -4526,6 +4526,9 @@
       <item label="Leafpad">
         <action name="Execute"><execute>leafpad</execute></action>
       </item>
+      <item label="Mnemosyne">
+        <action name="Execute"><execute>mnemosyne</execute></action>
+      </item>
       <item label="Screenshot">
         <action name="Execute"><execute>xfce4-screenshooter</execute></action>
       </item>
@@ -4575,6 +4578,18 @@
     <menu id="system-tools" label="System Tools">
       <item label="Bleachbit">
         <action name="Execute"><execute>bleachbit</execute></action>
+      </item>
+      <item label="Disable Microphone">
+        <action name="Execute"><execute>terminator -e 'sudo /usr/local/bin/disable-microphone.sh'</execute></action>
+      </item>
+      <item label="Disable Webcam">
+        <action name="Execute"><execute>terminator -e 'sudo /usr/local/bin/disable-webcam.sh'</execute></action>
+      </item>
+      <item label="Enable Microphone">
+        <action name="Execute"><execute>terminator -e 'sudo /usr/local/bin/enable-microphone.sh'</execute></action>
+      </item>
+      <item label="Enable Webcam">
+        <action name="Execute"><execute>terminator -e 'sudo /usr/local/bin/enable-webcam.sh'</execute></action>
       </item>
       <item label="Terminator">
         <action name="Execute"><execute>terminator</execute></action>

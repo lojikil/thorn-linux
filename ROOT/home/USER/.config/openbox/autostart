@@ -1,4 +1,4 @@
-# Mute the mute-microphone
+# Mute the microphone
 amixer set Capture nocap
 
 # Set the wallpaper
