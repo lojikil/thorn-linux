@@ -1,6 +1,6 @@
-Hardware only, will result in a broken install if using virtualbox, see documentation.html for virtualbox instructions
+Run the following on a fresh installation of Debian or BunsenLabs(https://www.bunsenlabs.org/installation.html).
 
-Run the following on a fresh installation of BunsenLabs(https://www.bunsenlabs.org/installation.html).
+If running on Debian, you may need to comment out the line in /etc/apt/sources.list that references the cdrom before apt-get will fetch online packages.
 
 sudo apt-get install git ansible
 git clone https://github.com/dovellr177/thorn-linux
