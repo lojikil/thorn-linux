@@ -270,10 +270,10 @@
     </keybind>
     <keybind key="C-A-f">
       <action name="Execute">
-        <command>nautilus</command>
+        <command>thunar</command>
         <startupnotify>
           <enabled>yes</enabled>
-          <name>nautilus</name>
+          <name>thunar</name>
         </startupnotify>
       </action>
     </keybind>
