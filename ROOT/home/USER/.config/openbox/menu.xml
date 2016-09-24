@@ -4547,17 +4547,8 @@
       </item>
     </menu>
     <menu id="multimedia" label="Multimedia">
-      <item label="Audacity">
-        <action name="Execute"><execute>audacity</execute></action>
-      </item>
       <item label="Eye of GNOME">
         <action name="Execute"><execute>eog</execute></action>
-      </item>
-      <item label="Gimp">
-        <action name="Execute"><execute>gimp</execute></action>
-      </item>
-      <item label="Pithos">
-        <action name="Execute"><execute>pithos</execute></action>
       </item>
       <item label="VLC">
         <action name="Execute"><execute>vlc</execute></action>
