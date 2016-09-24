@@ -90,9 +90,6 @@
        - pavucontrol # A volume control tool
        - iceweasel # A web browser
        - liferea # A RSS Reader
-       - pithos # A Pandora client
-       - gimp # An image editor
-       - audacity # An audio editor
        - bleachbit
        - conky
        - tor
