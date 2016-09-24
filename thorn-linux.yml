@@ -249,22 +249,17 @@
    - name: Copy over wallpaper setter configuration files - Part 2
      template: src=ROOT/home/USER/.config/nitrogen/nitrogen.cfg.j2 dest=/home/{{ username }}/.config/nitrogen/nitrogen.cfg owner={{ username }} group={{ username }}
 
-   - name: Add apt repository for Noobslabs icons
-     copy: src=ROOT/etc/apt/sources.list.d/noobslabs.list dest=/etc/apt/sources.list.d/noobslabs.list
+   - name: Copy over deb package for breeze-icon-theme
+     copy: src=ROOT/tmp/breeze-icon-theme_5.25.0-2_all.deb dest=/tmp/breeze-icon-theme.deb
 
-   - name: Import signing key for Noobslabs apt repository
-     apt_key: url=http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0xD530E028F59EAE4D
+   - name: Install breeze-icon-theme
+     apt: deb=/tmp/breeze-icon-theme.deb
 
-   - name: Install icon packs
-     apt: name={{ item }} state=present update_cache=yes
-     with_items:
-       - breeze-icon-theme
+   - name: Copy over deb package for arc-theme
+     copy: src=ROOT/tmp/arc-theme_1474665338.1959509_all.deb dest=/tmp/arc-theme.deb
 
-   - name: Install third-party themes
-     apt: name={{ item }} state=present
-     with_items:
-       - arc-theme
-
+   - name: Install arc-theme
+     apt: deb=/tmp/arc-theme.deb
    - name: Copy over custom themes
      unarchive: src=ROOT/tmp/arc-openbox.tar.gz dest=/tmp copy=yes
 
