@@ -2,6 +2,8 @@
 
 Current State: Work in progress, pre-first release
 
+For installation instructions, please see [install.md](install.md)
+
 ### Features
 * The full Kali Linux penetration testing toolset
 * A highly customized Openbox desktop environment modeled after BunsenLabs(formerly CrunchBang)
